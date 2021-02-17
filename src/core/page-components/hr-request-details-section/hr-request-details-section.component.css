@@ -1,0 +1,85 @@
+.labelBlock{
+  display: block;
+}
+.noMarginRow{
+  margin: 0;
+}
+
+/*Terms Styles*/
+.terms h5 { color: #712c81;}
+
+/* Optional fields */
+span.optional{
+  float: right;
+  font-size: 12px;
+  margin-bottom: 0px;
+  color: #888888;
+}
+
+/* Labels inside sections */
+.panel-body{
+  padding:20px 20px 0 20px;
+  font-family: STC-Regular;
+}
+
+.panel-body .form-group {
+  margin-left: 0px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.panel-body .form-group label {
+  color: #414142;
+  margin-bottom: 0;
+  font-size: 16px;
+}
+
+.panel-body .form-group p {
+  margin: 0;
+  color: #414142;
+}
+
+.panel-body .form-group input {
+  color: #414142;
+  border: 1px solid #E0E0E0;
+  height: 34px;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.panel-body .form-group input:focus {
+  outline: 0 none -webkit-focus-ring-color !important;
+  background-color: #fff;
+  border: 1px solid #732C7D;
+  box-shadow: 0 2px 4px rgba(225, 225, 225, 0.5);
+}
+
+.panel-body .radio label {
+  font-size: 14px;
+  color: #414142;
+}
+.panel-body .checkbox {
+  position: relative;
+}
+.panel-body .checkbox label {
+  font-size: 14px;
+  color: #414142;
+}
+.panel-body span.support {
+  font-size: 12px;
+  color: #888888;
+  margin-top: 8px;
+  display: block;
+}
+
+/*RTL STYLES*/
+.ar-dir-rtl{
+  direction: rtl;
+}
+
+.ar-float-right{
+  float: right;
+}
+
+.noRTL{direction: ltr!important;}
+.rtlPhoneField{text-align: right;}

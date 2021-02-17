@@ -1,0 +1,86 @@
+<div [ngClass]="formComponent()">
+  <div *ngIf="isReadOnly;else other_content">
+    <div *ngIf="field?.attachmentId">
+      <div class="col-sm-12" *ngIf="hasLabel"><label for="">{{labelTextReadMode}}</label></div>
+      <div>
+        <a (click)="downloadFile($event)" class="attachment-download">{{field?.fileName}}</a>
+        <a href="" class="hidden-placeholder"></a>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #other_content>
+    <div *ngIf="field?.attachmentId">
+      <div class="col-sm-12" *ngIf="hasLabel"><label for="">{{labelTextReadMode}}</label></div>
+      <div>
+        <a (click)="downloadFile($event)" class="attachment-download">{{field?.fileName}}</a>
+        <a href="" class="hidden-placeholder"></a>
+        <span class="deleteAttachment" (click)="removeAttachedFile($event)"><i class="fa fa-window-close"></i></span>
+      </div>
+    </div>
+    <div *ngIf="!field?.attachmentId && !disabled">
+
+      <div *ngIf="hasLabel" class="col-xs-9" [ngClass]="rtlLabel()"><label
+          [ngStyle]="{'font-size': small ? 'small' : '' }" for="">{{labelTextWriteMode}}</label></div>
+      <div *ngIf="!required" class="col-xs-3" [ngClass]="rtlOptionalLabel()"><span
+          class="optional">{{i18n.translate('optional')}}</span></div>
+      <input type="text" [name]="name" [(ngModel)]="field" class="hidden-placeholder">
+      <input #inputFile type="file" class="form-control file" id="fileInputBrowse_{{randomID}}"
+        (change)="onValueChange($event)" />
+
+      <input #inputFileName [ngClass]="validationBorder()" id="inputOverReadColor" type="button" name="fileInput"
+        placeholder="Select a file" />
+      <label [ngStyle]="{'top': !hasLabel ? '6px' : '' }" [ngClass]="rtlButtonBrowseLabel()"
+        for="fileInputBrowse_{{randomID}}" class="fileInput">{{i18n.translate('browse')}}</label>
+      <span class="validation-msg"
+        *ngIf="(!wrongExtensionFlag || !wrongMimeTypeFlag || wrongFileSizeFlag) && !isClean && !type=='image'"><i
+          class="fa fa-times-circle" aria-hidden="true"></i> {{i18n.translate('unsupportedType')}}</span>
+      <span class="validation-msg"
+        *ngIf="(!wrongExtensionFlag || !wrongMimeTypeFlag || wrongFileSizeFlag) && !isClean && type=='image'"><i
+          class="fa fa-times-circle" aria-hidden="true"></i> {{i18n.translate('unsupportedImagesType')}}</span>
+      <span [ngStyle]="{'top': !hasLabel ? '6px' : '' }" *ngIf="!isClean && !wrongFileSizeFlag"
+        [ngClass]="rtlButtonBrowseLabel()" class="removeAttachedFile" (click)="removeAttachedFile($event)"><i
+          class="fa fa-window-close"></i></span>
+    </div>
+
+    <div *ngIf="!field?.attachmentId  && disabled">
+
+      <div *ngIf="hasLabel" class="col-xs-9" [ngClass]="rtlLabel()"><label
+          [ngStyle]="{'font-size': small ? 'small' : '' }" for="">{{labelTextWriteMode}}</label></div>
+      <div *ngIf="!required" class="col-xs-3" [ngClass]="rtlOptionalLabel()"><span
+          class="optional">{{i18n.translate('optional')}}</span></div>
+      <input disabled type="text" [name]="name" [(ngModel)]="field" class="hidden-placeholder">
+      <input disabled #inputFile type="file" class="form-control file" id="fileInputBrowse1_{{randomID}}"
+        (change)="onValueChange($event)" />
+
+      <input disabled #inputFileName [ngClass]="validationBorder()" id="inputOverReadColor1" type="button"
+        name="fileInput" placeholder="Select a file" />
+      <label [ngStyle]="{'top': !hasLabel ? '6px' : '' }" [ngClass]="rtlButtonBrowseLabel()"
+        for="fileInputBrowse1_{{randomID}}" class="fileInput">{{i18n.translate('browse')}}</label>
+      <span class="validation-msg"
+        *ngIf="(!wrongExtensionFlag || !wrongMimeTypeFlag || wrongFileSizeFlag) && !isClean && !type=='image'"><i
+          class="fa fa-times-circle" aria-hidden="true"></i> {{i18n.translate('unsupportedType')}}</span>
+      <span class="validation-msg"
+        *ngIf="(!wrongExtensionFlag || !wrongMimeTypeFlag || wrongFileSizeFlag) && !isClean && type=='image'"><i
+          class="fa fa-times-circle" aria-hidden="true"></i> {{i18n.translate('unsupportedImagesType')}}</span>
+      <span [ngStyle]="{'top': !hasLabel ? '6px' : '' }" *ngIf="!isClean && !wrongFileSizeFlag"
+        [ngClass]="rtlButtonBrowseLabel()" class="removeAttachedFile" (click)="removeAttachedFile($event)"><i
+          class="fa fa-window-close"></i></span>
+    </div>
+  </ng-template>
+</div>
+
+<!-- <div class="upload-file-container">
+  <div class="uploading-item d-flex align-items-center" (click)="fileAttached.click()">
+    <div>
+      <img  src="../../../assets/images/upload-to-cloud.svg" alt="">
+    </div>
+    <div class="mx-3">
+      <p class="mb-0">
+        Drag and Drop file here
+        <span class="font-weight-bold">or Browse</span>
+      </p>
+    </div>
+    <input type="file" class="d-none" #fileAttached>
+  </div>
+</div> -->

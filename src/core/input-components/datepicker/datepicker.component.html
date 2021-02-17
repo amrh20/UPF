@@ -1,0 +1,57 @@
+
+  <div class="row">
+    <div class="col-6">
+      <label *ngIf="isReadOnly && labelTextReadMode && hasLabel" class="custom-label">{{labelTextReadMode}}</label>
+    </div>
+    <div  *ngIf="isReadOnly;else other_content"  class="custom-details col-6">
+      {{field | date :'dd/MM/yyyy'}}
+    </div>
+  </div>
+
+<div class="col-6">
+  <div >
+    <div *ngIf="(labelTextReadMode == 'Date of Birth' || labelTextReadMode == 'تاريخ الميلاد' ) 
+    && (field == null  || field == undefined)" class="custom-details">none</div>
+   </div>
+</div>
+ 
+  <ng-template #other_content>
+    <div class="d-flex w-100">
+      <label for="" *ngIf="hasLabel"
+      class="popup-lable">{{labelTextWriteMode}}</label>
+    </div>
+  
+
+    <div class="input-group" [ngClass]="rtlDir()">
+
+      <input *ngIf="disabled == null || disabled == undefined  || disabled == false"  type="text" [attr.fb-id]="name + '_date_field'" [value]="field | date :'dd/MM/yyyy'" class="form-control" placeholder="DD/MM/YYYY" (change)="updateDate($event)" (keyup)="validateInput($event)">
+      <input *ngIf="disabled == true" type="text" disabled  style="height: 34px;" [attr.fb-id]="name + '_date_field'" [value]="field | date :'dd/MM/yyyy'" class="form-control" placeholder="DD/MM/YYYY" (change)="updateDate($event)" (keyup)="validateInput($event)">
+      <input type="text" [name]="name" [(ngModel)]="inputValue" (ngModelChange)="inputValue=$event" [required]="required" class="hidden-placeholder form-control"> <!-- Hidden -->
+
+      <label *ngIf="disabled == null || disabled == undefined  || disabled == false" (click)="toggleCalendar($event)" class="input-group-addon calendar" id="date-picker-label-fb"><i class="fa fa-calendar" aria-hidden="true"></i><i class="fa fa-caret-down" aria-hidden="true"></i></label>
+      <label *ngIf="disabled == true" disabled class="input-group-addon calendar" id="date-picker-label-fb"><i  class="fa fa-calendar" aria-hidden="true"></i><i class="fa fa-caret-down" aria-hidden="true"></i></label>
+    </div>
+
+    <div class="{{dropdownClass()}}" [ngClass]="rtlDir()" [id]="name+'Container'">
+        <div id="" style="    margin-left: -46px !important;" [ngStyle]="{'margin-left': (!hasLabel && i18n.getLanguage() == 'en') ? '-83px  !important;' : '' }" [ngClass]="gregorianTabClasses()" (click)="toggleCalendarType('gregorian')">
+          <div class="btn1radio"></div>
+          <div class="btn2radio"></div>
+          <h5>{{i18n.translate('gregorian')}}</h5>
+        </div>
+        <div id=""  style="    margin-left: 84px;" [ngStyle]="{'margin-left': (!hasLabel && i18n.getLanguage() == 'ar') ? '80px !important;' : '' }" [ngClass]="hijriTabClasses()" (click)="toggleCalendarType('hijri')" >
+          <div class="btn1radio" src="assets/images/radioBtn.png"></div>
+          <div class="btn2radio" src="assets/images/radioBtnChecked.png"></div>
+          <h5>{{i18n.translate('hijri')}}</h5>
+        </div>
+        <div class="close-calendar-icon" (click)="toggleCalendar($event)">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <div class="tab-content" [ngClass]="isWindowsOs()">
+          <div [id]="name + '_gregorian_datepicker_placeholder'" class="form-date-picker form-calendar-date" [ngClass]="gregorianClasses()">
+          </div>
+          <div [id]="name + '_hijri_datepicker_placeholder'" class="form-date-picker form-calendar-date" [ngClass]="hijriClasses()">
+          </div>
+        </div>
+
+    </div>
+  </ng-template>

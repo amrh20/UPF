@@ -1,0 +1,15 @@
+<div [ngClass]="rtlDir()" class="panel-body" (change)="validComponent()">
+
+  <div class="row">
+    <app-checkbox [field]="section?.body?.details?.onBehalfFlag" name="onBehalfFlag" [labelTextReadMode]="i18n.translate('onBehalfFlag')"
+      [labelTextWriteMode]="i18n.translate('onBehalfFlag')" [hasColumnBreak]="true" [required]="true"
+      [isReadOnly]="section?.header?.readOnly" (checked)="handleCheckBoxs('onBehalfFlag', $event)" [disabled]="false">
+    </app-checkbox>
+  </div>
+  <div class="row" style="margin-bottom: 2%;" *ngIf="((section?.body?.details?.onBehalfFlag == 'true'))">
+    <app-search-employee [labelTextReadMode]="i18n.translate('onBehalfOfEmail')" [field]="section?.body?.details?.onBehalfOfEmail"
+      name="onBehalfOfEmail" [labelTextWriteMode]="i18n.translate('onBehalfOfEmail')" (userSelected)="searchEmployee('onBehalfOfEmail',$event)"
+      [isReadOnly]="section?.header?.readOnly">
+    </app-search-employee>
+  </div>
+</div>

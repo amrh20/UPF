@@ -1,0 +1,235 @@
+.ar-float-right {
+    float: right;
+}
+
+.attachment-download {
+    cursor: pointer;
+}
+
+.col-sm-12 {
+    padding: 0;
+}
+
+.file {
+    position: relative;
+}
+
+.col-xs-9 {
+    padding: 0;
+}
+
+.col-xs-3 {
+    padding: 0;
+}
+
+input[type="file"].file {
+    z-index: 1;
+    opacity: 0;
+    display: none;
+}
+
+input[type="file"].file+input+label.fileInput {
+    position: absolute;
+    top: 29px;
+    left: 15px;
+    background-color: #DA3F7B;
+    border-radius: 5px;
+    color: #ffffff;
+    padding: 3px 15px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+input[type="button"].file {
+    background-color: #ffffff;
+}
+
+#inputOverReadColor {
+    background-color: #FFFFFF !important;
+    text-align: left;
+    padding-left: 75px;
+}
+
+#fileInputBrowse {
+    background-color: #FFFFFF !important;
+}
+
+
+/* Optional fields */
+
+span.optional {
+    float: right;
+    font-size: 12px;
+    margin-bottom: 0px;
+    color: #888888;
+}
+
+
+/* validation */
+
+.validation-msg {
+    display: block;
+    bottom: 2px;
+    padding: 10px;
+    width: 100%;
+    color: #D8000C;
+    background-color: #FFD5D5;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.validation-msg i {
+    display: inline-block;
+}
+
+.field-border-error {
+    border: 1px solid #D8000C !important;
+}
+
+
+/* RTL STYLES */
+
+div.col-xs-9.rtlAttachmentLabel {
+    float: right;
+}
+
+div.col-xs-3.rtlOptionalLabel span.optional {
+    float: left;
+    padding: 0;
+}
+
+div.col-xs-3.rtlOptionalLabel {
+    float: left;
+}
+
+input[type="file"].file+input+label.fileInput.rtlButtonBrowseLabel {
+    left: inherit;
+    right: 15px;
+}
+
+.rtlButtonBrowse#inputOverReadColor {
+    padding-left: 7px;
+    padding-right: 70px;
+    text-align: right;
+}
+
+.hidden-placeholder {
+    display: none;
+}
+
+.deleteAttachment {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0px 15px;
+    cursor: pointer;
+}
+
+.deleteAttachment .fa-window-close,
+.removeAttachedFile .fa-window-close {
+    font-size: 24px;
+    color: #da3f7b;
+}
+
+.removeAttachedFile {
+    position: absolute;
+    top: 29px;
+    right: 17px;
+}
+
+.rtlButtonBrowseLabel.removeAttachedFile {
+    left: 17px;
+    right: initial;
+}
+
+.input-display {
+    display: none;
+}
+
+span.optional {
+    float: right;
+    font-size: 12px;
+    margin-bottom: 0px;
+    color: #888888;
+}
+
+.readOnly {
+    color: #888888;
+}
+
+.field-border-error {
+    border: 1px solid #D8000C !important;
+}
+
+select {
+    height: 34px;
+}
+
+.required {
+    border-color: #D8000C
+}
+
+select.form-control {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAMCAYAAABm+U3GAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAh0lEQVQ4T63TTQ2AMAwF4NYBElZHOAAJSEECOMBRJwEHI10GIfthhdFL08P78i5FAABm7hFxAIBO7obZnXMrEW0oiLXWNWBJ1BiDHmbmJTRu9kPj0cN/4Scq3gW34nc0gb/iMZqF3+I5tAhr8RL6CNfwJ7QKl/AaqoJjXIOq4YBPsolo1nzRAX7GWQ3yUGUtAAAAAElFTkSuQmCC');
+    background-repeat: no-repeat;
+    background-position: 96.5% 50%;
+    background-size: 12px;
+}
+
+select.form-control::-ms-expand {
+    display: none;
+}
+
+select.form-control.first-option-selected {
+    color: #888888;
+}
+
+
+/*RTL STYLES*/
+
+.noRTL {
+    direction: ltr!important;
+}
+
+.ar-dir-rtl {
+    direction: rtl;
+}
+
+.ar-float-right {
+    float: right;
+}
+
+.ar-float-left {
+    float: left;
+}
+
+select.form-control.ar-dir-rtl {
+    background-position: 2% 52%;
+}
+
+
+/*RESPONSIVE STYLE*/
+
+@media only screen and (max-width: 767px) {
+    select.form-control {
+        background-position: 98% 52%;
+    }
+}
+
+.readOnly {
+    color: #888888;
+    word-wrap: break-word;
+}
+
+.ar-float-right {
+    float: right;
+}
+
+.rtlPhoneField {
+    text-align: right;
+    direction: ltr!important;
+}

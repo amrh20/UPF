@@ -1,0 +1,196 @@
+@import "../scss/general.scss";
+@import "./bootstrap/variables";
+@import '~@angular/material/theming';
+
+@font-face {
+  font-family: 'BetaSTC';
+  src: url('../fonts/font-stc/STCForward-Light.woff2') format('woff2'), url('../fonts/font-stc/STCForward-Light.woff') format('woff'), url('../fonts/font-stc/STCForward-Light.ttf') format('truetype');
+  font-weight: $font-light;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BetaSTC';
+  src: url('../fonts/font-stc/STCForward-Regular.woff2') format('woff2'), url('../fonts/font-stc/STCForward-Regular.woff') format('woff'), url('../fonts/font-stc/STCForward-Regular.ttf') format('truetype');
+  font-weight: $font-regular;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BetaSTC';
+  src: url('../fonts/font-stc/STCForward-Medium.woff2') format('woff2'), url('../fonts/font-stc/STCForward-Medium.woff') format('woff'), url('../fonts/font-stc/STCForward-Medium.ttf') format('truetype');
+  font-weight: $font-medium;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BetaSTC';
+  src: url('../fonts/font-stc/STCForward-Bold.woff2') format('woff2'), url('../fonts/font-stc/STCForward-Bold.woff') format('woff'), url('../fonts/font-stc/STCForward-Bold.ttf') format('truetype');
+  font-weight: $font-bold;
+  font-style: normal;
+}
+
+body {
+  font-family: 'BetaSTC';
+  font-size: 16px;
+}
+
+// Forms
+.panel-body .form-group input {
+  color: #414142;
+  border: 1px solid #cccccc;
+  height: 34px;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.panel-body .form-group input:focus {
+  outline: 0 none -webkit-focus-ring-color !important;
+  background-color: #fff;
+  border: 1px solid #732c7d;
+  box-shadow: 0 2px 4px hsla(0, 0%, 88%, .5)
+}
+
+.panel-body .form-group label {
+  color: #414142;
+  margin-bottom: 0;
+  font-size: 16px;
+}
+
+input[type="radio"] {
+  height: auto !important;
+  width: auto !important;
+}
+
+.form-control[readonly] {
+  padding: 0;
+  height: inherit !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
+  background-color: none;
+  padding: 0;
+  height: inherit;
+  border: 0;
+  box-shadow: none;
+}
+
+.form-group input:focus {
+  border-color: #712c81;
+  box-shadow: none;
+}
+
+.form-group select:focus {
+  border-color: #712c81;
+  box-shadow: none;
+}
+
+.form-group textarea:focus {
+  border-color: #712c81;
+  box-shadow: none;
+}
+
+.checkbox-inline input[type="checkbox"] {
+  position: absolute;
+  margin-left: inherit;
+  margin-top: 4px \9;
+}
+
+.radio input[type="radio"] {
+  margin-left: 0px;
+}
+
+// Buttons
+.btn {
+  height: inherit !important;
+}
+
+
+
+
+.btn-success:focus {
+  background-color: #489748;
+  border-color: #489748;
+}
+
+.btn-info:hover {
+  background-color: #167dd5;
+  border-color: #167dd5;
+}
+
+.btn-warning:hover {
+  background-color: #e6ae3b;
+  border-color: #e6ae3b;
+}
+
+.btn-danger:focus {
+  background-color: #d63428;
+  border-color: #d63428;
+}
+
+.btn-group-sm>.btn,
+.btn-sm {
+  font-size: 18px;
+  border-radius: 5px;
+  padding: 6px 30px 5px 30px;
+}
+
+.btn-group-sm>.btn span,
+.btn-sm span {
+  line-height: 27px;
+}
+
+.btn-group-sm>.btn i,
+.btn-sm i {
+  max-height: 16px;
+  padding-right: 5px;
+}
+
+.btn-group-xs>.btn,
+.btn-xs {
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+label {
+  span {
+    i {
+      color: #da3f7b;
+    }
+  }
+}
+
+.btn-line {
+  width: 100%;
+  text-align: right;
+}
+
+.rtl {
+  .input-group {
+    input[type="date"] {
+      border-radius: 0 5px 5px 0;
+      text-align: right;
+    }
+
+    label {
+      border-radius: 5px 0 0 5px;
+      border: 1px solid #cccccc;
+      border-right: none;
+    }
+  }
+
+  .date-picker .tab {
+    &:nth-child(1) {
+      border-radius: 0 5px 0 0;
+    }
+
+    &:nth-child(2) {
+      border-radius: 5px 0 0 0;
+      margin-right: -4px;
+    }
+  }
+}

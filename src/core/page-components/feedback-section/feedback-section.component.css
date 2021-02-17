@@ -1,0 +1,148 @@
+.formInfoModals{
+  border-radius: 5px;
+  border: 1px solid #BDE5F8;
+  padding:15px 20px 15px 15px;
+  position:relative;
+  height: 150px;
+}
+
+.feedback_panel_header { font-weight: bold; margin-top: 0px; margin-bottom: 10px; padding: 10px 0px; border-bottom: 1px solid #ccc; }
+
+.formInfoModals div{
+  color: #888888;
+}
+
+:host ::ng-deep .popover-title { background: #722883; color: white; }
+
+.feedbackTooltip { margin: 0px; padding: 0px; color:#585858; list-style: none; font-size: 0.9em; }
+.feedbackTooltip li::before { font: normal normal normal 14px/1 'FontAwesome'; padding-right: 10px; content: "\f0da"; color: #dd3b7a; }
+.feedbackTooltip.ar-dir-rtl { direction: rtl; }
+.feedbackTooltip.ar-dir-rtl li::before { content: "\f0d9"; float: right; padding-left: 10px; padding-right: 0px; }
+
+#feedbackFormContent{
+  display:none;
+  /* height: 250px; */
+  height: auto;
+}
+.feedback_submit{
+  text-align: end;
+  padding-top: 10px;
+}
+#feedbackFormContent:before {
+  content: "";
+  border: 3px solid #BDE5F8;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  background-color: #BDE5F8;
+}
+#feedbackFormContent:after {
+  content: "\f0d8";
+  font-family: FontAwesome;
+  position: absolute;
+  font-size: 40px;
+  color: #BDE5F8;
+  top: -35px;
+  right: 19%; /*Changed on the last css */
+  height: 40px;
+  z-index: 100;
+  display: none;
+}
+
+#feedbackFormContent .closeIcon{
+  display: block;
+  margin-bottom: 18px;
+  cursor: pointer;
+}
+#feedbackFormContent #feedbackFormContentClose {
+  display: inline-block;
+  float: right;
+  position: relative;
+  margin-right: 0px;
+  margin-top: 0px;
+}
+#feedbackFormContent #feedbackFormContentClose i {
+  position: absolute;
+  margin: 0;
+  z-index: 999;
+}
+.feedback_infobox_icon { padding-left: 10px; font-size: 18px; color: #fabd40; cursor: pointer; vertical-align: middle; float: left; margin-top: 8px; }
+.ar-float-right.feedback_infobox_icon { padding-right: 10px; padding-left: 0px; }
+.feedback_infobox{ display: none; position: absolute; right: 10px; top: 10px; width: 280px; height: 150px; border: 1px solid #ccc; background: white;
+  z-index: 10; }
+
+.maxWidth{max-width: 70px;}
+#feedbackFormContent.ar-dir-rtl .maxWidth{max-width: 70px; float: right; text-align: right;}
+
+/*RTL STYLES*/
+.ar-dir-rtl{
+  direction: rtl;
+}
+.ar-float-right{
+  float: right;
+}
+.noRTL{direction: ltr!important;}
+.ar-dir-rtl#feedbackFormContent::after {
+  right: inherit;
+  left: 19%
+}
+#feedbackFormContent.ar-dir-rtl #feedbackFormContentClose{
+  float: left;
+}
+#feedbackFormContent.ar-dir-rtl #feedbackFormContentClose i{
+  right: -10px;
+}
+#feedbackFormContent.ar-dir-rtl .row .col-xs-2,
+#feedbackFormContent.ar-dir-rtl .row .col-xs-4,
+#feedbackFormContent.ar-dir-rtl .row .col-xs-6,
+#feedbackFormContent.ar-dir-rtl .row .col-xs-8,
+#feedbackFormContent.ar-dir-rtl .row .col-xs-10,
+#feedbackFormContent.ar-dir-rtl .row .col-xs-12
+{float: right;}
+
+
+/* RESPONSIVE */
+@media only screen and (max-width: 767px){
+  #feedbackFormContent:after {
+    right: 1.5%;
+  }
+  .ar-dir-rtl#feedbackFormContent::after {
+    right: inherit;
+    left: 1.5%
+  }
+}
+
+@media only screen and (max-width: 690px){
+  #feedbackFormContent:after {
+    right: 2%;
+  }
+  .ar-dir-rtl#feedbackFormContent::after {
+    right: inherit;
+    left: 2%
+  }
+}
+
+@media only screen and (max-width: 480px){
+  #feedbackFormContent:after {
+    right: 3%;
+  }
+  .ar-dir-rtl#feedbackFormContent::after {
+    right: inherit;
+    left: 3%
+  }
+}
+
+@media only screen and (max-width: 375px){
+  #feedbackFormContent:after {
+    right: 3.5%;
+  }
+  .ar-dir-rtl#feedbackFormContent::after {
+    right: inherit;
+    left: 3.5%
+  }
+}
+
+.hidden-placeholder {
+  display: none;
+}

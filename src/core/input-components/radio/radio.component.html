@@ -1,0 +1,16 @@
+<div [ngClass]="formComponent()">
+    <div *ngIf="isReadOnly;else other_content">
+        <label class="top-label" *ngIf="field?.value && hasLabel">{{labelTextReadMode}}</label>
+        <div class="readOnly">{{field?.value ? field?.value : lovResolver(field?.key)}}</div>
+    </div>
+    <ng-template #other_content>
+        <label class="top-label" *ngIf="hasLabel">{{labelTextWriteMode}}</label>
+        <ng-template ngFor let-option [ngForOf]="lov?.options" let-i="index">
+            <div class="radio" [ngClass]="rtlDir()" *ngIf="parentValue === null || parentValue === undefined || option?.parentValue === parentValue">
+                <input type="radio" [ngClass]="validationBorder()" [value]="option?.value" id="{{option?.description + name}}" [required]="required" (change)="onChooseElement($event, i)" name={{name}} [checked]="checkedRadio(option?.value)">
+                <label for="{{option?.description + name}}" class="radioInput"></label>
+                <label [attr.fb-id]="name + 'RadioLabel' + option?.value" class="bottom-label" for="{{option?.description + name}}">{{option?.description}}</label>
+            </div>
+        </ng-template>
+    </ng-template>
+</div>

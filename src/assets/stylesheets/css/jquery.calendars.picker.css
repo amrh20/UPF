@@ -1,0 +1,316 @@
+/* Default styling for jQuery Calendars Picker v2.0.0. */
+.form-date-picker.form-calendar-date .calendars{position: relative;}
+.form-date-picker.form-calendar-date .calendars {
+	background-color: #fff;
+	color: #000;
+	border: 1px solid #E6E6E6;
+	-moz-border-radius: 0.25em;
+	/* -webkit-border-radius: 0.25em; */
+	/* border-radius: 0.25em; */
+	/* font-family: Arial,Helvetica,Sans-serif; */
+	font-family: STC-Regular;
+	font-size: 14px;
+	width: 98% !important;
+	margin: -1px 1px;
+}
+.form-date-picker.form-calendar-date .calendars-rtl {
+	direction: rtl;
+}
+.form-date-picker.form-calendar-date .calendars-popup {
+	z-index: 1000;
+}
+.form-date-picker.form-calendar-date  .calendars-disable {
+	position: absolute;
+	z-index: 100;
+	background-color: white;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+}
+.form-date-picker.form-calendar-date .calendars a {
+	color: #414142;
+	text-decoration: none;
+}
+.form-date-picker.form-calendar-date .calendars a.calendars-disabled {
+	color: #888;
+	cursor: auto;
+}
+.form-date-picker.form-calendar-date .calendars button {
+    margin: 0.25em;
+    padding: 0.125em 0em;
+    background-color: #fcc;
+    border: none;
+    -moz-border-radius: 0.25em;
+    -webkit-border-radius: 0.25em;
+    border-radius: 0.25em;
+    font-weight: bold;
+}
+.form-date-picker.form-calendar-date .calendars-nav{}
+.form-date-picker.form-calendar-date .calendars-cmd-prev{font-size: 20px; position: absolute; left:10px; top:9px; width: auto !important; padding-right:10px !important;}
+.form-date-picker.form-calendar-date .calendars-cmd-next{font-size: 20px; position: absolute; right: 10px; top:9px; width: auto !important; padding-left: 10px !important;}
+
+.form-date-picker.form-calendar-date .calendars-nav, .form-date-picker.form-calendar-date .calendars-ctrl {
+	float: left;
+	width: 100%;
+	/* background-color: #000; */
+	color: #DA3F7B;
+	font-size: 90%;
+	font-weight: bold;
+	padding: 0 4%;
+}
+.form-date-picker.form-calendar-date .calendars-ctrl {
+	background-color: #600;
+}
+.form-date-picker.form-calendar-date .calendars-cmd {
+	width: 28%;
+	color:#ffffff !important;
+}
+.form-date-picker.form-calendar-date .calendars-cmd-today{
+	color: #414142!important;
+  border: 1px solid #da3f7b;
+  display: inline-block;
+  margin-left: 15px;
+  border-radius: 5px;
+	position: absolute;
+	top:-40px;
+	left:150px;
+	height: 25px!important;
+	width: 65px!important;
+	cursor: pointer;
+	line-height: 1.7;
+}
+.form-date-picker.form-calendar-date .calendars-cmd:hover {
+	/* background-color: #DA3F7B; */
+	color: #712C81;
+}
+.form-date-picker.form-calendar-date .calendars-ctrl .calendars-cmd:hover {
+	background-color: #f08080;
+}
+.form-date-picker.form-calendar-date .calendars-cmd-prevJump, .form-date-picker.form-calendar-date .calendars-cmd-nextJump {
+	width: 8%;
+}
+.form-date-picker.form-calendar-date a.calendars-cmd {
+	height: 1.5em;
+	padding: 1px 0px;
+	outline: none;
+}
+.form-date-picker.form-calendar-date button.calendars-cmd {
+	text-align: center;
+}
+.form-date-picker.form-calendar-date .calendars-cmd-prev, .form-date-picker.form-calendar-date .calendars-cmd-prevJump, .form-date-picker.form-calendar-date .calendars-cmd-clear {
+	float: left;
+	padding-left: 2%;
+}
+.form-date-picker.form-calendar-date .calendars-cmd-current, .form-date-picker.form-calendar-date .calendars-cmd-today {
+	float: left;
+	width: 35%;
+	text-align: center;
+}
+.form-date-picker.form-calendar-date .calendars-cmd-next, .form-date-picker.form-calendar-date .calendars-cmd-nextJump, .form-date-picker.form-calendar-date .calendars-cmd-close {
+	float: right;
+	padding-right: 2%;
+	text-align: right;
+}
+.form-date-picker.form-calendar-date .calendars-rtl .calendars-cmd-prev, .form-date-picker.form-calendar-date .calendars-rtl .calendars-cmd-prevJump,
+.form-date-picker.form-calendar-date .calendars-rtl .calendars-cmd-clear {
+	float: right;
+	padding-left: 0%;
+	padding-right: 2%;
+	text-align: right;
+}
+.form-date-picker.form-calendar-date .calendars-rtl .calendars-cmd-current, .form-date-picker.form-calendar-date .calendars-rtl .calendars-cmd-today {
+	float: right;
+}
+.form-date-picker.form-calendar-date .calendars-rtl .calendars-cmd-next, .form-date-picker.form-calendar-date .calendars-rtl .calendars-cmd-nextJump,
+.form-date-picker.form-calendar-date .calendars-rtl .calendars-cmd-close {
+	float: left;
+	padding-left: 2%;
+	padding-right: 0%;
+	text-align: left;
+}
+.form-date-picker.form-calendar-date .calendars-month-nav {
+	float: left;
+	background-color: #777;
+	text-align: center;
+}
+.form-date-picker.form-calendar-date .calendars-month-nav div {
+	float: left;
+	width: 12.5%;
+	margin: 1%;
+	padding: 1%;
+}
+.form-date-picker.form-calendar-date .calendars-month-nav span {
+	color: #888;
+}
+.form-date-picker.form-calendar-date .calendars-month-row {
+	clear: left;
+}
+.form-date-picker.form-calendar-date .calendars-month {
+	float: left;
+	width: 100%;
+	/* border: 1px solid #444; */
+	text-align: center;
+}
+.form-date-picker.form-calendar-date .calendars-month-header{
+	background-color: #da3f7b;
+	margin: 0;
+	padding: 10px 0;
+	height: inherit;
+	color:#fff;
+	font-weight: bold;
+}
+/* .form-date-picker.form-calendar-date .calendars-month-header select, .form-date-picker.form-calendar-date .calendars-month-header input {
+	height: 2.1em;
+	background-color: #444;
+	color: #fff;
+	font-weight: bold;
+} */
+.form-date-picker.form-calendar-date .calendars-month-header select, .form-date-picker.form-calendar-date .calendars-month-header input {
+	height: 1.9em;
+	border: none;
+	background: #da3f7b;
+	color: #fff;
+	outline: none;
+	border: none;
+	width: auto;
+	cursor: pointer;
+	font-size: 15px;
+	font-weight: bold;
+}
+.form-date-picker.form-calendar-date .calendars-month-header input {
+	position: absolute;
+	display: none;
+}
+.form-date-picker.form-calendar-date .calendars-month table {
+	width: 100%;
+	border-collapse: collapse;
+}
+.form-date-picker.form-calendar-date .calendars-month thead {
+	border-bottom: 1px solid #FFF;
+}
+.form-date-picker.form-calendar-date .calendars-month th, .form-date-picker.form-calendar-date .calendars-month td {
+	margin: 0em;
+	padding: 0.2em 0;
+	font-weight: normal;
+	text-align: center;
+}
+.form-date-picker.form-calendar-date .calendars-month th {
+	border: 1px solid #FFF;
+}
+.form-date-picker.form-calendar-date .calendars-month th, .form-date-picker.form-calendar-date .calendars-month th a {
+	background-color: transparent;
+	color: #ccc;
+	text-align: center;
+}
+.form-date-picker.form-calendar-date .calendars-month td {
+	background-color: transparent;
+	border:none;
+}
+.form-date-picker.form-calendar-date .calendars-month td.calendars-week {
+	border:none;
+}
+.form-date-picker.form-calendar-date .calendars-month td.calendars-week * {
+	background-color: transparent;
+	color: #5cb85c;
+	border: none;
+}
+.form-date-picker.form-calendar-date .calendars-month a {
+	display: block;
+	width: 100%;
+	padding: 0.125em 0em;
+	background-color: transparent;
+	color: #414142;
+	text-decoration: none;
+}
+.form-date-picker.form-calendar-date .calendars-month span {
+	display: block;
+	width: 100%;
+	padding: 0.125em 0em;
+	text-align: center;
+	/* background: #fff !important; */
+	/* color: #fff !important; */
+}
+.form-date-picker.form-calendar-date .calendars-month td span {
+	color: #888;
+}
+.form-date-picker.form-calendar-date .calendars-month td .calendars-other-month {
+	background-color: transparent;
+	background: transparent !important;
+	color: #C1C1C1 !important;
+}
+.form-date-picker.form-calendar-date .calendars-month td .calendars-weekend {
+	background-color: transparent;
+}
+.form-date-picker.form-calendar-date .calendars-month td .calendars-today {
+	color: #DA3F7B;
+	border-radius: 0;
+	border: none;
+	padding: 0;
+	display: block;
+}
+.form-date-picker.form-calendar-date .calendars-month td .calendars-highlight {
+	background-color: transparent;
+	color:#DA3F7B;
+}
+.form-date-picker.form-calendar-date .calendars-month td .calendars-selected {
+	background-color: #777;
+	color: #fff;
+}
+.form-date-picker.form-calendar-date .calendars-month td a.calendars-selected{
+
+	background-color: #DA3F7B;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	margin: 0 auto;
+	line-height: 1.6;
+
+}
+.form-date-picker.form-calendar-date .calendars-month td a.calendars-selected:focus{
+	outline: none;
+}
+.form-date-picker.form-calendar-date .calendars-month th.calendars-week {
+	background-color: transparent;
+	color: #fff;
+}
+.form-date-picker.form-calendar-date .calendars-status {
+	clear: both;
+	background-color: #ddd;
+	text-align: center;
+}
+.form-date-picker.form-calendar-date .calendars-clear-fix {
+	clear: both;
+}
+.form-date-picker.form-calendar-date .calendars-jumps .calendars-cmd-prev, .form-date-picker.form-calendar-date .calendars-jumps .calendars-cmd-next { width: 20%; }
+
+.form-date-picker.form-calendar-date select.calendars-month-year{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+.form-date-picker.form-calendar-date select.calendars-month-year::-ms-expand {
+  display: none;
+}
+
+.form-date-picker.form-calendar-date .date-picker.ar-dir-rtl .tab-content .is-calendarsPicker .calendar .calendars-nav .calendars-cmd-prev {
+  float: right;
+  transform: rotate(180deg);
+}
+.form-date-picker.form-calendar-date .date-picker.ar-dir-rtl .tab-content .is-calendarsPicker .calendar .calendars-nav .calendars-cmd-next {
+  float: left;
+  right: inherit;
+  left: 10px;
+  transform: rotate(180deg);
+}
+
+/*RTL STYLES*/
+
+.ar-dir-rtl .form-date-picker.form-calendar-date .calendars-cmd-today{
+	top:-40px;
+	left:inherit;
+	right: 160px;
+	cursor: pointer;
+	line-height: 1.7;
+}

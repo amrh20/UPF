@@ -1,0 +1,38 @@
+<div [ngClass]="formComponent()">
+    <div *ngIf="isReadOnly;else other_content">
+
+        <label for="" *ngIf="field">{{labelTextWriteMode}}</label>
+        <ng-template ngFor let-a [ngForOf]="field" let-s="index">
+            <div>
+                <div>
+                    <a (click)="downloadFile($event, a.attachmentId)" style="cursor: pointer;" class="attachment-download">{{ (a.fileName !== 'null') ? a.fileName : '' }}</a>
+                    <a href="" class="hidden-placeholder"></a>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+
+    <ng-template #other_content>
+
+        <label for="">{{labelTextWriteMode}}</label>
+        <div class="fileinputcontainer" *ngIf="isAddMoreVisible;">
+            <input #inputFile type="file" class="form-control file" id="fileInputBrowse" (change)="onFileInputValueChange($event)" />
+            <input #inputFileName id="inputOverReadColor" type="button" name="fileInput" placeholder="Select a file" value="" style="background: #ccc; opacity: 0;" />
+            <label [ngClass]="rtlButtonBrowseLabel()" for="fileInputBrowse" class="fileInput">{{i18n.translate('browse')}}</label>
+            <span class="validation-msg" *ngIf="(wrongExtensionFlag || wrongMimeTypeFlag) && !maxSizeFlag && !isClean">
+        <i class="fa fa-times-circle" aria-hidden="true"></i> {{i18n.translate('maxSize')}}
+      </span>
+            <span class="validation-msg" *ngIf="(!wrongExtensionFlag || !wrongMimeTypeFlag) && !isClean">
+        <i class="fa fa-times-circle" aria-hidden="true"></i> {{i18n.translate('unsupportedType')}}
+      </span>
+        </div>
+        <ng-template ngFor let-item [ngForOf]="totalattachments" let-i="index">
+            <div *ngIf="item?.fileName">
+                <a class="attachment-download" (click)="downloadFile($event, item.attachmentId)"><strong>{{ (item?.fileName !== 'null') ? item?.fileName : '' }}</strong></a>
+                <a href="" class="hidden-placeholder"></a>
+                <a (click)="removeAttachment(i)">[{{i18n.translate('delete')}}]</a>
+            </div>
+        </ng-template>
+        <p *ngIf="!isAddMoreVisible;">{{i18n.translate('attachmentnumlimit')}}</p>
+    </ng-template>
+</div>

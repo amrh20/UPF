@@ -1,0 +1,4 @@
+<div *ngIf="messages && messages.length > 0" [ngClass]="messageBoxClasses()">
+  <a  class="closeMessage" (click)="messageClose()"><i class="fa fa-times" aria-hidden="true"></i></a>
+  <p class="textMessage" *ngFor="let message of messages" [innerHTML]='message'></p>
+</div>

@@ -1,0 +1,15 @@
+@font-face{
+  font-family:'STC-Light';
+  src:url('../fonts/font-stc/STC-Light.eot') format('embedded-opentype');
+  src:url('../fonts/font-stc/STC-Light.otf') format("opentype");
+  src:url('../fonts/font-stc/STC-Light.svg') format('svg');
+  src:url('../fonts/font-stc/STC-Light.ttf') format('truetype');
+  src:url('../fonts/font-stc/STC-Light.woff') format('woff');
+
+  font-family:'STC-Regular';
+  src:url('../fonts/font-stc/STC-Regular.eot') format('embedded-opentype');
+  src:url('../fonts/font-stc/STC-Regular.otf') format("opentype");
+  src:url('../fonts/font-stc/STC-Regular.svg') format('svg');
+  src:url('../fonts/font-stc/STC-Regular.ttf') format('truetype');
+  src:url('../fonts/font-stc/STC-Regular.woff') format('woff');
+}

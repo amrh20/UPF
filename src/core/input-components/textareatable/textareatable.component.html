@@ -1,0 +1,20 @@
+<div >
+    <div *ngIf="isReadOnly;else other_content" [ngClass]="inputDisplay()">
+        <label for="" *ngIf="field && hasLabel">{{labelTextReadMode}}</label>
+        <div class="readOnly">{{field}}</div>
+    </div>
+
+    <ng-template #other_content>
+        <div class="col-xs-9" [ngClass]="rtlLabel()" *ngIf="hasLabel"><label for="">{{labelTextWriteMode}}</label></div>
+        <div *ngIf="!required && hasLabel" class="col-xs-3" [ngClass]="rtlOptionalLabel()"><span class="optional">{{i18n.translate('optional')}}</span></div>
+
+        <app-tooltip *ngIf="tooltipText" [text]="tooltipText">
+        </app-tooltip>
+
+        <!-- (input)="onValueChange($event.target.value)" -->
+        <textarea id="textArea" [ngClass]="validateTextAreaBorder()" class="form-control" rows="4" ngModel={{field}} [name]="name+''" [required]="required" [minlength]="minLength" [maxlength]="maxlength" min="maxlength" max="maxValue" [maximumInputSize]="maxlength"
+            (input)="onValueChange($event.target.value)" (focusout)="focusOutFunction()" (focusin)="focusInFunction()"></textarea>
+        <span class="validation-msg" *ngIf="field && field.length < minLength && field.length != 0 && !textAreaFocus"><i class="fa fa-times-circle" aria-hidden="true"></i> {{errorMessage}}</span>
+        <span class="validation-msg" *ngIf="field && field.length > maxlength && !textAreaFocus"><i class="fa fa-times-circle" aria-hidden="true"></i> {{errorMessage}}</span>
+    </ng-template>
+</div>

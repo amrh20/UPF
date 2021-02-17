@@ -1,0 +1,257 @@
+html:lang(ar) {
+  direction: rtl; }
+  html:lang(ar) .noRtl {
+    direction: ltr !important; }
+  html:lang(ar) .container-fluid form .form-buttons {
+    width: 100%;
+    text-align: left; }
+    html:lang(ar) .container-fluid form .form-buttons .dropdown-menu {
+      right: 0; }
+      html:lang(ar) .container-fluid form .form-buttons .dropdown-menu li {
+        text-align: right; }
+  html:lang(ar) .container-fluid form .panel-group .panel .col-lg-1 {
+    float: right; }
+  html:lang(ar) .container-fluid form .panel-group .panel .col-lg-3 {
+    float: right; }
+  html:lang(ar) .container-fluid form .panel-group .panel .col-lg-2 {
+    float: right; }
+  html:lang(ar) .container-fluid form .panel-group .panel .col-lg-4 {
+    float: right; }
+  html:lang(ar) .container-fluid form .panel-group .panel .col-lg-6 {
+    float: right; }
+  html:lang(ar) .container-fluid form .panel-group .panel .col-lg-2 {
+    float: right; }
+  html:lang(ar) .container-fluid form .panel-group .panel .panel-title i {
+    padding-right: 0px;
+    padding-left: 5px; }
+  html:lang(ar) .container-fluid form .panel-group .panel .panel-title i.fa.fa-caret-right {
+    padding-right: 5px;
+    padding-left: 0px;
+    -ms-transform: rotate(180deg);
+    /* IE 9 */
+    -webkit-transform: rotate(180deg);
+    /* Safari */
+    transform: rotate(180deg); }
+  html:lang(ar) .container-fluid form .panel-group .panel .panel-body .form-group.file input[type="file"] + input + label.fileInput {
+    right: 15px;
+    left: inherit; }
+  html:lang(ar) .container-fluid form .panel-group .panel .panel-body .form-group select {
+    background-position: 3.5% 50%; }
+  html:lang(ar) .container-fluid form .panel-group .panel .panel-body .form-group .radio input[type="radio"] + label.radioInput {
+    top: 0;
+    right: 0;
+    padding-right: 0; }
+  html:lang(ar) .container-fluid form .panel-group .panel .panel-body .terms .checkbox label {
+    padding-left: 0;
+    padding-right: 25px; }
+  html:lang(ar) .container-fluid form .panel-group .panel .panel-body .optional {
+    float: left; }
+  html:lang(ar) .container-fluid .titleForm .col-lg-9 {
+    float: right; }
+  html:lang(ar) .container-fluid .titleForm .col-lg-3 {
+    float: right; }
+    html:lang(ar) .container-fluid .titleForm .col-lg-3 a {
+      float: left; }
+  html:lang(ar) .container-fluid .tableForm .col-lg-10 {
+    float: right; }
+  html:lang(ar) .container-fluid .tableForm .col-lg-2 {
+    float: right; }
+  html:lang(ar) .container-fluid .panel .panel-heading h4.panel-title + span {
+    float: inherit; }
+  html:lang(ar) .container-fluid .panel .panel-body .checkbox input[type="checkbox"] + label.checkboxInput {
+    top: 0;
+    right: 0;
+    padding-right: 0; }
+  html:lang(ar) #profileFormContentClose i {
+    right: inherit !important;
+    left: -20px; }
+  html:lang(ar) #commentsFormContent #commentsFormContentClose i {
+    right: inherit !important;
+    left: -20px; }
+  html:lang(ar) #commentsFormContent .commentsImage {
+    float: right;
+    margin-right: 0;
+    margin-left: 10px; }
+  html:lang(ar) #commentsFormContent .col-lg-10 {
+    float: right; }
+  html:lang(ar) #commentsFormContent .col-lg-2 {
+    float: right; }
+    html:lang(ar) #commentsFormContent .col-lg-2 .iconImg {
+      float: right;
+      padding-right: 0;
+      padding-left: 6px; }
+    html:lang(ar) #commentsFormContent .col-lg-2 .timeDate {
+      float: right;
+      border-right: 1px solid #888888;
+      padding-right: 6px;
+      border-left: 0;
+      padding-left: 0; }
+  html:lang(ar) .remove-btn {
+    margin-left: -10px;
+    margin-right: 0;
+    float: left; }
+  html:lang(ar) .flag div {
+    float: left;
+    padding: 15px 15px 15px 0; }
+  html:lang(ar) .flag a {
+    float: left; }
+  html:lang(ar) .formInfo .badgeComments span {
+    margin-left: 4px;
+    margin-right: 0; }
+  html:lang(ar) .formInfo .icons {
+    text-align: left; }
+    html:lang(ar) .formInfo .icons .status {
+      float: left;
+      margin-left: 0;
+      margin-right: 15px; }
+  html:lang(ar) .formInfo .col-lg-4 {
+    float: right !important; }
+  html:lang(ar) .formInfo .col-lg-8 {
+    float: right !important;
+    text-align: right; }
+    html:lang(ar) .formInfo .col-lg-8 .image {
+      float: right;
+      margin-right: 0;
+      margin-left: 15px; }
+    html:lang(ar) .formInfo .col-lg-8 h4 {
+      float: right; }
+      html:lang(ar) .formInfo .col-lg-8 h4:after {
+        content: "|";
+        padding: 0 10px; }
+      html:lang(ar) .formInfo .col-lg-8 h4:before {
+        content: "";
+        padding: 0; }
+      html:lang(ar) .formInfo .col-lg-8 h4:last-child:after {
+        content: "";
+        padding: 0; }
+  html:lang(ar) #commentsFormContent:after {
+    right: 79%; }
+  html:lang(ar) #profileFormContent:after {
+    top: -35px;
+    right: 1%;
+    left: inherit;
+    z-index: -100; }
+  html:lang(ar) #profileFormContent .details {
+    text-align: left; }
+  html:lang(ar) .formInfoModals .row .col-lg-5 {
+    float: right; }
+  html:lang(ar) .formInfoModals .row .col-lg-12 {
+    float: left;
+    width: 100%; }
+    html:lang(ar) .formInfoModals .row .col-lg-12 div i {
+      float: left; }
+  html:lang(ar) .formInfoModals .row .col-lg-9 {
+    float: right; }
+  html:lang(ar) .formInfoModals .row .col-lg-3 {
+    float: right; }
+    html:lang(ar) .formInfoModals .row .col-lg-3 .iconImg {
+      padding-right: 0;
+      padding-left: 12px; }
+  html:lang(ar) .panel-group .panel .panel-heading .row a .col-lg-2, html:lang(ar) .panel-group .panel .panel-heading .row a .col-md-2, html:lang(ar) .panel-group .panel .panel-heading .row a .col-sm-2 {
+    padding-left: 5px;
+    padding-right: 0; }
+  html:lang(ar) .panel-group .panel .panel-heading .row .col-lg-6 .row .col-lg-1 {
+    float: right;
+    padding-left: 0;
+    padding-right: 10px; }
+  html:lang(ar) .panel-group .panel .panel-heading .row .col-lg-6 .row .col-lg-11 {
+    float: right;
+    padding-left: 10px;
+    padding-right: 0; }
+  html:lang(ar) .panel-group .panel .panel-heading .row .col-lg-4 {
+    text-align: left; }
+  html:lang(ar) .panel-group .panel .panel-heading .row .col-lg-2 .status {
+    float: left; }
+  html:lang(ar) .panel-heading .arrow i {
+    transform: rotate(180deg);
+    margin-top: 10px; }
+  html:lang(ar) .panel-primary .panel-heading .arrow i {
+    transform: rotate(90deg);
+    margin-top: 10px; }
+  html:lang(ar) .form-group .row .col-sm-9 {
+    float: right; }
+  html:lang(ar) .form-group .row .col-sm-9 {
+    float: right; }
+  html:lang(ar) .input-group .form-control:first-child {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px; }
+  html:lang(ar) .input-group .input-group-addon:last-child {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px; }
+  html:lang(ar) .input-group .input-group-addon i:last-child {
+    padding-left: 0;
+    padding-right: 10px; }
+  html:lang(ar) .radio {
+    margin-right: 0;
+    margin-left: 25px; }
+    html:lang(ar) .radio label {
+      padding-left: 0;
+      padding-right: 30px; }
+  html:lang(ar) .checkbox {
+    margin-right: 0;
+    margin-left: 25px; }
+    html:lang(ar) .checkbox label {
+      padding-left: 0;
+      padding-right: 30px; }
+  html:lang(ar) .date-picker .tab {
+    margin-left: 0;
+    margin-right: 15px; }
+  html:lang(ar) .date-picker .tab-hijri {
+    margin-left: 0;
+    margin-right: 5px; }
+  html:lang(ar) .date-picker .todayBtn {
+    margin-left: 0;
+    margin-right: 15px; }
+  html:lang(ar) .date-picker .tab-content .calendars-nav .calendars-cmd-prev {
+    float: right;
+    transform: rotate(180deg); }
+  html:lang(ar) .date-picker .tab-content .calendars-nav .calendars-cmd-next {
+    float: left;
+    right: inherit;
+    left: 10px;
+    transform: rotate(180deg); }
+  html:lang(ar) .delegated-box {
+    padding-right: 0;
+    float: right; }
+    html:lang(ar) .delegated-box:first-child {
+      color: #712C81; }
+    html:lang(ar) .delegated-box:nth-child(2) {
+      margin-right: 15px;
+      margin-left: 0; }
+    html:lang(ar) .delegated-box .delegated-box-img {
+      float: right; }
+    html:lang(ar) .delegated-box .delegated-box-txt {
+      float: right;
+      margin-right: 5px;
+      margin-left: 0; }
+    html:lang(ar) .delegated-box .delegated {
+      color: #da3f7b; }
+  html:lang(ar) .badgeImg {
+    left: -10px;
+    right: inherit; }
+  html:lang(ar) .searchSugestions .searchSugestionElement .imageSearch {
+    float: right;
+    margin: 7px 8px 0 5px; }
+  html:lang(ar) .searchSugestions .searchSugestionElement .textSearch {
+    float: right; }
+  @media only screen and (max-width: 767px) {
+    html:lang(ar) .panel-heading h4.panel-title + span {
+      float: right; }
+    html:lang(ar) .panel-heading .mobileIdent {
+      padding-left: 0;
+      padding-right: 8.5%; }
+      html:lang(ar) .panel-heading .mobileIdent h5 {
+        float: right; }
+      html:lang(ar) .panel-heading .mobileIdent .status {
+        float: right !important; }
+    html:lang(ar) .details {
+      text-align: left; }
+    html:lang(ar) .delegatedImg {
+      padding-left: 10px;
+      padding-right: 7.5%; } }
+
+/*# sourceMappingURL=main-rtl.css.map */

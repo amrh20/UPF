@@ -1,0 +1,64 @@
+<div id="profileFormContent" [ngClass]="rtlDir()" class="formInfoModals">
+
+  <div class="row">
+
+    <div class="col-lg-12 closeIcon">
+      <div id="profileFormContentClose" (click)="close.emit()"><i class="fa fa-times" aria-hidden="true"></i></div>
+    </div>
+
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 infoProfile" [ngClass]="rtlFloatRight()">
+      <div class="commentsInfo">
+        <h3>{{profile?.fullName}}</h3>
+        <p>{{profile?.employeeNumber}}</p>
+        <p>{{profile?.sectorName}}</p>
+        <p>{{profile?.jobPosition}}</p>
+      </div>
+    </div>
+
+    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 infoProfile" [ngClass]="rtlFloatRight()">
+      <div class="commentsInfo">
+        <div class="row">
+          <div class="col-sm-6 col-xs-12"><b i18n>{{i18n.translate('departmentName')}}:</b></div>
+          <div class="col-sm-6 col-xs-12">{{profile?.departmentName}}</div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-xs-12"><b i18n>{{i18n.translate('generalDepartmentName')}}:</b></div>
+          <div class="col-sm-6 col-xs-12">{{profile?.generalDepartmentName}}</div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-xs-12"><b i18n>{{i18n.translate('directManager')}}:</b></div>
+          <div class="col-sm-6 col-xs-12">{{profile?.directManagerName}}</div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-xs-12"><b i18n>{{i18n.translate('employeeEmail')}}:</b></div>
+          <div class="col-sm-6 col-xs-12"><a href="mailto:{{profile?.employeeEmail}}">{{profile?.employeeEmail}}</a></div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-xs-12"><b i18n>{{i18n.translate('humanResourcesLocation')}}:</b></div>
+          <div class="col-sm-6 col-xs-12">{{profile?.humanResourcesLocation}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 infoProfile" [ngClass]="rtlFloatRight()">
+      <div class="commentsInfo">
+        <div class="row">
+          <div class="col-sm-6 col-xs-12"><b i18n>{{i18n.translate('businessPhone')}}:</b></div>
+          <div class="col-sm-6 col-xs-12 noRTL"><a href="tel:{{profile.businessPhone}}">{{profile?.businessPhone}}</a></div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-xs-12"><b i18n>{{i18n.translate('nationality')}}:</b></div>
+          <div class="col-sm-6 col-xs-12">{{profile?.nationality}}</div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-xs-12"><b i18n>{{i18n.translate('generalDepartmentCode')}}:</b></div>
+          <div class="col-sm-6 col-xs-12">{{profile?.generalDepartmentCode}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-xs-12 link-viewAllDetails"><a href="/group/mygate/profile-detail?{{profile?.employeeEmail}}"><b i18n>{{i18n.translate('viewAllDetails')}}</b></a></div>
+    </div>
+  </div>
+
+</div>

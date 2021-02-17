@@ -1,0 +1,309 @@
+<div class="panel-body">
+
+  <div *ngIf=" type =='originalAddressSegment'  || type =='editoriginalAddressSegment'">
+
+    <app-select [field]="data?.country" name="country" [labelTextReadMode]="i18n.translate('country')"
+      [labelTextWriteMode]="i18n.translate('country')" [hasColumnBreak]="false" [lov]="lov?.country" [required]="true"
+      [isReadOnly]="section?.header?.readOnly" (selectedElement)="onSelectChange('country',data , $event)">
+    </app-select>
+
+    <div class="mt-4">
+      <app-input [field]="data?.city" name="city" [labelTextReadMode]="i18n.translate('city')"
+        [labelTextWriteMode]="i18n.translate('city')" [hasColumnBreak]="false" [required]="true"
+        [isReadOnly]="section?.header?.readOnly" (enteredData)="handleTextInput('city', data , $event)">
+      </app-input>
+    </div>
+
+
+    <div class="mt-4">
+      <app-input [field]="data?.districtName" name="districtName" [labelTextReadMode]="i18n.translate('districtName')"
+        [labelTextWriteMode]="i18n.translate('districtName')" [hasColumnBreak]="false" [required]="true"
+        [isReadOnly]="section?.header?.readOnly" (enteredData)="handleTextInput('districtName', data , $event)">
+      </app-input>
+    </div>
+
+    <div class="mt-4">
+      <app-input [field]="data?.streetName" name="streetName" [labelTextReadMode]="i18n.translate('streetName')"
+        [labelTextWriteMode]="i18n.translate('streetName')" [hasColumnBreak]="false" [required]="true"
+        [isReadOnly]="section?.header?.readOnly" (enteredData)="handleTextInput('streetName', data , $event)">
+      </app-input>
+    </div>
+
+    <div class="mt-4">
+      <app-input [field]="data?.postalCode" name="postalCode" [labelTextReadMode]="i18n.translate('postalCode')"
+        [labelTextWriteMode]="i18n.translate('postalCode')" [hasColumnBreak]="false" [required]="true"
+        [isReadOnly]="section?.header?.readOnly" (enteredData)="handleTextInput('postalCode', data , $event)">
+      </app-input>
+    </div>
+
+    <div class="mt-4">
+      <app-input [field]="data?.buildingNumber" name="buildingNumber"
+        [labelTextReadMode]="i18n.translate('buildingNumber')" [labelTextWriteMode]="i18n.translate('buildingNumber')"
+        [hasColumnBreak]="false" [required]="true" [isReadOnly]="section?.header?.readOnly"
+        (enteredData)="handleTextInput('buildingNumber', data , $event)">
+      </app-input>
+    </div>
+
+    <div class="mt-4">
+      <app-input [field]="data?.unitNumber" name="unitNumber" [labelTextReadMode]="i18n.translate('unitNumber')"
+        [labelTextWriteMode]="i18n.translate('unitNumber')" [hasColumnBreak]="false" [required]="true"
+        [isReadOnly]="section?.header?.readOnly" (enteredData)="handleTextInput('unitNumber', data , $event)">
+      </app-input>
+    </div>
+
+    <div class="mt-4">
+      <app-input [field]="data?.additionalNumber" name="additionalNumber"
+        [labelTextReadMode]="i18n.translate('additionalNumber')"
+        [labelTextWriteMode]="i18n.translate('additionalNumber')" [hasColumnBreak]="false" [required]="true"
+        [isReadOnly]="section?.header?.readOnly" (enteredData)="handleTextInput('additionalNumber', data , $event)">
+      </app-input>
+    </div>
+
+  </div>
+
+  <div *ngIf=" type =='contactInformationSegment'  || type =='editcontactInformationSegment'">
+
+    <app-select [field]="data?.type" name="type" [labelTextReadMode]="i18n.translate('type')"
+      [labelTextWriteMode]="i18n.translate('type')" [hasColumnBreak]="true" [lov]="lov?.type" [required]="true"
+      [isReadOnly]="section?.header?.readOnly" (selectedElement)="onSelectChange('type',data, $event)">
+    </app-select>
+
+    <app-select [field]="data?.countryCode" name="countryCode" [labelTextReadMode]="i18n.translate('countryCode')"
+      [labelTextWriteMode]="i18n.translate('countryCode')" [hasColumnBreak]="true" [lov]="lov?.countryCode"
+      [required]="true" [isReadOnly]="section?.header?.readOnly"
+      (selectedElement)="onSelectChange('countryCode',data, $event)">
+    </app-select>
+
+    <app-select [disabled]="data?.type?.key == 'M'" [field]="data?.areaCode" name="areaCode"
+      [labelTextReadMode]="i18n.translate('areaCode')" [labelTextWriteMode]="i18n.translate('areaCode')"
+      [hasColumnBreak]="true" [lov]="lov?.areaCode" [required]="true" [isReadOnly]="section?.header?.readOnly"
+      (selectedElement)="onSelectChange('areaCode',data, $event)">
+    </app-select>
+
+    <input *ngIf="data?.type?.key == 'M'" type="text" class="form-control" [maxlength]="9" OnlyNumber
+      [(ngModel)]="data.phone" name="">
+    <input *ngIf="data?.type?.key == 'ER'  || data?.type?.key == 'H1'  || data?.type?.key == 'W1'" type="text"
+      class="form-control" [maxlength]="7" OnlyNumber [(ngModel)]="data.phone" name="">
+    <input name="" type="checkbox" [checked]="ConvertStringToBoolean(data.primary)"
+      (change)="chaneStringToBoolean( i , $event.target.checked);" />
+  </div>
+
+
+  <div *ngIf=" type =='officeLocationSegment'  || type =='editofficeLocationSegment'">
+
+
+    <label for="" class="popup-lable">{{i18n.translate('costCenter')}}</label>
+    <input disabled="true" type="text" class="form-control"
+      [(ngModel)]="section?.body?.details?.officeLocationSegment?.officeLocation.costCenter" name="costCenter">
+
+    <div class="mt-4">
+
+      <label for="" class="popup-lable"> {{i18n.translate('region')}}</label>
+      <input type="text" class="form-control"
+        [(ngModel)]="section?.body?.details?.officeLocationSegment?.officeLocation.region" name="region">
+    </div>
+    <!-- </div>
+    <div class="row"> -->
+
+    <div class="mt-4">
+      <label for="" class="popup-lable">{{i18n.translate('districts')}}</label>
+      <input type="text" class="form-control"
+        [(ngModel)]="section?.body?.details?.officeLocationSegment?.officeLocation.district" name="district">
+    </div>
+
+    <div class="mt-4">
+      <label for="" class="popup-lable">
+        {{i18n.translate('campus')}}
+      </label>
+      <input type="text" class="form-control"
+        [(ngModel)]="section?.body?.details?.officeLocationSegment?.officeLocation.campus" name="campus">
+    </div>
+
+    <div class="mt-4">
+      <label for="" class="popup-lable">
+        {{i18n.translate('building')}}
+      </label>
+
+      <input type="text" class="form-control"
+        [(ngModel)]="section?.body?.details?.officeLocationSegment?.officeLocation.building" name="building">
+    </div>
+
+    <div class="mt-4">
+      <label for="" class="popup-lable">
+        {{i18n.translate('floor')}}
+      </label>
+
+      <input type="text" class="form-control"
+        [(ngModel)]="section?.body?.details?.officeLocationSegment?.officeLocation.floor" name="floor">
+    </div>
+
+    <div class="mt-4">
+      <label for="" class="popup-lable">
+        {{i18n.translate('officeNo')}}
+      </label>
+
+      <input type="text" class="form-control"
+        [(ngModel)]="section?.body?.details?.officeLocationSegment?.officeLocation.officeNo" name="officeNo">
+    </div>
+
+    <div class="mt-4">
+      <app-textareatable name="note" [labelTextReadMode]="i18n.translate('note')"
+        [labelTextWriteMode]="i18n.translate('note')"
+        [field]="section?.body?.details?.officeLocationSegment?.officeLocation?.note" [hasColumnBreak]="false"
+        [required]="false" [minLength]='15' [maxlength]='1000' [isReadOnly]="section?.header?.readOnly"
+        (enteredData)="handleTextInput('note', section?.body?.details?.officeLocationSegment?.officeLocation , $event)"
+        [errorMessage]="i18n.translate('lenghtMin15Max1000')">
+      </app-textareatable>
+    </div>
+
+  </div>
+
+  <div *ngIf=" type =='professionalCertificateSegment'  || type =='editprofessionalCertificateSegment'">
+    <app-input [field]="data?.certificateNo" name="certificateNo" [labelTextReadMode]="i18n.translate('certificateNo')"
+      [labelTextWriteMode]="i18n.translate('certificateNo')" [hasColumnBreak]="true" numberOnly [maxlength]="15"
+      (enteredData)="handleTextInput('certificateNo', data , $event)" [required]="true"
+      [isReadOnly]="section?.header?.readOnly">
+    </app-input>
+
+    <app-select [field]="data?.certificateOrganization" name="certificateOrganization"
+      [labelTextReadMode]="i18n.translate('certificateOrganization')"
+      [labelTextWriteMode]="i18n.translate('certificateOrganization')" [hasColumnBreak]="true"
+      [lov]="lov?.certificateOrganization" [required]="true" [isReadOnly]="section?.header?.readOnly"
+      (selectedElement)="onSelectChange('certificateOrganization', data , $event)">
+    </app-select>
+
+    <app-select [field]="data?.certificateName" name="certificateName"
+      [labelTextReadMode]="i18n.translate('certificateName')" [labelTextWriteMode]="i18n.translate('certificateName')"
+      [hasColumnBreak]="true" [lov]="lov?.certificateName" [required]="true" [isReadOnly]="section?.header?.readOnly"
+      (selectedElement)="onSelectChange('certificateName', data , $event)">
+    </app-select>
+
+
+    <div class="mx-4 mt-4">
+      <app-datepicker [field]="data.certificateDate" name="certificateDate"
+      [labelTextReadMode]="i18n.translate('certificateDate')" [labelTextWriteMode]="i18n.translate('certificateDate')"
+      [hasColumnBreak]="false" [required]="true" (dateValue)="handleDateSelected(data , 'certificateDate' , $event)"
+      [isReadOnly]="section?.header?.readOnly">
+    </app-datepicker>
+    <app-datepicker [field]="data.expiryDate" name="expiryDate" [labelTextReadMode]="i18n.translate('expiryDate')"
+      [labelTextWriteMode]="i18n.translate('expiryDate')" [hasColumnBreak]="false" [required]="true"
+      (dateValue)="handleDateSelected(data , 'expiryDate' , $event)" [isReadOnly]="section?.header?.readOnly">
+    </app-datepicker>
+    </div>
+
+    <div class="mt-4" [hidden]="hidenationalAttch('certificate' , data)">
+      <app-attachment [field]="data?.certificate" name="certificate" [hasColumnBreak]="true" [required]="true"
+        [isReadOnly]="section?.header?.readOnly" [labelTextReadMode]="i18n.translate('certificate')"
+        [labelTextWriteMode]="i18n.translate('certificate')"
+        (AttachmentValue)="handleAttachment('certificate', data, $event)">
+      </app-attachment>
+    </div>
+
+    <app-textarea [field]="data?.justification" name="justification"
+      [labelTextReadMode]="i18n.translate('justification')" [labelTextWriteMode]="i18n.translate('justification')"
+      [hasColumnBreak]="true" [required]="false" [minLength]='15'
+      (enteredData)="handleTextInput('justification', data , $event)" [maxlength]='1000'
+      [isReadOnly]="section?.header?.readOnly" [errorMessage]="i18n.translate('lenghtMin15Max1000')">
+    </app-textarea>
+
+
+  </div>
+
+  <div *ngIf=" type =='medicalDetailsSegment'  || type =='editmedicalDetailsSegment'">
+
+    <app-select [field]="section?.body?.details?.medicalDetailsSegment?.medicalDetails?.bloodType" name="bloodType"
+      [labelTextReadMode]="i18n.translate('bloodType')" [labelTextWriteMode]="i18n.translate('bloodType')"
+      [hasColumnBreak]="false" [lov]="lov?.bloodType" [required]="true" [isReadOnly]="section?.header?.readOnly"
+      (selectedElement)="onSelectChange('bloodType', section?.body?.details?.medicalDetailsSegment?.medicalDetails , $event)">
+    </app-select>
+
+    <div class="mt-4">
+      <app-input [field]="section?.body?.details?.medicalDetailsSegment?.medicalDetails?.weight" name="weight"
+        [labelTextReadMode]="i18n.translate('weight')" [labelTextWriteMode]="i18n.translate('weight')"
+        [hasColumnBreak]="false" weightOnly
+        (enteredData)="handleTextInput('weight', section?.body?.details?.medicalDetailsSegment?.medicalDetails , $event)"
+        [required]="true" [isReadOnly]="section?.header?.readOnly">
+      </app-input>
+    </div>
+
+    <div class="mt-4">
+      <app-input [field]="section?.body?.details?.medicalDetailsSegment?.medicalDetails?.height" name="height"
+        [labelTextReadMode]="i18n.translate('height')" [labelTextWriteMode]="i18n.translate('height')"
+        [hasColumnBreak]="false" weightOnly
+        (enteredData)="handleTextInput('height', section?.body?.details?.medicalDetailsSegment?.medicalDetails , $event)"
+        [required]="true" [isReadOnly]="section?.header?.readOnly">
+      </app-input>
+    </div>
+
+    <div class="mt-4">
+      <app-radio [field]="section?.body?.details?.medicalDetailsSegment?.medicalDetails?.smoker" name="smoker"
+        [labelTextReadMode]="i18n.translate('smoker')" [labelTextWriteMode]="i18n.translate('smoker')"
+        [hasColumnBreak]="false" [lov]="lov?.yesNo" [required]="true" [isReadOnly]="section?.header?.readOnly"
+        (selectedElement)="onSelectChange('smoker', section?.body?.details?.medicalDetailsSegment?.medicalDetails , $event)">
+      </app-radio>
+    </div>
+
+
+    <app-select [field]="section?.body?.details?.medicalDetailsSegment?.medicalDetails?.chronicDisease"
+      name="chronicDisease" [labelTextReadMode]="i18n.translate('chronicDisease')"
+      [labelTextWriteMode]="i18n.translate('chronicDisease')" [hasColumnBreak]="false" [lov]="lov?.yesNo"
+      [required]="true" [isReadOnly]="section?.header?.readOnly"
+      (selectedElement)="onSelectChange('chronicDisease', section?.body?.details?.medicalDetailsSegment?.medicalDetails , $event)">
+    </app-select>
+
+    <app-select *ngIf="section?.body?.details?.medicalDetailsSegment?.medicalDetails?.chronicDisease?.key == 'Y' "
+      [field]="section?.body?.details?.medicalDetailsSegment?.medicalDetails?.chronicDiseaseType"
+      name="chronicDiseaseType" [labelTextReadMode]="i18n.translate('chronicDiseaseType')"
+      [labelTextWriteMode]="i18n.translate('chronicDiseaseType')" [hasColumnBreak]="false" [lov]="lov?.chronicDisease"
+      [required]="true" [isReadOnly]="section?.header?.readOnly"
+      (selectedElement)="onSelectChange('chronicDiseaseType', section?.body?.details?.medicalDetailsSegment?.medicalDetails , $event)">
+    </app-select>
+
+    <app-select [field]="section?.body?.details?.medicalDetailsSegment?.medicalDetails?.disabilityFlag"
+      name="disabilityFlag" [labelTextReadMode]="i18n.translate('disabilityFlag')"
+      [labelTextWriteMode]="i18n.translate('disabilityFlag')" [hasColumnBreak]="false" [lov]="lov?.yesNo"
+      [required]="true" [isReadOnly]="section?.header?.readOnly"
+      (selectedElement)="onSelectChange('disabilityFlag', section?.body?.details?.medicalDetailsSegment?.medicalDetails , $event)">
+    </app-select>
+
+    <app-select *ngIf="section?.body?.details?.medicalDetailsSegment?.medicalDetails?.disabilityFlag?.key == 'Y' "
+      [field]="section?.body?.details?.medicalDetailsSegment?.medicalDetails?.disabilityType" name="disabilityType"
+      [labelTextReadMode]="i18n.translate('disabilityType')" [labelTextWriteMode]="i18n.translate('disabilityType')"
+      [hasColumnBreak]="false" [lov]="lov?.disabilityType" [required]="true" [isReadOnly]="section?.header?.readOnly"
+      (selectedElement)="onSelectChange('disabilityType', section?.body?.details?.medicalDetailsSegment?.medicalDetails , $event)">
+    </app-select>
+
+    <div class="mt-4">
+      <app-attachment *ngIf="section?.body?.details?.medicalDetailsSegment?.medicalDetails?.disabilityFlag?.key == 'Y'"
+        [field]="section?.body?.details?.medicalDetailsSegment?.medicalDetails?.medicalReport" name="medicalReport"
+        [labelTextReadMode]="i18n.translate('medicalReport')" [labelTextWriteMode]="i18n.translate('medicalReport')"
+        [hasColumnBreak]="false" [required]="true" [isReadOnly]="section?.header?.readOnly"
+        (AttachmentValue)="handleAttachment('medicalReport', section?.body?.details?.medicalDetailsSegment?.medicalDetails, $event)">
+      </app-attachment>
+    </div>
+
+    <div class="mt-4">
+      <app-attachment *ngIf="section?.body?.details?.medicalDetailsSegment?.medicalDetails?.disabilityFlag?.key == 'Y'"
+        [field]="section?.body?.details?.medicalDetailsSegment?.medicalDetails?.disabilityCard" name="familyCard"
+        [labelTextReadMode]="i18n.translate('disabilityCard')" [labelTextWriteMode]="i18n.translate('disabilityCard')"
+        [hasColumnBreak]="false" [required]="true" [isReadOnly]="section?.header?.readOnly"
+        (AttachmentValue)="handleAttachment('disabilityCard', section?.body?.details?.medicalDetailsSegment?.medicalDetails, $event)">
+      </app-attachment>
+    </div>
+
+  </div>
+
+  <div *ngIf="type =='termsAndConditions'">
+
+    <div *ngIf="i18n.getLanguage() == 'en'" class="textMessage"
+      [innerHTML]="'
+   I undertake that all information and attachments related to my profile herein above stated are accurate and valid and if such information or attachments are incorrect, I shall bear full legal liability and applying consequent of the laws, regulations and penalties prescribed.'">
+    </div>
+
+    <div *ngIf="i18n.getLanguage() == 'ar'" class="textMessage"
+      [innerHTML]="'
+   أتعهد بأن كافة المعلومات والمرفقات المتعلقة ببياناتي الخاصة والموضحة أعلاه دقيقة وصحيحة، وفي حال عدم صحة تلك المعلومات أو المرفقات فإنني أتحمل كامل المسؤولية القانونية وما يترتب عليه من تطبيق الأنظمة واللوائح و الجزاءات المقررة لذلك.'">
+    </div>
+  </div>
+
+</div>

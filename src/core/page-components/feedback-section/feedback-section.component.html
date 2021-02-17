@@ -1,0 +1,104 @@
+<div  id="feedbackFormContent" [ngClass]="rtlDir()" class="formInfoModals">
+  
+    <div id="feedbackFormContentClose" class="closeIcon" (click)="close.emit()" ><i class="fa fa-times" aria-hidden="true"></i></div>
+  
+  <div id="feedbackFormContentInnerContainer">
+    <div *ngIf="feedbackForm">
+        <h4 class="feedback_panel_header">
+            {{i18n.translate('requestFeedback')}}
+          </h4>
+          <div class="row">
+            <div class="col-xs-2"><label><strong>{{i18n.translate('requestTo')}}</strong></label></div>
+            <div class="col-xs-10">
+                <app-search-employee   
+                #employee 
+                [hasColumnBreak]="false" 
+                (userSelected) = "handleUserSelected($event)"
+                (input) = "handleInput($event)" 
+                (blur) = "handleInput($event)" 
+                ></app-search-employee>
+                <!-- <i class="fa fa-info-circle feedback_infobox_icon"
+                data-toggle="feedbackpopover"
+                data-trigger="hover"
+                title="{{i18n.translate('employeeSearch')}}"
+                [ngClass] = "rtlFloatRight()"
+                ></i> -->
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+                <label><strong>{{i18n.translate('feedback')}}</strong></label>
+                <textarea #request class="form-control" (input)="handleFeedbackQuestion($event)"></textarea> </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 feedback_submit">
+              <button class="btn-secondary btn-xs" [disabled]="!isFeedbackValidated" (click)="addFeedback()">
+                {{i18n.translate('submit')}}
+              </button>
+            </div>
+          </div>
+    </div>
+    <div *ngIf="!feedbackForm">
+        <div *ngIf="responderForm">
+                <h4 class="feedback_panel_header">
+                  {{i18n.translate('viewFeedback')}}
+                </h4>
+                <div class="row">
+                  <div class="col-xs-2"><label><strong>{{i18n.translate('requestFrom')}}</strong></label></div>
+                  <div class="col-xs-10"><p>{{feedbackReponse.requestFrom}}</p></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-2"><label><strong>{{i18n.translate('requestTo')}}</strong></label></div>
+                    <div class="col-xs-10"><p>{{feedbackReponse.requestTo}}</p></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-2"><label><strong>{{i18n.translate('feedbackQuestion')}}</strong></label></div>
+                    <div class="col-xs-10"><p>{{feedbackReponse.requestFeedback}}</p></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <label><strong>{{i18n.translate('feedback')}}</strong></label>
+                        <textarea #request class="form-control" (input)="handleFeedbackResponse($event)"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 feedback_submit">
+                      <button class="btn-secondary btn-xs" [disabled]="!isResponseValidated" (click)="addResponse()">
+                        {{i18n.translate('submit')}}
+                      </button>
+                    </div>
+                </div>
+        </div>
+        <div *ngIf="pendingForm"   id="responce_form">
+            <h4 class="feedback_panel_header">
+                {{i18n.translate('viewFeedback')}}
+              </h4>
+              <div class="row">
+                <div class="col-xs-2"><label><strong>{{i18n.translate('requestFrom')}}</strong></label></div>
+                <div class="col-xs-10"><p>{{feedbackReponse.requestFrom}}</p></div>
+              </div>
+              <div class="row">
+                  <div class="col-xs-2"><label><strong>{{i18n.translate('requestTo')}}</strong></label></div>
+                  <div class="col-xs-10"><p>{{feedbackReponse.requestTo}}</p></div>
+              </div>
+              <div class="row">
+                  <div class="col-xs-2"><label><strong>{{i18n.translate('feedbackQuestion')}}</strong></label></div>
+                  <div class="col-xs-10"><p>{{feedbackReponse.requestFeedback}}</p></div>
+              </div>
+              <div class="row">
+                    <div class="col-xs-2"><label><strong>{{i18n.translate('feedback')}}</strong></label></div>
+                    <div class="col-xs-10"><p>{{feedbackReponse.responseFeedback}}</p></div>  
+              </div>
+        </div>
+    </div>
+    
+  </div>
+</div>
+<div id="fbtooltipContent" style="display: none;" [ngClass]="rtlFloatRight()">
+        <ol class="feedbackTooltip" [ngClass]="rtlDir()">
+            <li>{{i18n.translate('searchEmployeeTooltip_1')}}</li>
+            <li>{{i18n.translate('searchEmployeeTooltip_2')}}</li>
+            <li>{{i18n.translate('searchEmployeeTooltip_3')}}</li>
+            <li>{{i18n.translate('searchEmployeeTooltip_4')}}</li>
+        </ol>
+</div>

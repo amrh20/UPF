@@ -1,0 +1,39 @@
+<!-- <div class="col-sm-12" *ngIf="complaintArea">
+        <font size="4" color="red">{{i18n.translate('note')}}</font>
+        <button class="btn-secondary btn-sm" style="font-size: 15px;border-radius: 5px;padding: 4px 15px 4px 16px;margin-right: 23px;margin-left: 23px;" type="button"
+              (click)="showTextArea()"><span>{{i18n.translate('report')}}</span></button>
+    </div>
+    <div *ngIf="textComplaintArea"> -->
+<!-- <div  id="feedbackFormContent" [ngClass]="rtlDir()" class="formInfoModals">
+  
+            <div id="feedbackFormContentClose" class="closeIcon" (click)="close.emit()" ><i class="fa fa-times" aria-hidden="true"></i></div>
+           -->
+<div class="row formInfoModals">
+  <div class="row">
+    <app-textarea [field]="section?.body?.details?.emailBody" name="emailBody"
+      [labelTextReadMode]="i18n.translate('complaintBody')" [required]="true"
+      [labelTextWriteMode]="i18n.translate('complaintBody')" [hasColumnBreak]="false" [isReadOnly]="false"
+      (enteredData)="handleTextArea('emailBody',$event)">
+    </app-textarea>
+  </div>
+  <div class="row" style="margin-bottom: 2%;margin-top: 2%;">
+    <button class="btn-secondary btn-sm" *ngIf="section.body.details.emailBody.length <15"
+      style="font-size: 15px;border-radius: 5px;padding: 4px 15px 4px 16px;margin-right: 23px;margin-left: 23px;"
+      type="button" (click)="sendComplaint()" disabled>
+      <span>{{i18n.translate('send')}}</span>
+      <i *ngIf="isSubmitting.key=='search'" [ngClass]="rtlFloatRight()" class="fa fa-spinner fa-spin form-spinner"></i>
+    </button>
+    <button class="btn-secondary btn-sm" *ngIf="section.body.details.emailBody.length >=15"
+      style="font-size: 15px;border-radius: 5px;padding: 4px 15px 4px 16px;margin-right: 23px;margin-left: 23px;"
+      type="button" (click)="sendComplaint()">
+      <span>{{i18n.translate('send')}}</span>
+      <i *ngIf="isSubmitting.key=='search'" [ngClass]="rtlFloatRight()" class="fa fa-spinner fa-spin form-spinner"></i>
+    </button>
+  </div>
+</div>
+<!-- </div> -->
+<!-- 
+    </div>
+    <div class="col-sm-12" *ngIf="textComplaintAreaResponse">
+      <font size="4" color="red">{{i18n.translate('response')}}</font>
+    </div> -->

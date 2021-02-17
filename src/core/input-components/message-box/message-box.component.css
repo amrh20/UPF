@@ -1,0 +1,17 @@
+.closeMessage{
+  display: inline-block;
+  padding: 0 5px;
+}
+.closeMessage:hover{
+  color: #DA3F7B;
+}
+.textMessage{
+  display:block;
+  padding: 0 15px;
+}
+.alert .textMessage:nth-child(2) {
+  padding: 0;
+  display: inline-block;
+}
+
+:host ::ng-deep .textMessage a{ text-decoration: underline; }

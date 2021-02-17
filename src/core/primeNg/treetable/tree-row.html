@@ -1,0 +1,48 @@
+<tr class="ui-treetable-row" 
+    [ngClass]="{'ui-state-highlight':isSelected(),
+                'ui-treetable-row-selectable':treeTable.selectionMode && node.selectable !== false}">
+  <td *ngFor="let col of treeTable.columns; let i=index" 
+        [ngStyle]="col.style" 
+        [class]="col.styleClass" 
+        [ngClass]="{'text-info':level==0,
+                    'text-success':level==1,
+                    '':level==2,
+                    'text-danger':level==3
+              }"
+
+        (click)="onRowClick($event)"
+        (touchend)="onRowTouchEnd()" 
+        (contextmenu)="onRowRightClick($event)">
+    <a href="#" 
+        *ngIf="i==0" 
+        class="ui-treetable-toggler fa fa-plus ui-c" 
+        [ngClass]="{'fa-minus':node.expanded,'fa-plus':!node.expanded}"
+        [ngStyle]="{'margin-left':level*16 + 'px','visibility': isLeaf() ? 'hidden' : 'visible'}" 
+        (click)="toggle($event)" 
+        [title]="node.expanded ? labelCollapse : labelExpand">
+    </a>
+    <div class="ui-chkbox ui-treetable-checkbox" *ngIf="treeTable.selectionMode == 'checkbox' && i==0">
+      <div class="ui-chkbox-box ui-widget ui-corner-all ui-state-default">
+        <span class="ui-chkbox-icon ui-c fa" [ngClass]="{'fa-check':isSelected(),'fa-minus':node.partialSelected}"></span>
+      </div>
+    </div>
+    <span *ngIf="!col.template">{{resolveFieldData(node.data,col.field)}}</span>
+    <p-columnBodyTemplateLoader [column]="col" [rowData]="node" *ngIf="col.template"></p-columnBodyTemplateLoader>
+  </td>
+</tr>
+<tr *ngIf="node.children && node.expanded" class="ui-treetable-row" style="display:table-row">
+  <td [attr.colspan]="treeTable.columns.length" class="ui-treetable-child-table-container">
+    <table class="table">
+      <tbody pTreeRow 
+        *ngFor="let childNode of node.children" 
+        [node]="childNode" 
+        [level]="level+1" 
+        [labelExpand]="labelExpand"
+        [labelCollapse]="labelCollapse" 
+        [parentNode]="node" 
+        ></tbody>
+    </table>
+  </td>
+</tr>
+        <!-- [ngClass]="{'alert alert-success': labelExpand=='Expand'}" -->
+

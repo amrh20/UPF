@@ -1,0 +1,8 @@
+.readOnly{
+  color: #888888;
+  word-wrap: break-word;
+}
+.ar-float-right{
+  float: right;
+}
+.rtlPhoneField{text-align: right; direction: ltr!important;}

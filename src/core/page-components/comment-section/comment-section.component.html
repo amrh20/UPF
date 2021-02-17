@@ -1,0 +1,51 @@
+<div  id="commentsFormContent" [ngClass]="rtlDir()" class="formInfoModals">
+  <div class="col-lg-12 closeIcon">
+    <div id="commentsFormContentClose" (click)="close.emit()" ><i class="fa fa-times" aria-hidden="true"></i></div>
+  </div>
+  <div id="commentsFormContentInnerContainer">
+
+      <div *ngFor="let comment of comments" class="row comment-row">
+
+        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-7">
+
+          <div class="commentsImage"> <img src="{{comment?.profilePicture}}"> </div>
+
+          <div class="commentsInfo">
+            <h4>{{comment.employeeName}}</h4>
+            <span>{{comment.jobPosition}}</span>
+          </div>
+
+        </div>
+
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-5 files">
+
+          <div class="filesInner">
+
+            <div (click)="downloadAttachment($event, comment?.attachment)" *ngIf="comment?.attachment" class="iconImg"><i class="fa fa-file-o" aria-hidden="true"></i><i class="fa fa-paperclip" aria-hidden="true"></i></div>
+            <a #placeholder href="" class="hidden-placeholder"></a>
+
+            <div class="timeDate">
+              <h5 class="noRTL">
+                <app-datepicker
+                componentClass="max-width"
+                [isReadOnly]="true"
+                [field]="comment.commentDate"
+                format="DD/MM/YYYY HH:mm:ss"
+                ></app-datepicker>
+              </h5>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="col-lg-12 commentsContent">
+          <div class="commentsContentInner">
+            <p>{{comment.commentBody}}</p>
+          </div>
+        </div>
+
+      </div>
+
+  </div>
+</div>

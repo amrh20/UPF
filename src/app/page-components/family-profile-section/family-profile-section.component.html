@@ -1,0 +1,476 @@
+<mat-expansion-panel *ngIf="section?.body?.details?.familyProfileSegment?.isEnabled =='true'" [expanded]="false"
+     (opened)="onfamilyProfileSegmentisUpdated(true);getSegmentDetails('familySegment'  ,true)"
+     [disabled]="section.body.details.source =='HRMS' || isReadOnly" class="margTop">
+     <mat-expansion-panel-header>
+          <mat-panel-title>       
+               <div class="d-flex align-items-center">
+                    <span>
+                         {{i18n.translate('familyProfile')}}
+                    </span>
+                   <div class="mx-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16.826" height="16.826" viewBox="0 0 16.826 16.826">
+                         <defs>
+                           <clipPath id="clip-path">
+                             <path id="Path_9532" data-name="Path 9532" d="M267.413-231a8.413,8.413,0,0,1,8.413,8.413,8.411,8.411,0,0,1-4.506,7.453h0l-.652-1.241a7.009,7.009,0,0,0,3.756-6.211,7.011,7.011,0,0,0-7.011-7.011,7.011,7.011,0,0,0-7.011,7.011,7.012,7.012,0,0,0,6.31,6.976h0v-5.574h1.4v7.011h-.7A8.413,8.413,0,0,1,259-222.587,8.413,8.413,0,0,1,267.413-231Zm1.052,5.609v2.1h-2.1v-2.1Z" fill="#fff" clip-rule="evenodd"/>
+                           </clipPath>
+                           <clipPath id="clip-path-2">
+                             <path id="Path_9531" data-name="Path 9531" d="M259-214.174h16.826V-231H259Z" transform="translate(-259 231)" fill="#fff"/>
+                           </clipPath>
+                         </defs>
+                         <g id="Group_10531" data-name="Group 10531" transform="translate(-259 231)" clip-path="url(#clip-path)">
+                           <g id="Group_10530" data-name="Group 10530" transform="translate(259 -231)" clip-path="url(#clip-path-2)">
+                             <path id="Path_9530" data-name="Path 9530" d="M254-236h20.833v20.833H254Z" transform="translate(-256.003 233.997)" fill="#000"/>
+                           </g>
+                         </g>
+                       </svg>
+                    </div>
+               </div>
+          </mat-panel-title>
+     </mat-expansion-panel-header>
+     <div class="" *ngIf="section?.body?.details?.familyProfileSegment?.isEnabled =='true'">
+          <div *ngIf="section?.body?.details?.familyProfileSegment && section?.body?.details?.familyProfileSegment?.familyProfile &&
+                    section?.body?.details?.familyProfileSegment?.familyProfile?.length >= 0">
+
+               <div class="mt-5"
+                    *ngFor="let familyProfile of  section?.body?.details?.familyProfileSegment?.familyProfile;  let i=index">
+                    <mat-card-content class="custom-card-content">
+                         <mat-card-header class="custom-card-head custom-padding">
+                              <div class="d-flex justify-content-between align-items-center w-100">
+                                   <div class="">
+                                        <label class="d-flex align-items-center m-0">
+                                                  {{familyProfile?.firstNameEn}} 
+                                                  <span
+                                                  class="family-relation px-3"
+                                                  *ngIf="(familyProfile?.relationship?.value && familyProfile?.relationship?.value != '')">
+                                                  {{familyProfile?.relationship?.value}}
+                                             </span>
+                                        </label>
+                                   </div>
+                                   <div>
+                                        <button (click)="edit('editfamilyProfileSegment'  , i , familyProfile)"
+                                             data-toggle="modal" data-target="#familyProfilePopup" data-backdrop="static"
+                                             data-keyboard="false" class="reset-button">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="79" height="34" viewBox="0 0 79 34">
+                                                  <g id="Group_15961" data-name="Group 15961" transform="translate(-1048 -250)">
+                                                    <rect id="Rectangle_2812" data-name="Rectangle 2812" width="79" height="34" transform="translate(1048 250)" fill="#1cced8" opacity="0.2"/>
+                                                    <g id="Group_15944" data-name="Group 15944" transform="translate(-1)">
+                                                      <path id="Path_9540" data-name="Path 9540" d="M17.745,6.987,15.3,4.542a1.785,1.785,0,0,0-2.374-.062L4.892,12.512a1.785,1.785,0,0,0-.509,1.08L4,17.315a.89.89,0,0,0,.893.973h.08l3.722-.339a1.785,1.785,0,0,0,1.08-.509l8.033-8.033a1.714,1.714,0,0,0-.062-2.419ZM8.534,16.163l-2.678.25L6.1,13.735,11.14,8.755l2.41,2.41ZM14.71,9.969,12.318,7.577l1.741-1.785L16.5,8.228Z" transform="translate(1059.004 255.941)" fill="#1cced8"/>
+                                                      <text id="Edit" transform="translate(1086 273)" fill="#1cced8" font-size="14" font-family="STCForward-Medium, STC Forward" font-weight="500"><tspan x="0" y="0">Edit</tspan></text>
+                                                    </g>
+                                                  </g>
+                                                </svg>
+                                        </button>
+                                        <button *ngIf="!isReadOnly "
+                                             (click)="deleteGenericRow('familyProfileSegment', 'familyProfile'  , i)"
+                                             class="reset-button">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34">
+                                                  <g id="Group_15962" data-name="Group 15962" transform="translate(-1116 -1045)">
+                                                    <rect id="Rectangle_2813" data-name="Rectangle 2813" width="34" height="34" transform="translate(1116 1045)" fill="#ff375e" opacity="0.2"/>
+                                                    <g id="Group_10788" data-name="Group 10788" transform="translate(1126.983 1054.643)">
+                                                      <path id="Path_9541" data-name="Path 9541" d="M12.955,17.608H7.1a1.653,1.653,0,0,1-1.65-1.494L4.5,6.608A.552.552,0,0,1,5.053,6H15a.553.553,0,0,1,.55.608L14.6,16.114a1.653,1.653,0,0,1-1.65,1.494ZM5.663,7.106,6.551,16a.552.552,0,0,0,.55.5h5.854a.552.552,0,0,0,.55-.5l.888-8.9Z" transform="translate(-3.118 -3.789)" fill="#ff375e"/>
+                                                      <path id="Path_9542" data-name="Path 9542" d="M15.267,7.106H2.553A.553.553,0,0,1,2.553,6H15.267a.553.553,0,0,1,0,1.106Z" transform="translate(-2 -3.789)" fill="#ff375e"/>
+                                                      <path id="Path_9543" data-name="Path 9543" d="M14.053,17.186a.553.553,0,0,1-.553-.553V10.553a.553.553,0,0,1,1.106,0v6.081A.553.553,0,0,1,14.053,17.186Z" transform="translate(-7.143 -5.578)" fill="#ff375e"/>
+                                                      <path id="Path_9544" data-name="Path 9544" d="M10.1,17.186a.553.553,0,0,1-.55-.5L9,10.6a.553.553,0,1,1,1.1-.1l.553,6.081a.553.553,0,0,1-.551.6Z" transform="translate(-5.13 -5.578)" fill="#ff375e"/>
+                                                      <path id="Path_9545" data-name="Path 9545" d="M17.553,17.187a.553.553,0,0,1-.551-.6l.553-6.081a.553.553,0,1,1,1.1.1L18.1,16.684A.553.553,0,0,1,17.553,17.187Z" transform="translate(-8.708 -5.578)" fill="#ff375e"/>
+                                                      <path id="Path_9546" data-name="Path 9546" d="M14.528,5.317H9.553A.553.553,0,0,1,9,4.764V2.553A.553.553,0,0,1,9.553,2h4.975a.553.553,0,0,1,.553.553V4.764A.553.553,0,0,1,14.528,5.317ZM10.106,4.211h3.869V3.106H10.106Z" transform="translate(-5.131 -2)" fill="#ff375e"/>
+                                                    </g>
+                                                  </g>
+                                                </svg>
+                                        </button>
+                                   </div>
+                              </div>       
+                         </mat-card-header>
+                         <div class="collapse-row">
+                              <div class="col-6">
+                                   <span class="custom-label">
+                                        {{i18n.translate('title')}} :
+                                   </span>
+                              </div>
+                              <div class="col-6">
+                                   <span class="custom-details">
+                                        {{familyProfile?.title?.value}}
+                                   </span>
+                              </div>
+                         </div>
+                         <div class="collapse-row">
+                              <div class="col-6">
+                                   <span class="custom-label">
+                                        {{i18n.translate('firstNameEn')}} :
+                                   </span>
+                                  
+                              </div>
+                              <div class="col-6">
+                                   <span class="custom-details">
+                                        {{familyProfile?.firstNameEn}}
+                                   </span>
+                                  
+                              </div>
+                         </div>
+                         <div class="collapse-row">
+                              <div class="col-6">
+                                   <span class="custom-label">
+                                        {{i18n.translate('firstNameAr')}} :
+                                   </span>
+                                   
+                              </div>
+                              <div class="col-6">
+                                   <span class="custom-details">
+                                        {{familyProfile?.firstNameAr}}
+                                   </span>
+                              </div>
+                         </div>
+                         <div class="collapse-row">
+                              <div class="col-6">
+                                   <span class="custom-label">{{i18n.translate('fatherNameEn')}} : </span>
+                                   
+                              </div>
+                              <div class="col-6">
+                                   <span class="custom-details"> {{familyProfile?.fatherNameEn}}</span>
+                              </div>
+                         </div>
+                         <div class="collapse-row">
+                              <div class="col-6">
+                                   <span class="custom-label"> {{i18n.translate('fatherNameAr')}}:</span>
+                                  
+                              </div>
+                              <div class="col-6">
+                                   <span class="custom-details"> {{familyProfile?.fatherNameAr}}</span>
+                                  
+                              </div>
+                         </div>
+                         <div class="collapse-row">
+                              <div class="col-6">
+                                   <span class="custom-label">{{i18n.translate('grandFatherNameEn')}}:</span>
+                                   
+                              </div>
+                              <div class="col-6">
+                                   <span class="custom-details">{{familyProfile?.grandFatherNameEn}}</span>
+                                   
+                              </div>
+                         </div>
+                         <div class="collapse-row">
+                              <div class="col-6">
+                                   <span class="custom-label"> {{i18n.translate('grandFatherNameAr')}}:</span>
+                                  
+                              </div>
+                              <div class="col-6">
+                                   <span class="custom-details"> {{familyProfile?.grandFatherNameAr}}</span>
+                                  
+                              </div>
+                         </div>
+                         <div class="collapse-row">
+                              <div class="col-6">
+                                   <span class="custom-label">{{i18n.translate('familyNameEn')}}:</span>
+                                   
+                              </div>
+                              <div class="col-6">
+                                   <span class="custom-details">{{familyProfile?.familyNameEn}}</span>
+                                
+                              </div>
+                         </div>
+                         <div class="collapse-row">
+                              <div class="col-6">
+                                   <span class="custom-label"> {{i18n.translate('familyNameAr')}}:</span>
+                                  
+                              </div>
+                              <div class="col-6">
+                                   <span class="custom-details">  {{familyProfile?.familyNameAr}}</span>
+                                 
+                              </div>
+                         </div>
+                         <div class="collapse-row">
+                              <div class="col-6">
+                                   <span class="custom-label">{{i18n.translate('nationality')}} :</span>
+                                   
+                              </div>
+                              <div class="col-6">
+                                   <span class="custom-details">{{familyProfile?.nationality?.value}}</span>
+                                   
+                              </div>
+                         </div>
+                         <div class="collapse-row">
+                              <div class="col-6">
+                                   <span class="custom-label">  {{i18n.translate('maritalStatus')}} : </span>
+                                 
+                              </div>
+                              <div class="col-6">
+                                   <span class="custom-details"> {{familyProfile?.maritalStatus?.value}}</span>
+                                  
+                              </div>
+                         </div>
+                         <div class="collapse-row">
+                              <div class="col-6">
+                                   <span class="custom-label"> {{i18n.translate('idNumber')}} :</span>
+                                  
+                              </div>
+                              <div class="col-6">
+                                   <span class="custom-details"> {{familyProfile?.idNumber}} </span>
+                                  
+                              </div>
+                         </div>
+                         <div class="collapse-row">
+                              <div class="col-6">
+                                   <span class="custom-label">{{i18n.translate('borderBirthNumber')}} :</span>
+                                   
+                              </div>
+                              <div class="col-6">
+                                   <span class="custom-details"> {{familyProfile?.borderBirthNumber}}</span>
+                                  
+                              </div>
+                         </div>
+                         <div class="collapse-row">
+                              <div class="col-6">
+                                   <span class="custom-label">  {{i18n.translate('birthDate')}}:</span>
+                                  
+                              </div>
+                              <div class="col-6">
+                                   <span class="custom-details">  {{familyProfile?.birthDate | date :'dd/MM/yyyy'}}</span>
+                                  
+                              </div>
+                         </div>
+                         <div class="collapse-row">
+                              <div class="col-6">
+                                   <span class="custom-label">  {{i18n.translate('age')}}:</span>
+                                  
+                              </div>
+                              <div class="col-6">
+                                   <span class="custom-details"> {{familyProfile?.age}} </span>
+                                   
+                              </div>
+                         </div>
+                         <div class="collapse-row">
+                              <div class="col-6">
+                                   <span class="custom-label">   {{i18n.translate('gender')}}: </span>
+                                
+                              </div>
+                              <div class="col-6">
+                                   <span class="custom-details">  {{familyProfile?.gender?.value}}</span>
+                                  
+                              </div>
+                         </div>
+                         <div class="collapse-row">
+                              <div class="col-6">
+                                   <span class="custom-label">{{i18n.translate('disabilityFlag')}}:</span>
+                                   
+                              </div>
+                              <div class="col-6">
+                                   <span class="custom-details">{{familyProfile?.disabilityFlag?.value}}</span>
+                                   
+                              </div>
+                         </div>
+                         <div class="collapse-row">
+                              <div class="col-6">
+                                   <span class="custom-label"> {{i18n.translate('disabilityType')}}:</span>
+                                  
+                              </div>
+                              <div class="col-6">
+                                   <span class="custom-details">{{familyProfile?.disabilityType?.value}}</span>
+                                   
+                              </div>
+                         </div>
+                         <div class="collapse-row">
+                              <div class="col-6">
+                                   <span class="custom-label">  {{i18n.translate('relationship')}}:</span>
+                                  
+                              </div>
+                              <div class="col-6">
+                                   <span class="custom-details">{{familyProfile?.relationship?.value}}</span>
+                                   
+                              </div>
+                         </div>
+                         <div class="collapse-row">
+                              <div class="col-6">
+                                   <span class="custom-label">{{i18n.translate('chronicDisease')}}: </span>
+                                   
+                              </div>
+                              <div class="col-6">
+                                   <span class="custom-details"> {{familyProfile?.chronicDisease?.value}}</span>
+                                  
+                              </div>
+                         </div>
+                         <div class="collapse-row">
+                              <div class="col-6">
+                                   <span class="custom-label">{{i18n.translate('chronicDiseaseType')}}:</span>
+                                   
+                              </div>
+                              <div class="col-6">
+                                   <span class="custom-details"> {{familyProfile?.chronicDiseaseType?.value}}</span>
+                                  
+                              </div>
+                         </div>
+                         <div class="collapse-row">
+                              <div class="col-6">
+                                   <span class="custom-label">  {{i18n.translate('working')}}: </span>
+                                 
+                              </div>
+                              <div class="col-6">
+                                   <span class="custom-details"> {{familyProfile?.working?.value}} </span>
+                                  
+                              </div>
+                         </div>
+                         <div class="collapse-row">
+                              <div class="col-6">
+                                   <span class="custom-label"> {{i18n.translate('noNeedMedical')}}:</span>
+                                  
+                              </div>
+                              <div class="col-6">
+                                   <span class="custom-details"> {{familyProfile?.noNeedMedical?.value}}</span>
+                                  
+                              </div>
+                         </div>
+                         <div class="collapse-row">
+                              <div class="col-6">
+                                   <span class="custom-label"> {{i18n.translate('coverageNote')}}:</span>
+                                  
+                              </div>
+                              <div class="col-6">
+                                   <span class="custom-details"> {{familyProfile?.coverageNote}}</span>
+                                  
+                              </div>
+                         </div>
+                         <div class="collapse-row">
+                              <div class="col-6">
+                                   <span class="custom-label">  {{i18n.translate('justification')}}:</span>
+
+                                  
+                              </div>
+                              <div class="col-6">
+                                   <span class="custom-details"> {{familyProfile?.justification?.value}}</span>
+                                  
+                              </div>
+                         </div>
+                         <div class="collapse-row">
+                              <div class="col-6">
+                                   <span class="custom-label"> {{i18n.translate('note')}}:</span>
+                                  
+                              </div>
+                              <div class="col-6">
+                                   <span class="custom-details">{{familyProfile?.note}}</span>
+                               
+                              </div>
+                         </div>
+
+                    </mat-card-content>
+               </div>
+
+             <!-- <div class="mt-5" *ngFor="let familyProfile of  section?.body?.details?.familyProfileSegment?.familyProfile;  let i=index">
+               <mat-expansion-panel>
+                    <mat-expansion-panel-header class="custom-card-head">
+                         <div class="d-flex justify-content-between align-items-center w-100 mx-4">
+                              <div class="">
+                                   <label class="d-flex align-items-center m-0">
+                                             text
+                                   </label>
+                              </div>
+                              <div>
+                                   <button (click)="edit('editfamilyProfileSegment'  , i , familyProfile)"
+                                        data-toggle="modal" data-target="#familyProfilePopup" data-backdrop="static"
+                                        data-keyboard="false" class="reset-button">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="79" height="34" viewBox="0 0 79 34">
+                                             <g id="Group_15961" data-name="Group 15961" transform="translate(-1048 -250)">
+                                               <rect id="Rectangle_2812" data-name="Rectangle 2812" width="79" height="34" transform="translate(1048 250)" fill="#1cced8" opacity="0.2"/>
+                                               <g id="Group_15944" data-name="Group 15944" transform="translate(-1)">
+                                                 <path id="Path_9540" data-name="Path 9540" d="M17.745,6.987,15.3,4.542a1.785,1.785,0,0,0-2.374-.062L4.892,12.512a1.785,1.785,0,0,0-.509,1.08L4,17.315a.89.89,0,0,0,.893.973h.08l3.722-.339a1.785,1.785,0,0,0,1.08-.509l8.033-8.033a1.714,1.714,0,0,0-.062-2.419ZM8.534,16.163l-2.678.25L6.1,13.735,11.14,8.755l2.41,2.41ZM14.71,9.969,12.318,7.577l1.741-1.785L16.5,8.228Z" transform="translate(1059.004 255.941)" fill="#1cced8"/>
+                                                 <text id="Edit" transform="translate(1086 273)" fill="#1cced8" font-size="14" font-family="STCForward-Medium, STC Forward" font-weight="500"><tspan x="0" y="0">Edit</tspan></text>
+                                               </g>
+                                             </g>
+                                           </svg>
+                                   </button>
+                                   <button *ngIf="!isReadOnly "
+                                        (click)="deleteGenericRow('familyProfileSegment', 'familyProfile'  , i)"
+                                        class="reset-button">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34">
+                                             <g id="Group_15962" data-name="Group 15962" transform="translate(-1116 -1045)">
+                                               <rect id="Rectangle_2813" data-name="Rectangle 2813" width="34" height="34" transform="translate(1116 1045)" fill="#ff375e" opacity="0.2"/>
+                                               <g id="Group_10788" data-name="Group 10788" transform="translate(1126.983 1054.643)">
+                                                 <path id="Path_9541" data-name="Path 9541" d="M12.955,17.608H7.1a1.653,1.653,0,0,1-1.65-1.494L4.5,6.608A.552.552,0,0,1,5.053,6H15a.553.553,0,0,1,.55.608L14.6,16.114a1.653,1.653,0,0,1-1.65,1.494ZM5.663,7.106,6.551,16a.552.552,0,0,0,.55.5h5.854a.552.552,0,0,0,.55-.5l.888-8.9Z" transform="translate(-3.118 -3.789)" fill="#ff375e"/>
+                                                 <path id="Path_9542" data-name="Path 9542" d="M15.267,7.106H2.553A.553.553,0,0,1,2.553,6H15.267a.553.553,0,0,1,0,1.106Z" transform="translate(-2 -3.789)" fill="#ff375e"/>
+                                                 <path id="Path_9543" data-name="Path 9543" d="M14.053,17.186a.553.553,0,0,1-.553-.553V10.553a.553.553,0,0,1,1.106,0v6.081A.553.553,0,0,1,14.053,17.186Z" transform="translate(-7.143 -5.578)" fill="#ff375e"/>
+                                                 <path id="Path_9544" data-name="Path 9544" d="M10.1,17.186a.553.553,0,0,1-.55-.5L9,10.6a.553.553,0,1,1,1.1-.1l.553,6.081a.553.553,0,0,1-.551.6Z" transform="translate(-5.13 -5.578)" fill="#ff375e"/>
+                                                 <path id="Path_9545" data-name="Path 9545" d="M17.553,17.187a.553.553,0,0,1-.551-.6l.553-6.081a.553.553,0,1,1,1.1.1L18.1,16.684A.553.553,0,0,1,17.553,17.187Z" transform="translate(-8.708 -5.578)" fill="#ff375e"/>
+                                                 <path id="Path_9546" data-name="Path 9546" d="M14.528,5.317H9.553A.553.553,0,0,1,9,4.764V2.553A.553.553,0,0,1,9.553,2h4.975a.553.553,0,0,1,.553.553V4.764A.553.553,0,0,1,14.528,5.317ZM10.106,4.211h3.869V3.106H10.106Z" transform="translate(-5.131 -2)" fill="#ff375e"/>
+                                               </g>
+                                             </g>
+                                           </svg>
+                                   </button>
+                              </div>
+                         </div>
+                    </mat-expansion-panel-header>
+                         <mat-card-content> 
+                           <div class="collapse-row">
+                                <div class="col-6">1</div>
+                                <div class="col-6">2</div>
+                           </div>
+                           <div class="collapse-row">
+                              <div class="col-6">1</div>
+                              <div class="col-6">2</div>
+                         </div>
+                         <div class="collapse-row">
+                              <div class="col-6">1</div>
+                              <div class="col-6">2</div>
+                         </div>
+                         <div class="collapse-row">
+                              <div class="col-6">1</div>
+                              <div class="col-6">2</div>
+                         </div>
+                         </mat-card-content>
+               </mat-expansion-panel>
+             </div> -->
+
+               <div style="position: relative; top: 11px; text-align: end;"
+                    *ngIf="section?.body?.details?.familyProfileSegment?.familyProfile">
+                    <button class="btn-primary tableButtonPad px-5 m-3" id="itemDetails" data-backdrop="static"
+                         *ngIf="!isReadOnly  && section?.body?.details?.parentProfileSegment?.parentProfile?.length < 2"
+                         data-keyboard="false" (click)="openPopUp('familyProfileSegment')" data-toggle="modal"
+                         data-target="#familyProfilePopup">
+                      
+                         <span class="d-flex align-items-center"> 
+                                 <span class="mx-2 mb-2">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="33" viewBox="0 0 18 33">
+                                   <text id="_" data-name="+" transform="translate(0 27)" fill="#fff" font-size="25" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">+</tspan></text>
+                                 </svg></span>
+                                 <span>{{i18n.translate('addfamilyProfile')}}</span>
+                         </span>
+                    </button>
+               </div>
+          </div>
+     </div>
+</mat-expansion-panel>
+
+<div class="row">
+     <div class="modal fade" id="familyProfilePopup" tabindex="-1" role="dialog"
+          aria-labelledby="familyProfilePopupLabel" aria-hidden="true">
+          <div class="modal-dialog  modal-lg" role="document">
+               <div class="modal-content">
+                    <div class="modal-header d-flex align-items-center">
+
+                         <div >
+                              <h4 class="center modal-title orgchart">{{i18n.translate('familyProfile')}}</h4>
+                         </div>
+
+                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true" (click)="close()">
+                                   <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35">
+                                        <g id="Group_16490" data-name="Group 16490" transform="translate(-724.833 -20)">
+                                          <rect id="Rectangle_2209" data-name="Rectangle 2209" width="35" height="35" transform="translate(724.833 20)" fill="#f3f3f1"/>
+                                          <path id="Icon_ionic-ios-close" data-name="Icon ionic-ios-close" d="M21.179,19.285l5.713-5.713A1.339,1.339,0,0,0,25,11.678l-5.713,5.713-5.713-5.713a1.339,1.339,0,1,0-1.893,1.893l5.713,5.713L11.679,25a1.339,1.339,0,0,0,1.893,1.893l5.713-5.713L25,26.892A1.339,1.339,0,1,0,26.892,25Z" transform="translate(723.496 18.711)"/>
+                                        </g>
+                                      </svg>
+                              </span>
+                         </button>
+                        
+                    </div>
+                    <div class="modal-body">
+                         <app-family-profile-popup [section]="section" [lov]="lov"></app-family-profile-popup>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                              <button class="btn-secondary mx-3" data-dismiss="modal" aria-label="Close"
+                                   *ngIf="(this.familyProfileType != 'editfamilyProfileSegment' )"
+                                   (click)="close()"><span>Discard</span></button>
+                              <button class="btn-secondary mx-3" data-dismiss="modal" aria-label="Close"
+                                   [disabled]="!formisvalid()" (click)="update()"><span>Update</span></button>
+                    </div>
+               </div>
+          </div>
+     </div>
+</div>

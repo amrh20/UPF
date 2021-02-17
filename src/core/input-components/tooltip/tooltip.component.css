@@ -1,0 +1,44 @@
+.informative-tooltip{
+  position: relative;
+  display: inline-block;
+}
+
+.informative-tooltip i{
+  color: #da3f7b;
+}
+
+.informative-tooltip-open{
+  position: absolute;
+  width: 250px;
+  bottom: 28px;
+  right: -125px;
+  display: block;
+  padding: 10px;
+  z-index: 999;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-bottom: 4px solid #ccc;
+  border-radius: 5px;
+  display: none;
+}
+
+.informative-tooltip-open::after{
+  content: "\f0d8";
+  color: red;
+  font-family: FontAwesome;
+  position: absolute;
+  font-size: 40px;
+  transform: rotate(180deg);
+  color: #ccc;
+  top: 60px;
+  /* Firefox */
+  right: -moz-calc(50% - 6px);
+  /* WebKit */
+  right: -webkit-calc(50% - 6px);
+  /* Opera */
+  right: -o-calc(50% - 6)px;
+  /* Standard */
+  right: calc(50% - 6px);
+  height: 20px;
+  z-index: 100;
+}

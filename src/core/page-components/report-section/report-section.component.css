@@ -1,0 +1,18 @@
+    /* Spinner */
+    .form-spinner{
+      padding: 0;
+      margin-top: 4px;
+      float: left;
+      display: inline-block;
+      transform-origin: calc(50% - 0.5px);
+      font-size: 20px;
+    }
+    
+    .form-spinner + span {padding-left: 10px;}
+    .form-spinner.ar-float-right + span {padding-left: 0; padding-right: 30px;}
+    .ar-float-right{
+      float: right;
+    }
+    .ar-float-left{
+      float: left;
+    }

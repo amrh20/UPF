@@ -1,0 +1,20 @@
+.ui-state-highlight
+
+{
+     color: blue;
+}
+/* 
+.table-responsive{ 
+    padding: 15px !important; }
+  .table-responsive .table {
+    max-width: 0px !important;
+  } */
+
+
+  .tableresponsive {
+    direction: ltr;
+  }
+  .tableresponsive > table  {
+    direction: rtl;
+    
+  }

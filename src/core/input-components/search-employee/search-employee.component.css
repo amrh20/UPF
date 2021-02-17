@@ -1,0 +1,84 @@
+.readOnly{
+  color: #888888;
+  word-wrap: break-word;
+}
+.feedback_infobox_icon { padding-left: 10px; font-size: 18px; color: #fabd40; cursor: pointer; vertical-align: middle; float: left; margin-top: 8px; }
+feedbackTooltip { margin: 0px; padding: 0px; color:#585858; list-style: none; font-size: 0.9em; }
+.feedbackTooltip li::before { font: normal normal normal 14px/1 'FontAwesome'; padding-right: 10px; content: "\f0da"; color: #dd3b7a; }
+.feedbackTooltip.ar-dir-rtl { direction: rtl; }
+.feedbackTooltip.ar-dir-rtl li::before { content: "\f0d9"; float: right; padding-left: 10px; padding-right: 0px; }
+
+.searchSugestions { position: absolute; top:82px; width: 500px; height: 200px; overflow-y: auto; z-index: 99; border-radius: 5px; border: 1px solid #888888; background-color: #ffffff; }
+.searchSugestions ul { margin: 0; padding: 0; list-style: none; }
+.searchSugestions ul li { margin: 0 5px; }
+.searchSugestions ul li:first-child { margin-top: 5px; }
+.searchSugestions ul li:last-child { margin-bottom: 5px; }
+.searchSugestions ul li:hover { background-color: #da3f7b; color:#ffffff; }
+.searchSugestions ul li:hover h5 { color:#ffffff; }
+
+.searchSugestionElement { cursor: pointer;height: 64px; }
+
+.searchSugestionElement .imageSearch { float: left; width:50px; height:50px; display: inline-block; background-color: #DEDEDE; border-radius: 50%; overflow: hidden; margin: 7px 5px 0 8px; }
+.searchSugestionElement .imageSearch img { height: 100%; }
+
+.searchSugestionElement .textSearch { float: left; margin-top: 17px;}
+.searchSugestionElement .textSearch h4 { margin: 0; }
+.searchSugestionElement .textSearch h5 { margin: 0; color: #888888; }
+
+/*RTL STYLES*/
+.noRTL{direction: ltr!important;}
+.ar-dir-rtl{
+  direction: rtl;
+}
+.ar-float-right{
+  float: right;
+}
+.ar-float-left{
+  float: left;
+}
+.remove-btn.ar-dir-rtl {
+  margin-left: -10px;
+  margin-right: 0;
+  float: left;
+}
+.searchSugestions.ar-dir-rtl {width: 500px;}
+.searchSugestions.ar-dir-rtl .searchSugestionElement .imageSearch {float: right;}
+.searchSugestions.ar-dir-rtl .searchSugestionElement .textSearch {float: right;}
+
+@media only screen and (max-width: 979px){
+  .searchSugestions {width: 96%;}
+  .searchSugestions.ar-dir-rtl {width: 96%;}
+  .searchSugestionElement .imageSearch { width:30px; height:30px; margin: 7px 5px 0 0; }
+  .searchSugestions.ar-dir-rtl .searchSugestionElement .imageSearch { width:30px; height:30px; margin: 7px 0 0 5px; }
+  .searchSugestionElement .textSearch { margin-top: 10px;}
+  .searchSugestionElement .textSearch h4 { font-size: 12px;}
+  .searchSugestionElement .textSearch h5 { font-size: 10px; max-width: 150px;}
+}
+
+  /* Optional fields */
+  span.optional{
+    float: right;
+    font-size: 12px;
+    margin-bottom: 0px;
+    color: #888888;
+  }
+  
+  div.col-xs-3.rtlOptionalLabel span.optional{
+    float: left;
+    padding: 0;
+  }
+  
+  div.col-xs-3.rtlOptionalLabel{
+    float: left;
+  }
+  
+  .col-xs-9{
+    padding: 0;
+  }
+  
+  .col-xs-3{
+    padding: 0;
+  }
+  div.col-xs-9.rtlAttachmentLabel{
+    float: right;
+  }

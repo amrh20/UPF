@@ -1,0 +1,42 @@
+<div [ngClass]="formComponent()">
+    <div *ngIf="isReadOnly">
+        <label for="" *ngIf="field?.personEmail && hasLabel">{{labelTextReadMode}}</label>
+        <div>{{field?.personName}}</div>
+    </div>
+    <div class="searchInput" *ngIf="!isReadOnly">
+        <label *ngIf="hasLabel"> {{labelTextWriteMode}} </label>
+        <table class="col-sm-12">
+            <tr>
+                <td width="95%">
+                    <input value="{{field?.personName}}" #name (input)="onLoadOptions($event)" type="text" class="form-control" id="" placeholder="">
+                </td>
+                <td>
+                    <i class="fa fa-info-circle feedback_infobox_icon" data-toggle="feedbackpopover" data-trigger="hover" title="{{i18n.translate('employeeSearch')}}" [ngClass]="rtlFloatRight()"></i>
+                </td>
+            </tr>
+        </table>
+        <div class="searchSugestions" *ngIf="options?.length > 0" [ngClass]="rtlDir()">
+            <ul>
+                <li *ngFor="let option of options">
+                    <div class="searchSugestionElement" (click)="selectUser($event, option)">
+                        <div class="imageSearch">
+                            <img [src]="getImage(option?.email)">
+                        </div>
+                        <div class="textSearch">
+                            <h4>{{getShortNameSearch(option?.description)}} <span>({{option?.value}})</span></h4>
+                            <h5>{{option?.jobPosition}}</h5>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="fbtooltipContent" style="display: none;" [ngClass]="rtlFloatRight()">
+    <ol class="feedbackTooltip" [ngClass]="rtlDir()">
+        <li>{{i18n.translate('searchEmployeeTooltip_1')}}</li>
+        <li>{{i18n.translate('searchEmployeeTooltip_2')}}</li>
+        <li>{{i18n.translate('searchEmployeeTooltip_3')}}</li>
+        <li>{{i18n.translate('searchEmployeeTooltip_4')}}</li>
+    </ol>
+</div>

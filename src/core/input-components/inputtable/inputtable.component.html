@@ -1,0 +1,21 @@
+<div >
+    
+    <div *ngIf="isReadOnly;else other_content" >
+        <label for="" *ngIf="hasLabel" >{{labelTextReadMode}}</label>
+        <div class="readOnly">{{field}}</div>
+        <div *ngIf="(labelTextReadMode == 'Age'  || labelTextReadMode == 'العمر') 
+                 && (field == null  || field == undefined)" class="readOnly">none</div>
+    </div>
+
+    <ng-template #other_content>
+        <div class="col-xs-9" [ngClass]="rtlLabel()" *ngIf="hasLabel"><label for="" class="popup-lable">{{labelTextWriteMode}}</label></div>
+        <div *ngIf="!required && hasLabel" class="col-xs-3" [ngClass]="rtlOptionalLabel()"><span class="optional">{{i18n.translate('optional')}}</span></div>
+        <input *ngIf="disabled==false && !useCurrency " [ngClass]="validationBorder()" #input [type]="type" class="form-control" id="" ngModel={{field}} (input)="onValueChange($event.target.value)" (focusout)="onValueChange($event.target.value)" (blur)=InputValidations($event)
+            [minlength]="minLength" [maxlength]="maxlength" min="minValue" max="maxValue" [name]="name" [required]="required" placeholder={{placeholder}}>
+        <input *ngIf="disabled==false && useCurrency" [ngClass]="validationBorder()" #input [type]="type" class="form-control" id="" ngModel={{field}} (focusout)="onValueChange($event.target.value)" [minlength]="minLength" [maxlength]="maxlength" min="maxlength"
+            max="maxValue" [name]="name" [required]="required" appMycurrency placeholder={{placeholder}}>
+        <font *ngIf="field && field > maxValue" size="3" color="red">{{errorMessage}}</font>
+        <input *ngIf="disabled"  #input [type]="type" class="form-control" id="" ngModel={{field}} [name]="name" [required]="required" disabled style="padding: 5px; height: 34px;" >
+       
+    </ng-template>
+</div>
