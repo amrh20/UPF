@@ -20,16 +20,28 @@
       <label for="" *ngIf="hasLabel"
       class="popup-lable">{{labelTextWriteMode}}</label>
     </div>
-  
 
-    <div class="input-group" [ngClass]="rtlDir()">
 
-      <input *ngIf="disabled == null || disabled == undefined  || disabled == false"  type="text" [attr.fb-id]="name + '_date_field'" [value]="field | date :'dd/MM/yyyy'" class="form-control" placeholder="DD/MM/YYYY" (change)="updateDate($event)" (keyup)="validateInput($event)">
-      <input *ngIf="disabled == true" type="text" disabled  style="height: 34px;" [attr.fb-id]="name + '_date_field'" [value]="field | date :'dd/MM/yyyy'" class="form-control" placeholder="DD/MM/YYYY" (change)="updateDate($event)" (keyup)="validateInput($event)">
-      <input type="text" [name]="name" [(ngModel)]="inputValue" (ngModelChange)="inputValue=$event" [required]="required" class="hidden-placeholder form-control"> <!-- Hidden -->
+    <div class="input-group mb-4" [ngClass]="rtlDir()">
 
-      <label *ngIf="disabled == null || disabled == undefined  || disabled == false" (click)="toggleCalendar($event)" class="input-group-addon calendar" id="date-picker-label-fb"><i class="fa fa-calendar" aria-hidden="true"></i><i class="fa fa-caret-down" aria-hidden="true"></i></label>
-      <label *ngIf="disabled == true" disabled class="input-group-addon calendar" id="date-picker-label-fb"><i  class="fa fa-calendar" aria-hidden="true"></i><i class="fa fa-caret-down" aria-hidden="true"></i></label>
+      <input *ngIf="disabled == null || disabled == undefined  || disabled == false"  type="text" 
+      [attr.fb-id]="name + '_date_field'" [value]="field | date :'dd/MM/yyyy'" class="form-control date-picker-input" placeholder="DD/MM/YYYY" (change)="updateDate($event)" (keyup)="validateInput($event)">
+
+      <input *ngIf="disabled == true" type="text" disabled  style="height: 34px;" 
+      [attr.fb-id]="name + '_date_field'" [value]="field | date :'dd/MM/yyyy'" 
+      class="form-control date-picker-input" placeholder="DD/MM/YYYY" (change)="updateDate($event)" (keyup)="validateInput($event)">
+
+      <input type="text" [name]="name" [(ngModel)]="inputValue" (ngModelChange)="inputValue=$event" 
+      [required]="required" class="hidden-placeholder form-control"> <!-- Hidden -->
+
+      <label *ngIf="disabled == null || disabled == undefined  || disabled == false" (click)="toggleCalendar($event)" 
+      class="input-group-addon calendar" id="date-picker-label-fb">
+      <i class="fa fa-calendar" aria-hidden="true"></i>
+    </label>
+      <label *ngIf="disabled == true" disabled class="input-group-addon calendar" id="date-picker-label-fb">
+        <i  class="fa fa-calendar" aria-hidden="true"></i>
+      
+      </label>
     </div>
 
     <div class="{{dropdownClass()}}" [ngClass]="rtlDir()" [id]="name+'Container'">

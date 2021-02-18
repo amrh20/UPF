@@ -158,6 +158,7 @@ mat-card {
   background-color: #F3F3F1;
   label {
     font-size: 14px;
+    font-weight: 500;
   }
 }
 .custom-padding {
@@ -459,7 +460,7 @@ select {
 }
 
 .modal-body {
-  max-height: 75vh;
+  max-height: 70vh;
   overflow: auto;
   padding-top: 0;
   textarea {
@@ -623,4 +624,139 @@ mat-slide-toggle{
    
   }
 
+}
+.square-btn {
+  width: 35px;
+  height: 35px;
+  line-height: 1;
+  position: relative;
+  border:none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .3s linear;
+  font-size: 14px;
+  font-weight: 500;
+  &:after {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  &:hover:after,
+  &:active:after {
+    width: 100%;
+  }
+  span {
+    z-index: 1;
+    position: relative;
+    display: inherit;
+  }
+  &.collapse-btn{
+    background-color: $light-gray;
+    color: $coral;
+    &:after{
+      background-color: rgba($light-gray,.3);
+    }
+  }
+  &.btn-link{
+    background-color: transparent;
+    color: $coral;
+    &:after{
+      background-color: transparent;
+    }
+  }
+  &.coral-100{
+    background-color: $coral;
+    color: $white;
+    &:after{
+      color:$coral;
+      background-color: rgba($coral,.3);
+    }
+  }
+  &.coral{
+    background-color: rgba($coral,.17);
+    color: $coral;
+    &:after{
+      background-color: rgba($coral,.3);
+    }
+  }
+  &.edit{
+    background-color: rgba($sea-light,.2);
+    color:$sea-light;
+    &:after{
+      background-color: rgba($sea-light,.3);
+    }
+  }
+  &.download {
+    background-color: rgba($secondary-purple,.2);
+    color:$secondary-purple;
+    &:after {
+      background-color: rgba($secondary-purple,.3);
+    }
+  }
+  &.delete{
+    background-color: rgba($coral,.2);
+    color: $coral;
+    &:after{
+      background-color: rgba($coral,.3);
+    }
+  } 
+  &:hover{
+    opacity: .9;
+  }
+}
+
+.edit-button {
+    background-color: rgba(28, 206, 216, .2);
+    border: 0;
+    color: #1CCED8;
+    border-radius: 0 !important;
+    -moz-transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    height: 35px;
+    font-size: 14px;
+    font-weight: 500;
+    .svg {
+      margin-right: 5px;
+      margin-bottom: 2px;
+    }
+}
+
+.styled-select select {
+  -moz-appearance:none; /* Firefox */
+  -webkit-appearance:none; /* Safari and Chrome */
+  appearance:none;
+}
+
+.textMessage  {
+  background: $light-gray;
+  padding: 20px;
+  color: $dark-gray;
+}
+.modal-content {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.input-group-addon {
+  background: $off-white2;
+    border-radius: 0;
+    border: 0;
+}
+.date-picker-input {
+  background: $off-white2 !important;
+  border: 0 !important;
+  &:focus {
+    background: $off-white2 !important;
+  border: 0 !important;
+  }
 }

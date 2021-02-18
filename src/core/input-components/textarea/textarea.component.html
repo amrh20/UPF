@@ -5,10 +5,15 @@
     </div>
 
     <ng-template #other_content>
-        <div class="col-xs-9" [ngClass]="rtlLabel()" *ngIf="hasLabel">
-            <label for="" class="popup-lable">{{labelTextWriteMode}}</label>
+      
+        <div class="d-flex justify-content-between align-items-center">
+            <div [ngClass]="rtlLabel()" *ngIf="hasLabel">
+                <label for="" class="popup-lable">{{labelTextWriteMode}}</label>
+            </div>
+            <div *ngIf="!required && hasLabel" [ngClass]="rtlOptionalLabel()">
+                <span class="optional">{{i18n.translate('optional')}}</span>
+            </div>
         </div>
-        <div *ngIf="!required && hasLabel" class="col-xs-3" [ngClass]="rtlOptionalLabel()"><span class="optional">{{i18n.translate('optional')}}</span></div>
 
         <app-tooltip *ngIf="tooltipText" [text]="tooltipText">
         </app-tooltip>

@@ -1,8 +1,11 @@
 <div class="panel-body">
+      
+     <div class="mx-2">
       <app-input [field]="data?.jobTitle" name="jobTitle" [labelTextReadMode]="i18n.translate('jobTitle')"
-        [labelTextWriteMode]="i18n.translate('jobTitle')" [hasColumnBreak]="true" [required]="true"
-        [isReadOnly]="section?.header?.readOnly" (enteredData)="handleTextInput('jobTitle', data , $event)">
-      </app-input>
+      [labelTextWriteMode]="i18n.translate('jobTitle')" [hasColumnBreak]="true" [required]="true"
+      [isReadOnly]="section?.header?.readOnly" (enteredData)="handleTextInput('jobTitle', data , $event)">
+    </app-input>
+     </div>
 
     <div class="row">
       <div class="col-6">
@@ -21,24 +24,28 @@
       </div>
     </div>
 
-      <div class="mt-4">
+      <div class="mt-4 mx-2">
         <app-input [field]="data?.companyName" name="companyName" [labelTextReadMode]="i18n.translate('companyName')"
         [labelTextWriteMode]="i18n.translate('companyName')" [hasColumnBreak]="true" [required]="true"
         [isReadOnly]="section?.header?.readOnly" (enteredData)="handleTextInput('companyName', data , $event)">
       </app-input>
       </div>
 
-      <app-select [field]="data?.jobField" name="jobField" [labelTextReadMode]="i18n.translate('jobField')"
+      <div class="mx-2">
+        <app-select [field]="data?.jobField" name="jobField" [labelTextReadMode]="i18n.translate('jobField')"
         [labelTextWriteMode]="i18n.translate('jobField')" [hasColumnBreak]="true" [lov]="lov?.jobField"
         [required]="true" [isReadOnly]="section?.header?.readOnly"
         (selectedElement)="onSelectChange('jobField',data, $event)">
       </app-select>
+      </div>
 
-      <app-select [field]="data?.companySector" name="companySector"
-        [labelTextReadMode]="i18n.translate('companySector')" [labelTextWriteMode]="i18n.translate('companySector')"
-        [hasColumnBreak]="true" [lov]="lov?.companySector" [required]="true" [isReadOnly]="section?.header?.readOnly"
-        (selectedElement)="onSelectChange('companySector',data, $event)">
-      </app-select>
+        <div class="mx-2">
+          <app-select [field]="data?.companySector" name="companySector"
+          [labelTextReadMode]="i18n.translate('companySector')" [labelTextWriteMode]="i18n.translate('companySector')"
+          [hasColumnBreak]="true" [lov]="lov?.companySector" [required]="true" [isReadOnly]="section?.header?.readOnly"
+          (selectedElement)="onSelectChange('companySector',data, $event)">
+        </app-select>
+        </div>
 
         <div class="mt-4 mx-4">
           <app-datepicker [field]="data?.startDate" name="startDate" [labelTextReadMode]="i18n.translate('startDate')"

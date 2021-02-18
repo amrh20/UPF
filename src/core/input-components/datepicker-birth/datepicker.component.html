@@ -5,13 +5,16 @@
   </div>
 
   <ng-template #other_content>
+
     <label for="" *ngIf="hasLabel" class="popup-lable">{{labelTextWriteMode}}</label>
     <div class="input-group" [ngClass]="rtlDir()">
 
-      <input type="text" [attr.fb-id]="name + '_date_field'" [value]="field | date :'dd/MM/yyyy'" class="form-control" placeholder="DD/MM/YYYY" (change)="updateDate($event)" (keyup)="validateInput($event)">
+      <input type="text" [attr.fb-id]="name + '_date_field'" [value]="field | date :'dd/MM/yyyy'" class="form-control date-picker-input" placeholder="DD/MM/YYYY" (change)="updateDate($event)" (keyup)="validateInput($event)">
       <input type="text" [name]="name" [(ngModel)]="inputValue" (ngModelChange)="inputValue=$event" [required]="required" class="hidden-placeholder form-control"> <!-- Hidden -->
 
-      <label (click)="toggleCalendar($event)" class="input-group-addon calendar" id="date-picker-label-fb"><i class="fa fa-calendar" aria-hidden="true"></i><i class="fa fa-caret-down" aria-hidden="true"></i></label>
+      <label (click)="toggleCalendar($event)" class="input-group-addon calendar" id="date-picker-label-fb">
+        <i class="fa fa-calendar" aria-hidden="true"></i>
+      </label>
     </div>
 
     <div class="{{dropdownClass()}}" [ngClass]="rtlDir()" [id]="name+'Container'">

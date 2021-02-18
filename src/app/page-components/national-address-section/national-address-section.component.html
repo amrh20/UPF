@@ -40,23 +40,16 @@ section?.body?.details?.nationalAddressSegment?.nationalAddress?.length >= 0">
                          <button *ngIf="!isReadOnly"
                               (click)="edit('editnationalAddressSegment'  , i , nationalAddress)"
                               data-toggle="modal" data-target="#nationaladdressPopup" data-backdrop="static"
-                              data-keyboard="false" class="btn-secondary">
+                              data-keyboard="false" class="edit-button px-4">
                               
-                              <svg xmlns="http://www.w3.org/2000/svg" width="79" height="34" viewBox="0 0 79 34">
-                                   <g id="Group_15961" data-name="Group 15961" transform="translate(-1048 -250)">
-                                     <rect id="Rectangle_2812" data-name="Rectangle 2812" width="79" height="34"
-                                       transform="translate(1048 250)" fill="#1cced8" opacity="0.2" />
-                                     <g id="Group_15944" data-name="Group 15944" transform="translate(-1)">
-                                       <path id="Path_9540" data-name="Path 9540"
-                                         d="M17.745,6.987,15.3,4.542a1.785,1.785,0,0,0-2.374-.062L4.892,12.512a1.785,1.785,0,0,0-.509,1.08L4,17.315a.89.89,0,0,0,.893.973h.08l3.722-.339a1.785,1.785,0,0,0,1.08-.509l8.033-8.033a1.714,1.714,0,0,0-.062-2.419ZM8.534,16.163l-2.678.25L6.1,13.735,11.14,8.755l2.41,2.41ZM14.71,9.969,12.318,7.577l1.741-1.785L16.5,8.228Z"
-                                         transform="translate(1059.004 255.941)" fill="#1cced8" />
-                                       <text id="Edit" transform="translate(1086 273)" fill="#1cced8" font-size="14"
-                                         font-family="STCForward-Medium, STC Forward" font-weight="500">
-                                         <tspan x="0" y="0">Edit</tspan>
-                                       </text>
-                                     </g>
-                                   </g>
-                                 </svg>
+                              <span>
+                                   <span class="svg">
+                                     <svg xmlns="http://www.w3.org/2000/svg" width="14.281" height="14.23" viewBox="0 0 14.281 14.23">
+                                       <path id="Path_9540" data-name="Path 9540" d="M17.745,6.987,15.3,4.542a1.785,1.785,0,0,0-2.374-.062L4.892,12.512a1.785,1.785,0,0,0-.509,1.08L4,17.315a.89.89,0,0,0,.893.973h.08l3.722-.339a1.785,1.785,0,0,0,1.08-.509l8.033-8.033a1.714,1.714,0,0,0-.062-2.419ZM8.534,16.163l-2.678.25L6.1,13.735,11.14,8.755l2.41,2.41ZM14.71,9.969,12.318,7.577l1.741-1.785L16.5,8.228Z" transform="translate(-3.996 -4.058)" fill="#1cced8"/>
+                                     </svg>
+                                   </span>
+                                   Edit
+                                 </span>
 
                               </button>
                     </div>
@@ -228,7 +221,7 @@ section?.body?.details?.nationalAddressSegment?.nationalAddress?.length >= 0">
           <div class="modal-dialog  modal-lg" role="document">
                <div class="modal-content">
                     <div class="modal-header d-flex align-items-center">
-                         <div class="row">
+                         <div class="mx-2">
                               <h4 class="center modal-title orgchart">{{i18n.translate('nationalAddressSegment')}}</h4>
                          </div>
                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -247,10 +240,10 @@ section?.body?.details?.nationalAddressSegment?.nationalAddress?.length >= 0">
                     <div class="modal-body">
                          <app-national-address-popup [section]="section" [lov]="lov"></app-national-address-popup>
                     </div>
-                    <div class="modal-footer d-flex justify-content-center">
+                    <div class="modal-footer d-flex justify-content-center pb-5">
                               <button class="btn-secondary" data-dismiss="modal" aria-label="Close"
                                    *ngIf="(this.nationalAddressType != 'editnationalAddressSegment' )" (click)="close()"><span>Discard</span></button>
-                              <button class="btn-secondary mx-3" data-dismiss="modal" aria-label="Close"
+                              <button class="btn-secondary mx-5" data-dismiss="modal" aria-label="Close"
                                    [disabled]="!formisvalid()" (click)="update()"><span>Update</span></button>
                     </div>
                </div>

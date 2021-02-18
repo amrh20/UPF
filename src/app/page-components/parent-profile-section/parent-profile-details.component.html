@@ -1,9 +1,11 @@
 <div class="panel-body" [hidden]="data?.minimize">
 
-    <app-select [field]="data?.title" name="title" [labelTextReadMode]="i18n.translate('title')"
+    <div class="mx-2">
+      <app-select [field]="data?.title" name="title" [labelTextReadMode]="i18n.translate('title')"
       [labelTextWriteMode]="i18n.translate('title')" [hasColumnBreak]="true" [lov]="lov?.parentTitle" [required]="true"
       [isReadOnly]="section?.header?.readOnly" (selectedElement)="onSelectChange('title', data ,  $event)">
     </app-select>
+    </div>
 
   <div class="row mt-4">
     <div class="col-6">

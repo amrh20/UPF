@@ -1,9 +1,11 @@
 <div class="panel-body" [hidden]="data?.minimize">
 
-    <app-select [field]="data?.title" name="title" [labelTextReadMode]="i18n.translate('title')"
+    <div class="mx-2">
+      <app-select [field]="data?.title" name="title" [labelTextReadMode]="i18n.translate('title')"
       [labelTextWriteMode]="i18n.translate('title')" [hasColumnBreak]="true" [lov]="lov?.title" [required]="true"
       [isReadOnly]="section?.header?.readOnly" (selectedElement)="onSelectChange('title', data ,  $event)">
     </app-select>
+    </div>
   
 
 
@@ -104,11 +106,13 @@
 
 
  
-      <app-select [disabled]="checkIfImportFromElmFamilyProfile(data)" [field]="data?.nationality" name="nationality"
+      <div class="mx-2">
+        <app-select [disabled]="checkIfImportFromElmFamilyProfile(data)" [field]="data?.nationality" name="nationality"
       [labelTextReadMode]="i18n.translate('nationality')" [labelTextWriteMode]="i18n.translate('nationality')"
       [hasColumnBreak]="true" [lov]="lov?.nationality" [required]="true" [isReadOnly]="section?.header?.readOnly"
       (selectedElement)="onSelectChange('nationality' , data, $event)">
     </app-select>
+      </div>
 
   <div class="row" *ngIf="(data?.nationality?.key && data?.nationality?.key != '001')">
     <app-checkbox [field]="data?.newToSaudi" name="newToSaudi" [labelTextReadMode]="i18n.translate('newToSaudi')"
@@ -117,17 +121,21 @@
     </app-checkbox>
   </div>
 
-  <app-input *ngIf="data?.newToSaudi == 'true'" [labelTextReadMode]="i18n.translate('borderBirthNumber')"
+  <div class="mx-2">
+    <app-input *ngIf="data?.newToSaudi == 'true'" [labelTextReadMode]="i18n.translate('borderBirthNumber')"
       [labelTextWriteMode]="i18n.translate('borderBirthNumber')" [hasColumnBreak]="true"
       (enteredData)="handleTextInput('borderBirthNumber', data , $event)" [required]="true"
       [disabled]="checkIfImportFromElmFamilyProfile(data)" [isReadOnly]="section?.header?.readOnly">
     </app-input>
+  </div>
 
-    <app-select [field]="data?.maritalStatus" name="maritalStatus" [labelTextReadMode]="i18n.translate('maritalStatus')"
+    <div class="mx-2">
+      <app-select [field]="data?.maritalStatus" name="maritalStatus" [labelTextReadMode]="i18n.translate('maritalStatus')"
       [labelTextWriteMode]="i18n.translate('maritalStatus')" [hasColumnBreak]="true" [lov]="lov?.maritalStatus"
       [required]="true" [isReadOnly]="section?.header?.readOnly"
       (selectedElement)="onSelectChange('maritalStatus' , data, $event)">
     </app-select>
+    </div>
 
 
   <div *ngIf="data?.nationality?.key != null">
@@ -160,11 +168,13 @@
     </div>
   </div>
 
+   <div class="mx-2">
     <app-select [field]="data?.disabilityFlag" name="disabilityFlag"
-      [labelTextReadMode]="i18n.translate('disabilityFlag')" [labelTextWriteMode]="i18n.translate('disabilityFlag')"
-      [hasColumnBreak]="true" [lov]="lov?.yesNo" [required]="true" [isReadOnly]="section?.header?.readOnly"
-      (selectedElement)="onSelectChange('disabilityFlag', data, $event)">
-    </app-select>
+    [labelTextReadMode]="i18n.translate('disabilityFlag')" [labelTextWriteMode]="i18n.translate('disabilityFlag')"
+    [hasColumnBreak]="true" [lov]="lov?.yesNo" [required]="true" [isReadOnly]="section?.header?.readOnly"
+    (selectedElement)="onSelectChange('disabilityFlag', data, $event)">
+  </app-select>
+   </div>
  
 
   <!-- <div class="mt-4">
@@ -190,24 +200,32 @@
     </app-select>
 
   </div>
+
+   <div class="mx-2">
     <app-select [disabled]="checkIfImportFromElmFamilyProfile(data)" [field]="data?.gender" name="gender"
-      [labelTextReadMode]="i18n.translate('gender')" [labelTextWriteMode]="i18n.translate('gender')"
-      [hasColumnBreak]="false" [lov]="lov?.gender" [required]="true" [isReadOnly]="section?.header?.readOnly"
-      (selectedElement)="onSelectChange('gender', data, $event)">
-    </app-select>
+    [labelTextReadMode]="i18n.translate('gender')" [labelTextWriteMode]="i18n.translate('gender')"
+    [hasColumnBreak]="false" [lov]="lov?.gender" [required]="true" [isReadOnly]="section?.header?.readOnly"
+    (selectedElement)="onSelectChange('gender', data, $event)">
+  </app-select>
+   </div>
     <!-- </div>
   <div class="row"> -->
-    <app-select [field]="data?.relationship" name="relationship" [labelTextReadMode]="i18n.translate('relationship')"
+    <div class="mx-2">
+      <app-select [field]="data?.relationship" name="relationship" [labelTextReadMode]="i18n.translate('relationship')"
       [labelTextWriteMode]="i18n.translate('relationship')" [hasColumnBreak]="false" [lov]="lov?.relationship"
       [required]="true" [isReadOnly]="section?.header?.readOnly"
       (selectedElement)="onSelectChange('relationship', data, $event)">
     </app-select>
-    <app-select [field]="data?.chronicDisease" name="chronicDisease"
+    </div>
+   
+    <div class="mx-2">
+      <app-select [field]="data?.chronicDisease" name="chronicDisease"
       [labelTextReadMode]="i18n.translate('chronicDisease')" [labelTextWriteMode]="i18n.translate('chronicDisease')"
       [hasColumnBreak]="true" [lov]="lov?.yesNo" [required]="true" [isReadOnly]="section?.header?.readOnly"
       (selectedElement)="onSelectChange('chronicDisease', data, $event)">
     </app-select>
-  <div  *ngIf="data?.chronicDisease?.key == 'Y'">
+    </div>
+  <div  *ngIf="data?.chronicDisease?.key == 'Y'" class="mx-2">
     <app-select [field]="data?.chronicDiseaseType" name="chronicDiseaseType"
       [labelTextReadMode]="i18n.translate('chronicDiseaseType')"
       [labelTextWriteMode]="i18n.translate('chronicDiseaseType')" [hasColumnBreak]="true" [lov]="lov?.chronicDisease"
@@ -216,15 +234,20 @@
     </app-select>
   </div>
 
-    <app-select [field]="data?.working" name="working" [labelTextReadMode]="i18n.translate('working')"
+    <div class="mx-2">
+      <app-select [field]="data?.working" name="working" [labelTextReadMode]="i18n.translate('working')"
       [labelTextWriteMode]="i18n.translate('working')" [hasColumnBreak]="false" [lov]="lov?.yesNo" [required]="true"
       [isReadOnly]="section?.header?.readOnly" (selectedElement)="onSelectChange('working', data, $event)">
     </app-select>
-    <app-select [field]="data?.noNeedMedical" name="noNeedMedical" [labelTextReadMode]="i18n.translate('noNeedMedical')"
+    </div>
+   
+    <div class="mx-2">
+      <app-select [field]="data?.noNeedMedical" name="noNeedMedical" [labelTextReadMode]="i18n.translate('noNeedMedical')"
       [labelTextWriteMode]="i18n.translate('noNeedMedical')" [hasColumnBreak]="false" [lov]="lov?.yesNo"
       [required]="true" [isReadOnly]="section?.header?.readOnly"
       (selectedElement)="onSelectChange('noNeedMedical', data, $event)">
     </app-select>
+    </div>
 
   <div  *ngIf="data?.newToSaudi == 'true'">
     <app-attachment [small]="true" [field]="data?.passportOrBirthAttachment" name="passportOrBirthAttachment"
@@ -235,11 +258,13 @@
     </app-attachment>
   </div>
 
+  <div class="mx-2">
     <app-select [field]="data?.justification" name="justification" [labelTextReadMode]="i18n.translate('justification')"
-      [labelTextWriteMode]="i18n.translate('justification')" [hasColumnBreak]="true" [lov]="lov?.updateJustification"
-      [required]="true" [isReadOnly]="section?.header?.readOnly"
-      (selectedElement)="onSelectChange('justification', data, $event)">
-    </app-select>
+    [labelTextWriteMode]="i18n.translate('justification')" [hasColumnBreak]="true" [lov]="lov?.updateJustification"
+    [required]="true" [isReadOnly]="section?.header?.readOnly"
+    (selectedElement)="onSelectChange('justification', data, $event)">
+  </app-select>
+  </div>
 
   <div *ngIf="data?.justification?.key == 'DE' || data?.justification?.key == 'DV'">
     <app-attachment [field]="data?.supportDoc" name="supportDoc" [labelTextReadMode]="i18n.translate('supportDoc')"
@@ -264,10 +289,12 @@
       [isReadOnly]="section?.header?.readOnly" (AttachmentValue)="handleAttachment('familyCard', data, $event)">
     </app-attachment>
 
-    <app-textarea [field]="data?.note" name="note" [labelTextReadMode]="i18n.translate('note')"
+    <div class="mx-2">
+      <app-textarea [field]="data?.note" name="note" [labelTextReadMode]="i18n.translate('note')"
       [labelTextWriteMode]="i18n.translate('note')" [hasColumnBreak]="true" [required]="true" [minLength]='15'
       [maxlength]='1000' [isReadOnly]="section?.header?.readOnly" (enteredData)="handleTextInput('note', data , $event)"
       [errorMessage]="i18n.translate('lenghtMin15Max1000')">
     </app-textarea>
     
+    </div>
 </div>

@@ -1,7 +1,7 @@
 <div class="panel-body">
 
 
-      <div class="row">
+      <div class="row" style="margin-left: -13px;">
         <div class="col-6">
           <app-select [field]="data?.educationLevel" name="educationLevel"
         [labelTextReadMode]="i18n.translate('educationLevel')" [labelTextWriteMode]="i18n.translate('educationLevel')"
@@ -42,6 +42,7 @@
         [hasColumnBreak]="false" [lov]="lov?.major" [required]="true" [isReadOnly]="section?.header?.readOnly"
         (selectedElement)="onSelectChange('major',data , $event)">
       </app-select>
+
       <app-select name="subMajor" [field]="data?.subMajor"
         [disabled]="(data?.educationLevel?.key == '5'  ||  data?.educationLevel?.key == '8' || data?.educationLevel?.key == '9')"
         [labelTextReadMode]="i18n.translate('subMajor')" [labelTextWriteMode]="i18n.translate('subMajor')"
@@ -49,7 +50,7 @@
         (selectedElement)="onSelectChange('subMajor',data , $event)">
       </app-select>
 
-    <div class="mt-4 mx-4">
+    <div class="mt-4 mx-3">
       <app-datepicker [field]="data?.startDate" name="startDate" [labelTextReadMode]="i18n.translate('startDate')"
         [labelTextWriteMode]="i18n.translate('startDate')" [hasColumnBreak]="false" [required]="true"
         (dateValue)="handleDateSelected(data , 'startDate' , $event)" [isReadOnly]="section?.header?.readOnly">
@@ -65,6 +66,7 @@
         [labelTextWriteMode]="i18n.translate('scale')" [hasColumnBreak]="false" [lov]="lov?.scale" [required]="true"
         [isReadOnly]="section?.header?.readOnly" (selectedElement)="onSelectChange('scale',data , $event)">
       </app-select>
+
       <app-input [field]="data?.gpa" name="gpa" [labelTextReadMode]="i18n.translate('gpa')"
         [labelTextWriteMode]="i18n.translate('gpa')" [hasColumnBreak]="false" [required]="true"
         [disabled]="(data?.scale?.key == 'STC_QUALIFICATION_GPA_TYPE_PAS'  ||  data?.scale?.key == null)"

@@ -46,35 +46,29 @@
                                              </span>
                                         </label>
                                    </div>
-                                   <div>
+                                   <div class="d-flex">
                                         <button (click)="edit('editfamilyProfileSegment'  , i , familyProfile)"
                                              data-toggle="modal" data-target="#familyProfilePopup" data-backdrop="static"
-                                             data-keyboard="false" class="reset-button">
-                                             <svg xmlns="http://www.w3.org/2000/svg" width="79" height="34" viewBox="0 0 79 34">
-                                                  <g id="Group_15961" data-name="Group 15961" transform="translate(-1048 -250)">
-                                                    <rect id="Rectangle_2812" data-name="Rectangle 2812" width="79" height="34" transform="translate(1048 250)" fill="#1cced8" opacity="0.2"/>
-                                                    <g id="Group_15944" data-name="Group 15944" transform="translate(-1)">
-                                                      <path id="Path_9540" data-name="Path 9540" d="M17.745,6.987,15.3,4.542a1.785,1.785,0,0,0-2.374-.062L4.892,12.512a1.785,1.785,0,0,0-.509,1.08L4,17.315a.89.89,0,0,0,.893.973h.08l3.722-.339a1.785,1.785,0,0,0,1.08-.509l8.033-8.033a1.714,1.714,0,0,0-.062-2.419ZM8.534,16.163l-2.678.25L6.1,13.735,11.14,8.755l2.41,2.41ZM14.71,9.969,12.318,7.577l1.741-1.785L16.5,8.228Z" transform="translate(1059.004 255.941)" fill="#1cced8"/>
-                                                      <text id="Edit" transform="translate(1086 273)" fill="#1cced8" font-size="14" font-family="STCForward-Medium, STC Forward" font-weight="500"><tspan x="0" y="0">Edit</tspan></text>
-                                                    </g>
-                                                  </g>
-                                                </svg>
+                                             data-keyboard="false" class="edit-button px-4 mx-3">
+                                             <span>
+                                                  <span class="svg">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14.281" height="14.23" viewBox="0 0 14.281 14.23">
+                                                      <path id="Path_9540" data-name="Path 9540" d="M17.745,6.987,15.3,4.542a1.785,1.785,0,0,0-2.374-.062L4.892,12.512a1.785,1.785,0,0,0-.509,1.08L4,17.315a.89.89,0,0,0,.893.973h.08l3.722-.339a1.785,1.785,0,0,0,1.08-.509l8.033-8.033a1.714,1.714,0,0,0-.062-2.419ZM8.534,16.163l-2.678.25L6.1,13.735,11.14,8.755l2.41,2.41ZM14.71,9.969,12.318,7.577l1.741-1.785L16.5,8.228Z" transform="translate(-3.996 -4.058)" fill="#1cced8"/>
+                                                    </svg>
+                                                  </span>
+                                                  Edit
+                                                </span>
                                         </button>
                                         <button *ngIf="!isReadOnly "
                                              (click)="deleteGenericRow('familyProfileSegment', 'familyProfile'  , i)"
-                                             class="reset-button">
-                                             <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34">
-                                                  <g id="Group_15962" data-name="Group 15962" transform="translate(-1116 -1045)">
-                                                    <rect id="Rectangle_2813" data-name="Rectangle 2813" width="34" height="34" transform="translate(1116 1045)" fill="#ff375e" opacity="0.2"/>
-                                                    <g id="Group_10788" data-name="Group 10788" transform="translate(1126.983 1054.643)">
-                                                      <path id="Path_9541" data-name="Path 9541" d="M12.955,17.608H7.1a1.653,1.653,0,0,1-1.65-1.494L4.5,6.608A.552.552,0,0,1,5.053,6H15a.553.553,0,0,1,.55.608L14.6,16.114a1.653,1.653,0,0,1-1.65,1.494ZM5.663,7.106,6.551,16a.552.552,0,0,0,.55.5h5.854a.552.552,0,0,0,.55-.5l.888-8.9Z" transform="translate(-3.118 -3.789)" fill="#ff375e"/>
-                                                      <path id="Path_9542" data-name="Path 9542" d="M15.267,7.106H2.553A.553.553,0,0,1,2.553,6H15.267a.553.553,0,0,1,0,1.106Z" transform="translate(-2 -3.789)" fill="#ff375e"/>
-                                                      <path id="Path_9543" data-name="Path 9543" d="M14.053,17.186a.553.553,0,0,1-.553-.553V10.553a.553.553,0,0,1,1.106,0v6.081A.553.553,0,0,1,14.053,17.186Z" transform="translate(-7.143 -5.578)" fill="#ff375e"/>
-                                                      <path id="Path_9544" data-name="Path 9544" d="M10.1,17.186a.553.553,0,0,1-.55-.5L9,10.6a.553.553,0,1,1,1.1-.1l.553,6.081a.553.553,0,0,1-.551.6Z" transform="translate(-5.13 -5.578)" fill="#ff375e"/>
-                                                      <path id="Path_9545" data-name="Path 9545" d="M17.553,17.187a.553.553,0,0,1-.551-.6l.553-6.081a.553.553,0,1,1,1.1.1L18.1,16.684A.553.553,0,0,1,17.553,17.187Z" transform="translate(-8.708 -5.578)" fill="#ff375e"/>
-                                                      <path id="Path_9546" data-name="Path 9546" d="M14.528,5.317H9.553A.553.553,0,0,1,9,4.764V2.553A.553.553,0,0,1,9.553,2h4.975a.553.553,0,0,1,.553.553V4.764A.553.553,0,0,1,14.528,5.317ZM10.106,4.211h3.869V3.106H10.106Z" transform="translate(-5.131 -2)" fill="#ff375e"/>
-                                                    </g>
-                                                  </g>
+                                             class="square-btn delete">
+                                             <svg xmlns="http://www.w3.org/2000/svg" id="Group_10788" data-name="Group 10788" width="13.819" height="13.819" viewBox="0 0 13.819 13.819">
+                                                  <path id="Path_9541" data-name="Path 9541" d="M12.955,17.608H7.1a1.653,1.653,0,0,1-1.65-1.494L4.5,6.608A.552.552,0,0,1,5.053,6H15a.553.553,0,0,1,.55.608L14.6,16.114a1.653,1.653,0,0,1-1.65,1.494ZM5.663,7.106,6.551,16a.552.552,0,0,0,.55.5h5.854a.552.552,0,0,0,.55-.5l.888-8.9Z" transform="translate(-3.118 -3.789)" fill="#ff375e"/>
+                                                  <path id="Path_9542" data-name="Path 9542" d="M15.267,7.106H2.553A.553.553,0,0,1,2.553,6H15.267a.553.553,0,0,1,0,1.106Z" transform="translate(-2 -3.789)" fill="#ff375e"/>
+                                                  <path id="Path_9543" data-name="Path 9543" d="M14.053,17.186a.553.553,0,0,1-.553-.553V10.553a.553.553,0,0,1,1.106,0v6.081A.553.553,0,0,1,14.053,17.186Z" transform="translate(-7.143 -5.578)" fill="#ff375e"/>
+                                                  <path id="Path_9544" data-name="Path 9544" d="M10.1,17.186a.553.553,0,0,1-.55-.5L9,10.6a.553.553,0,1,1,1.1-.1l.553,6.081a.553.553,0,0,1-.551.6Z" transform="translate(-5.13 -5.578)" fill="#ff375e"/>
+                                                  <path id="Path_9545" data-name="Path 9545" d="M17.553,17.187a.553.553,0,0,1-.551-.6l.553-6.081a.553.553,0,1,1,1.1.1L18.1,16.684A.553.553,0,0,1,17.553,17.187Z" transform="translate(-8.708 -5.578)" fill="#ff375e"/>
+                                                  <path id="Path_9546" data-name="Path 9546" d="M14.528,5.317H9.553A.553.553,0,0,1,9,4.764V2.553A.553.553,0,0,1,9.553,2h4.975a.553.553,0,0,1,.553.553V4.764A.553.553,0,0,1,14.528,5.317ZM10.106,4.211h3.869V3.106H10.106Z" transform="translate(-5.131 -2)" fill="#ff375e"/>
                                                 </svg>
                                         </button>
                                    </div>
@@ -444,7 +438,7 @@
                <div class="modal-content">
                     <div class="modal-header d-flex align-items-center">
 
-                         <div >
+                         <div class="px-3">
                               <h4 class="center modal-title orgchart">{{i18n.translate('familyProfile')}}</h4>
                          </div>
 
