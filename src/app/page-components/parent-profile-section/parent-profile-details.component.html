@@ -81,11 +81,14 @@
    </div>
   </div>
 
-    <app-select [field]="data?.nationality" name="nationality" [labelTextReadMode]="i18n.translate('nationality')"
+    <div class="mx-2">
+      <app-select [field]="data?.nationality" name="nationality" [labelTextReadMode]="i18n.translate('nationality')"
       [labelTextWriteMode]="i18n.translate('nationality')" [hasColumnBreak]="!(data?.nationality?.key)" [lov]="lov?.nationality"
       [required]="true" [isReadOnly]="section?.header?.readOnly"
       (selectedElement)="onSelectChange('nationality' , data, $event)">
     </app-select>
+    </div>
+
     <app-input *ngIf="data?.nationality?.key != null" [field]="data?.idNumber" name="idNumber"
       [labelTextReadMode]="i18n.translate('idNumber')"
       [maxlength]="getMaxLenthFromNationality(data?.nationality?.key, data)"
@@ -94,24 +97,30 @@
       [isReadOnly]="section?.header?.readOnly">
     </app-input>
 
-    <app-select [field]="data?.relationship" name="relationship" [labelTextReadMode]="i18n.translate('relationship')"
+    <div class="mx-2">
+      <app-select [field]="data?.relationship" name="relationship" [labelTextReadMode]="i18n.translate('relationship')"
       [labelTextWriteMode]="i18n.translate('relationship')" [hasColumnBreak]="false" [lov]="lov?.parentRelationship"
       [required]="true" [isReadOnly]="section?.header?.readOnly"
       (selectedElement)="onSelectChange('relationship', data, $event)">
     </app-select>
+    </div>
 
+   <div class="mx-2">
     <app-select [field]="data?.gender" name="gender" [labelTextReadMode]="i18n.translate('gender')"
-      [labelTextWriteMode]="i18n.translate('gender')" [hasColumnBreak]="false" [lov]="lov?.gender" [required]="true"
-      [isReadOnly]="section?.header?.readOnly" (selectedElement)="onSelectChange('gender', data, $event)">
-    </app-select>
+    [labelTextWriteMode]="i18n.translate('gender')" [hasColumnBreak]="false" [lov]="lov?.gender" [required]="true"
+    [isReadOnly]="section?.header?.readOnly" (selectedElement)="onSelectChange('gender', data, $event)">
+  </app-select>
+   </div>
 
+   <div class="mx-2">
     <app-select [field]="data?.maritalStatus" name="maritalStatus" [labelTextReadMode]="i18n.translate('maritalStatus')"
-      [labelTextWriteMode]="i18n.translate('maritalStatus')" [hasColumnBreak]="true" [lov]="lov?.maritalStatus"
-      [required]="true" [isReadOnly]="section?.header?.readOnly"
-      (selectedElement)="onSelectChange('maritalStatus' , data, $event)">
-    </app-select>
+    [labelTextWriteMode]="i18n.translate('maritalStatus')" [hasColumnBreak]="true" [lov]="lov?.maritalStatus"
+    [required]="true" [isReadOnly]="section?.header?.readOnly"
+    (selectedElement)="onSelectChange('maritalStatus' , data, $event)">
+  </app-select>
+   </div>
      
-    <div class="mt-4">
+    <div class="mt-4 mx-2">
       
     <app-datepicker-birth name="birthDate" [field]="data?.birthDate"
     [labelTextReadMode]="i18n.translate('birthDate')" (dateValue)="ageFromDateOfBirthday($event , data)"
@@ -120,7 +129,7 @@
   </app-datepicker-birth>
     </div>
     
-    <div class="mt-4">
+    <div class="mt-4 mx-2">
       <app-input name="age" [field]="data?.age" [labelTextReadMode]="i18n.translate('age')"
       [labelTextWriteMode]="i18n.translate('age')" [hasColumnBreak]="false"
       (enteredData)="handleTextInput('age', data , $event)" [disabled]="true" [required]="true"
@@ -128,30 +137,40 @@
     </app-input>
     </div>
 
-    <app-select [field]="data?.disabilityFlag" name="disabilityFlag"
+    <div class="mx-2">
+      <app-select [field]="data?.disabilityFlag" name="disabilityFlag"
       [labelTextReadMode]="i18n.translate('disabilityFlag')" [labelTextWriteMode]="i18n.translate('disabilityFlag')"
       [hasColumnBreak]="!(data?.disabilityFlag?.key == 'Y')" [lov]="lov?.yesNo" [required]="true" [isReadOnly]="section?.header?.readOnly"
       (selectedElement)="onSelectChange('disabilityFlag', data, $event)">
     </app-select>
+    </div>
 
+   <div class="mx-2"> 
     <app-select *ngIf="data?.disabilityFlag?.key == 'Y'" [field]="data?.disabilityType" name="disabilityType"
-      [labelTextReadMode]="i18n.translate('disabilityType')" [labelTextWriteMode]="i18n.translate('disabilityType')"
-      [hasColumnBreak]="false" [lov]="lov?.disabilityType" [required]="true" [isReadOnly]="section?.header?.readOnly"
-      (selectedElement)="onSelectChange('disabilityType', data, $event)">
-    </app-select>
+    [labelTextReadMode]="i18n.translate('disabilityType')" [labelTextWriteMode]="i18n.translate('disabilityType')"
+    [hasColumnBreak]="false" [lov]="lov?.disabilityType" [required]="true" [isReadOnly]="section?.header?.readOnly"
+    (selectedElement)="onSelectChange('disabilityType', data, $event)">
+  </app-select>
+   </div>
 
-    <app-select [field]="data?.chronicDisease" name="chronicDisease"
+    <div class="mx-2">
+      <app-select [field]="data?.chronicDisease" name="chronicDisease"
       [labelTextReadMode]="i18n.translate('chronicDisease')" [labelTextWriteMode]="i18n.translate('chronicDisease')"
       [hasColumnBreak]="!(data?.chronicDisease?.key == 'Y')" [lov]="lov?.yesNo" [required]="true" [isReadOnly]="section?.header?.readOnly"
       (selectedElement)="onSelectChange('chronicDisease', data, $event)">
     </app-select>
 
-    <app-select *ngIf="data?.chronicDisease?.key == 'Y'" [field]="data?.chronicDiseaseType" name="chronicDiseaseType"
+    </div>
+    
+
+    <div class="mx-2">
+      <app-select *ngIf="data?.chronicDisease?.key == 'Y'" [field]="data?.chronicDiseaseType" name="chronicDiseaseType"
       [labelTextReadMode]="i18n.translate('chronicDiseaseType')"
       [labelTextWriteMode]="i18n.translate('chronicDiseaseType')" [hasColumnBreak]="false" [lov]="lov?.chronicDisease"
       [required]="true" [isReadOnly]="section?.header?.readOnly"
       (selectedElement)="onSelectChange('chronicDiseaseType', data, $event)">
     </app-select>
+    </div>
 
 
     <div class="mt-4"> 
@@ -170,7 +189,7 @@
     </div>
 
 
-    <div class="mt-4">
+    <div class="mt-4 mx-2">
       <app-textarea [field]="data?.note" name="note" [labelTextReadMode]="i18n.translate('note')"
       [labelTextWriteMode]="i18n.translate('note')" [hasColumnBreak]="true" [required]="false" [minLength]='15'
       [maxlength]='1000' [isReadOnly]="section?.header?.readOnly" (enteredData)="handleTextInput('note', data , $event)"
@@ -178,7 +197,7 @@
     </app-textarea>
     </div>
 
-    <div class="mt-4">
+    <div class="mt-4 mx-2">
       <app-textarea [field]="data?.justification" name="justification"
       [labelTextReadMode]="i18n.translate('justification')" [labelTextWriteMode]="i18n.translate('justification')"
       [hasColumnBreak]="true" [required]="true" [minLength]='15' [maxlength]='1000'

@@ -9,7 +9,7 @@
     <span *ngIf="hidenational('buildingNumber' , data)" style="color: #da3f7b;">{{i18n.translate('Verified')}}</span>
   </div>
 
-  <div class="mt-4" [hidden]="hidenational('streetName' , data)">
+  <div class="mt-4 mx-2" [hidden]="hidenational('streetName' , data)">
     <app-input [field]="data?.streetName" name="streetName" [labelTextReadMode]="i18n.translate('streetName')"
       [labelTextWriteMode]="i18n.translate('streetName')" [hasColumnBreak]="true" [required]="true"
       [isReadOnly]="section?.header?.readOnly" (enteredData)="handleTextInput('streetName', data , $event)">
@@ -17,7 +17,7 @@
     <span *ngIf="hidenational('streetName' , data)" style="color: #da3f7b;">{{i18n.translate('Verified')}}</span>
   </div>
 
-  <div class="mt-4" [hidden]="hidenational('district' , data)">
+  <div class="mt-4 mx-2" [hidden]="hidenational('district' , data)">
     <app-input [field]="data?.district" name="district" [labelTextReadMode]="i18n.translate('district')"
       [labelTextWriteMode]="i18n.translate('district')" [hasColumnBreak]="true" [required]="true"
       [isReadOnly]="section?.header?.readOnly" (enteredData)="handleTextInput('district', data , $event)">
@@ -25,7 +25,7 @@
     <span *ngIf="hidenational('district' , data)" style="color: #da3f7b;">{{i18n.translate('Verified')}}</span>
   </div>
 
-  <div class="mt-4">
+  <div class="mt-4 mx-2">
     <div [hidden]="hidenationalSelectize('city' , data)">
       <app-select [field]="data?.city" name="city" [labelTextReadMode]="i18n.translate('city')"
         [labelTextWriteMode]="i18n.translate('city')" [hasColumnBreak]="true" [lov]="lov?.city" [required]="true"
@@ -35,7 +35,7 @@
     <span *ngIf="hidenationalSelectize('city' , data)" style="color: #da3f7b;">{{i18n.translate('Verified')}}</span>
   </div>
 
-  <div class="mt-4" [hidden]="hidenational('postalCode' , data)">
+  <div class="mt-4 mx-2" [hidden]="hidenational('postalCode' , data)">
     <app-input [field]="data?.postalCode" name="postalCode" [labelTextReadMode]="i18n.translate('postalCode')"
       [labelTextWriteMode]="i18n.translate('postalCode')" [hasColumnBreak]="true" [required]="true"
       [isReadOnly]="section?.header?.readOnly" (enteredData)="handleTextInput('postalCode', data , $event)">
@@ -43,7 +43,7 @@
     <span *ngIf="hidenational('postalCode' , data)" style="color: #da3f7b;">{{i18n.translate('Verified')}}</span>
   </div>
 
-  <div class="mt-4" [hidden]="hidenational('additionalNumber' , data)">
+  <div class="mt-4 mx-2" [hidden]="hidenational('additionalNumber' , data)">
     <app-input [field]="data?.additionalNumber" name="additionalNumber"
       [labelTextReadMode]="i18n.translate('additionalNumber')" [labelTextWriteMode]="i18n.translate('additionalNumber')"
       [hasColumnBreak]="true" [required]="true" [isReadOnly]="section?.header?.readOnly"
@@ -52,7 +52,7 @@
     <span *ngIf="hidenational('additionalNumber' , data)" style="color: #da3f7b;">{{i18n.translate('Verified')}}</span>
   </div>
 
-  <div class="mt-4" [hidden]="hidenationalAttch('attachment' , data)">
+  <div class="mt-4 mx-2" [hidden]="hidenationalAttch('attachment' , data)">
     <app-attachment [field]="data?.attachment" name="attachment" [hasColumnBreak]="true" [required]="true"
       [isReadOnly]="section?.header?.readOnly" [labelTextReadMode]="i18n.translate('attachment')"
       [labelTextWriteMode]="i18n.translate('attachment')"
@@ -60,13 +60,12 @@
     </app-attachment>
     <span *ngIf="hidenationalAttch('attachment' , data)" style="color: #da3f7b;">{{i18n.translate('Verified')}}</span>
   </div>
-  <div class="mt-4">
+
     <app-textarea [field]="data?.note" name="note" [labelTextReadMode]="i18n.translate('note')"
       [labelTextWriteMode]="i18n.translate('note')" [hasColumnBreak]="true" [required]="false" [minLength]='15'
       [maxlength]='1000' [isReadOnly]="section?.header?.readOnly" (enteredData)="handleTextInput('note', data , $event)"
       [errorMessage]="i18n.translate('lenghtMin15Max1000')">
     </app-textarea>
-  </div>
 
 
 </div>

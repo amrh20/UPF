@@ -159,38 +159,48 @@
   </div>
 
   <div *ngIf=" type =='professionalCertificateSegment'  || type =='editprofessionalCertificateSegment'">
-    <app-input [field]="data?.certificateNo" name="certificateNo" [labelTextReadMode]="i18n.translate('certificateNo')"
-      [labelTextWriteMode]="i18n.translate('certificateNo')" [hasColumnBreak]="true" numberOnly [maxlength]="15"
-      (enteredData)="handleTextInput('certificateNo', data , $event)" [required]="true"
-      [isReadOnly]="section?.header?.readOnly">
-    </app-input>
+    <div class="mx-2">
+      <app-input [field]="data?.certificateNo" name="certificateNo"
+        [labelTextReadMode]="i18n.translate('certificateNo')" [labelTextWriteMode]="i18n.translate('certificateNo')"
+        [hasColumnBreak]="true" numberOnly [maxlength]="15"
+        (enteredData)="handleTextInput('certificateNo', data , $event)" [required]="true"
+        [isReadOnly]="section?.header?.readOnly">
+      </app-input>
+    </div>
 
-    <app-select [field]="data?.certificateOrganization" name="certificateOrganization"
-      [labelTextReadMode]="i18n.translate('certificateOrganization')"
-      [labelTextWriteMode]="i18n.translate('certificateOrganization')" [hasColumnBreak]="true"
-      [lov]="lov?.certificateOrganization" [required]="true" [isReadOnly]="section?.header?.readOnly"
-      (selectedElement)="onSelectChange('certificateOrganization', data , $event)">
-    </app-select>
+    <div class="mx-2">
+      <app-select [field]="data?.certificateOrganization" name="certificateOrganization"
+        [labelTextReadMode]="i18n.translate('certificateOrganization')"
+        [labelTextWriteMode]="i18n.translate('certificateOrganization')" [hasColumnBreak]="true"
+        [lov]="lov?.certificateOrganization" [required]="true" [isReadOnly]="section?.header?.readOnly"
+        (selectedElement)="onSelectChange('certificateOrganization', data , $event)">
+      </app-select>
+    </div>
 
-    <app-select [field]="data?.certificateName" name="certificateName"
-      [labelTextReadMode]="i18n.translate('certificateName')" [labelTextWriteMode]="i18n.translate('certificateName')"
-      [hasColumnBreak]="true" [lov]="lov?.certificateName" [required]="true" [isReadOnly]="section?.header?.readOnly"
-      (selectedElement)="onSelectChange('certificateName', data , $event)">
-    </app-select>
+    <div class="mx-2">
+      <app-select [field]="data?.certificateName" name="certificateName"
+        [labelTextReadMode]="i18n.translate('certificateName')" [labelTextWriteMode]="i18n.translate('certificateName')"
+        [hasColumnBreak]="true" [lov]="lov?.certificateName" [required]="true" [isReadOnly]="section?.header?.readOnly"
+        (selectedElement)="onSelectChange('certificateName', data , $event)">
+      </app-select>
+    </div>
 
 
     <div class="mx-4 mt-4">
       <app-datepicker [field]="data.certificateDate" name="certificateDate"
-      [labelTextReadMode]="i18n.translate('certificateDate')" [labelTextWriteMode]="i18n.translate('certificateDate')"
-      [hasColumnBreak]="false" [required]="true" (dateValue)="handleDateSelected(data , 'certificateDate' , $event)"
-      [isReadOnly]="section?.header?.readOnly">
-    </app-datepicker>
-    <app-datepicker [field]="data.expiryDate" name="expiryDate" [labelTextReadMode]="i18n.translate('expiryDate')"
-      [labelTextWriteMode]="i18n.translate('expiryDate')" [hasColumnBreak]="false" [required]="true"
-      (dateValue)="handleDateSelected(data , 'expiryDate' , $event)" [isReadOnly]="section?.header?.readOnly">
-    </app-datepicker>
-    </div>
+        [labelTextReadMode]="i18n.translate('certificateDate')" [labelTextWriteMode]="i18n.translate('certificateDate')"
+        [hasColumnBreak]="false" [required]="true" (dateValue)="handleDateSelected(data , 'certificateDate' , $event)"
+        [isReadOnly]="section?.header?.readOnly">
+      </app-datepicker>
 
+      
+    </div>
+   <div class="mx-4 mt-4">
+    <app-datepicker [field]="data.expiryDate" name="expiryDate" [labelTextReadMode]="i18n.translate('expiryDate')"
+    [labelTextWriteMode]="i18n.translate('expiryDate')" [hasColumnBreak]="false" [required]="true"
+    (dateValue)="handleDateSelected(data , 'expiryDate' , $event)" [isReadOnly]="section?.header?.readOnly">
+  </app-datepicker>
+   </div>
     <div class="mt-4" [hidden]="hidenationalAttch('certificate' , data)">
       <app-attachment [field]="data?.certificate" name="certificate" [hasColumnBreak]="true" [required]="true"
         [isReadOnly]="section?.header?.readOnly" [labelTextReadMode]="i18n.translate('certificate')"
@@ -199,12 +209,14 @@
       </app-attachment>
     </div>
 
-    <app-textarea [field]="data?.justification" name="justification"
-      [labelTextReadMode]="i18n.translate('justification')" [labelTextWriteMode]="i18n.translate('justification')"
-      [hasColumnBreak]="true" [required]="false" [minLength]='15'
-      (enteredData)="handleTextInput('justification', data , $event)" [maxlength]='1000'
-      [isReadOnly]="section?.header?.readOnly" [errorMessage]="i18n.translate('lenghtMin15Max1000')">
-    </app-textarea>
+    <div>
+      <app-textarea [field]="data?.justification" name="justification"
+        [labelTextReadMode]="i18n.translate('justification')" [labelTextWriteMode]="i18n.translate('justification')"
+        [hasColumnBreak]="true" [required]="false" [minLength]='15'
+        (enteredData)="handleTextInput('justification', data , $event)" [maxlength]='1000'
+        [isReadOnly]="section?.header?.readOnly" [errorMessage]="i18n.translate('lenghtMin15Max1000')">
+      </app-textarea>
+    </div>
 
 
   </div>
@@ -307,7 +319,7 @@
     <div class="mt-4 mb-4">
       <!-- <app-checkbox></app-checkbox> -->
     </div>
-    
+
   </div>
 
 </div>

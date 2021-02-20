@@ -49,16 +49,19 @@
 
         <div class="mt-4 mx-4">
           <app-datepicker [field]="data?.startDate" name="startDate" [labelTextReadMode]="i18n.translate('startDate')"
-        [labelTextWriteMode]="i18n.translate('startDate')" [hasColumnBreak]="false" [required]="true"
-        [isReadOnly]="section?.header?.readOnly" (dateValue)="handleDateSelected(data , 'startDate' , $event)">
-       </app-datepicker>
+          [labelTextWriteMode]="i18n.translate('startDate')" [hasColumnBreak]="false" [required]="true"
+          [isReadOnly]="section?.header?.readOnly" (dateValue)="handleDateSelected(data , 'startDate' , $event)">
+         </app-datepicker>
 
-        <app-datepicker [field]="data?.endDate" name="endDate" [labelTextReadMode]="i18n.translate('endDate')"
-        [labelTextWriteMode]="i18n.translate('endDate')" [hasColumnBreak]="false" [required]="true"
-        [isReadOnly]="section?.header?.readOnly" (dateValue)="handleDateSelected(data  , 'endDate', $event)">
-       </app-datepicker>
+        
+
         </div>
-
+        <div class="mt-4 mx-4">
+          <app-datepicker [field]="data?.endDate" name="endDate" [labelTextReadMode]="i18n.translate('endDate')"
+          [labelTextWriteMode]="i18n.translate('endDate')" [hasColumnBreak]="false" [required]="true"
+          [isReadOnly]="section?.header?.readOnly" (dateValue)="handleDateSelected(data  , 'endDate', $event)">
+         </app-datepicker>
+         </div>
        <div class="row mt-4">
          <div class="col-6">
           <app-input-table [field]="data?.duration?.periodYears" name="periodYears"
@@ -75,7 +78,6 @@
        </div>
      
 
-     <div class="mt-4">
       <app-textarea [field]="data?.responsibilities" name="responsibilities"
       [labelTextReadMode]="i18n.translate('responsibilities')"
       [labelTextWriteMode]="i18n.translate('responsibilities')" [hasColumnBreak]="true" [required]="false"
@@ -83,7 +85,6 @@
       (enteredData)="handleTextInput('responsibilities', data , $event)"
       [errorMessage]="i18n.translate('lenghtMin15Max1000')">
     </app-textarea>
-     </div>
 
     <div class="mt-4" [hidden]="hidenationalAttch('attachment' , data)">
       <app-attachment [field]="data?.attachment" name="attachment" [hasColumnBreak]="true" [required]="true"
@@ -92,15 +93,12 @@
       </app-attachment>
     </div>
 
-    <div class="mt-4">
       <app-textarea [field]="data?.note" name="note" [labelTextReadMode]="i18n.translate('note')"
         [labelTextWriteMode]="i18n.translate('note')" [hasColumnBreak]="true" [required]="false" [minLength]='15'
         [maxlength]='1000' [isReadOnly]="section?.header?.readOnly"
         (enteredData)="handleTextInput('note', data , $event)" [errorMessage]="i18n.translate('lenghtMin15Max1000')">
       </app-textarea>
-    </div>
 
-    <div class="mt-4">
 
       <app-textarea [field]="data?.justification" name="justification"
         [labelTextReadMode]="i18n.translate('justification')" [labelTextWriteMode]="i18n.translate('justification')"
@@ -108,5 +106,4 @@
         [isReadOnly]="section?.header?.readOnly" (enteredData)="handleTextInput('justification', data , $event)"
         [errorMessage]="i18n.translate('lenghtMin15Max1000')">
       </app-textarea>
-    </div>
 </div>

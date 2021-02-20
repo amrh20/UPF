@@ -16,8 +16,10 @@
               <label class="popup-lable" *ngIf="hasLabel">{{labelTextWriteMode}}</label>
             </div>
              <div>
-              <select id="" (change)="onSelectElement($event)"  [ngClass]="rtlDir()" [required]="required">
-                <option class ="select-option" [ngValue]="null" [selected]="field?.key === null">{{i18n.translate('selectYourOption')}}</option>
+              <select id="" (change)="onSelectElement($event)"  
+                [ngClass]="rtlDir()" [required]="required">
+                <option class ="select-option" [ngValue]="null" 
+                [selected]="field?.key === null">{{i18n.translate('selectYourOption')}}</option>
                 <ng-template ngFor let-option [ngForOf]="lov?.options" let-i="index">
                   <option  *ngIf="parentValue === null || parentValue === undefined || option?.parentValue === parentValue"
                   [value]="option?.value"
@@ -29,14 +31,15 @@
              </div>
             <!-- </ng-template> -->
         </div>
-        <div *ngIf="disabled" #other_content class="row d-flex align-items-center">
+        <div *ngIf="disabled" #other_content class="">
 
             <!-- <ng-template #other_content> -->
             <!-- <label for="">{{labelTextWriteMode}}</label> -->
-            <div class="col-4" [ngClass]="rtlLabel()" *ngIf="hasLabel"><label for="" class="popup-lable">{{labelTextWriteMode}}</label></div>
+            <div  [ngClass]="rtlLabel()" *ngIf="hasLabel"><label for="" class="popup-lable">{{labelTextWriteMode}}</label></div>
+
             <div *ngIf="!required && hasLabel" class="col-xs-3" [ngClass]="rtlOptionalLabel()" class="col-4"><span class="optional">{{i18n.translate('optional')}}</span></div>
 
-            <select id="" (change)="onSelectElement($event)" [ngClass]="rtlDir()" class="form-control col-4" style="height: 34px;;"  [required]="required" disabled>
+            <select id="" (change)="onSelectElement($event)" [ngClass]="rtlDir()" class="form-control" style="height: 34px;;"  [required]="required" disabled>
       <option class ="select-option" [ngValue]="null" [selected]="field?.key === null">{{i18n.translate('selectYourOption')}}</option>
       <ng-template ngFor let-option [ngForOf]="lov?.options" let-i="index">
         <option  *ngIf="parentValue === null || parentValue === undefined || option?.parentValue === parentValue"

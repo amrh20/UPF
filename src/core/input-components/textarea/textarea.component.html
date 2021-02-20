@@ -1,4 +1,4 @@
-<div [ngClass]="formComponent()" class="p-2">
+<div [ngClass]="formComponent()" class="p-2 mt-4">
     <div *ngIf="isReadOnly;else other_content" [ngClass]="inputDisplay()">
         <label for="" *ngIf="field && hasLabel">{{labelTextReadMode}}</label>
         <div class="readOnly">{{field}}</div>

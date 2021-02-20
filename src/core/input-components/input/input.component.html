@@ -11,14 +11,18 @@
 
     <ng-template #other_content>
 
-        <div  [ngClass]="rtlLabel()" *ngIf="hasLabel">
-            <label for="" class="popup-lable">{{labelTextWriteMode}}</label>
-        </div>
+       
 
-        <div *ngIf="!required && hasLabel" class="col-xs-3" [ngClass]="rtlOptionalLabel()">
-            <span class="optional">{{i18n.translate('optional')}}</span>
-        </div>
 
+        <div class="d-flex justify-content-between align-items-center">
+            <div  [ngClass]="rtlLabel()" *ngIf="hasLabel">
+                <label for="" class="popup-lable">{{labelTextWriteMode}}</label>
+            </div>
+    
+            <div *ngIf="!required && hasLabel" [ngClass]="rtlOptionalLabel()">
+                <span class="optional">{{i18n.translate('optional')}}</span>
+            </div>
+        </div>
         <input *ngIf="disabled==false && !useCurrency " [ngClass]="validationBorder()" #input [type]="type" class="form-control" id="" ngModel={{field}} 
         (input)="onValueChange($event.target.value)" (focusout)="onValueChange($event.target.value)" 
         (blur)=InputValidations($event)

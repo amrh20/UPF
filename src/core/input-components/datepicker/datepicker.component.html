@@ -22,7 +22,7 @@
     </div>
 
 
-    <div class="input-group mb-4" [ngClass]="rtlDir()">
+    <div class="input-group" [ngClass]="rtlDir()">
 
       <input *ngIf="disabled == null || disabled == undefined  || disabled == false"  type="text" 
       [attr.fb-id]="name + '_date_field'" [value]="field | date :'dd/MM/yyyy'" class="form-control date-picker-input" placeholder="DD/MM/YYYY" (change)="updateDate($event)" (keyup)="validateInput($event)">
@@ -36,11 +36,10 @@
 
       <label *ngIf="disabled == null || disabled == undefined  || disabled == false" (click)="toggleCalendar($event)" 
       class="input-group-addon calendar" id="date-picker-label-fb">
-      <i class="fa fa-calendar" aria-hidden="true"></i>
+       <img src="../../../assets/images/calender.png" alt="">
     </label>
       <label *ngIf="disabled == true" disabled class="input-group-addon calendar" id="date-picker-label-fb">
-        <i  class="fa fa-calendar" aria-hidden="true"></i>
-      
+        <img src="../../../assets/images/calender.png" alt="">      
       </label>
     </div>
 

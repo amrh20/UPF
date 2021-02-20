@@ -51,7 +51,7 @@ input {
     }
   }
 
-  .reset-button {
+  .reset-svg {
     svg {
       path {
         fill: #1CCED8 !important;
@@ -155,10 +155,11 @@ mat-card {
   font-size: 14px;
   padding: 15px 12px 15px 25px;
   border-bottom: 2px solid #fff;
-  background-color: #F3F3F1;
+  background-color: $light-gray;
   label {
     font-size: 14px;
     font-weight: 500;
+    margin: 0;
   }
 }
 .custom-padding {
@@ -279,7 +280,7 @@ mat-card {
     }
   }
 
-  &.disabled {
+  &:disabled {
     background-color: $dark-gray !important;
     border: 2px solid $dark-gray !important;
     color: $white !important;
@@ -356,12 +357,12 @@ mat-card {
     }
   }
 
-  &.disabled {
+  &:disabled {
     background-color: $dark-gray !important;
     border: 2px solid $dark-gray !important;
     color: $white !important;
     opacity: 1 !important;
-
+    cursor: not-allowed;
     &:after {
       background-color: $dark-gray !important;
     }
@@ -418,6 +419,7 @@ input {
   min-height: 50px !important;
 }
 .form-control {
+  font-size: 14px;
   &:focus {
     border: 1px solid #E0E0E0 !important;
   }
@@ -759,4 +761,25 @@ mat-slide-toggle{
     background: $off-white2 !important;
   border: 0 !important;
   }
+}
+select {
+  color: #8E9AA0;
+  font-size: 14px;
+  font-weight: 400;
+  background-image: url('../../images/header_dropdown.png') !important;
+  -webkit-appearance: none; 
+  background-position-x: 98%!important;
+  background-repeat: no-repeat !important;
+  background-position-y: 50% !important;
+  &.disabled {
+    padding: 0 15px;
+  }
+}
+.form-control[disabled] {
+  border: 0 !important;
+  padding: 0 15px !important;
+}
+.date-picker-input {
+  color: #8E9AA0;
+  font-size: 14px;
 }
