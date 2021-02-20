@@ -962,3 +962,18 @@ $shadow: rgba(205, 210, 214, .8);
 .panel-body {
   padding: 10px !important;
 }
+.calendar {
+  select {
+    min-width: 100px;
+    background-position-x: 93% !important;
+  }
+}
+.form-date-picker.form-calendar-date .calendars-cmd-prev {
+  top: 25px !important;
+}
+.form-date-picker.form-calendar-date .calendars-cmd-next {
+  top: 25px !important;
+}
+.form-date-picker.form-calendar-date .calendars-month-header {
+  background-color: $primary-purple !important;
+}
