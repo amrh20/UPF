@@ -450,71 +450,71 @@
         </mat-card-header> -->
         <mat-card-content>
           <div class="row collapse-row">
-            <div class="col-6">
+            <div class="col-md-6">
               <span class="custom-label">
                 {{i18n.translate('costCenter')}} :
               </span>
             </div>
-            <div class="col-6">
+            <div class="col-md-6">
               <span class="custom-details">
                 {{section?.body?.details?.officeLocationSegment?.officeLocation?.costCenter}}
               </span>
             </div>
           </div>
           <div class="row collapse-row">
-            <div class="col-6">
+            <div class="col-md-6">
               <span class="custom-label">{{i18n.translate('region')}} :</span>
 
             </div>
-            <div class="col-6">
+            <div class="col-md-6">
               <span class="custom-details">
                 {{section?.body?.details?.officeLocationSegment?.officeLocation?.region}}
               </span>
             </div>
           </div>
           <div class="row collapse-row">
-            <div class="col-6">
+            <div class="col-md-6">
               <span class="custom-label">
                 {{i18n.translate('districts')}} :
               </span>
             </div>
-            <div class="col-6">
+            <div class="col-md-6">
               <span class="custom-details">
                 {{section?.body?.details?.officeLocationSegment?.officeLocation?.district}}
               </span>
             </div>
           </div>
           <div class="row collapse-row">
-            <div class="col-6">
+            <div class="col-md-6">
               <span class="custom-label">
                 {{i18n.translate('campus')}} :
               </span>
             </div>
-            <div class="col-6">
+            <div class="col-md-6">
               <span class="custom-details">
                 {{section?.body?.details?.officeLocationSegment?.officeLocation?.campus}}
               </span>
             </div>
           </div>
           <div class="row collapse-row">
-            <div class="col-6">
+            <div class="col-md-6">
               <span class="custom-label">
                 {{i18n.translate('building')}} :
               </span>
             </div>
-            <div class="col-6">
+            <div class="col-md-6">
               <span class="custom-details">
                 {{section?.body?.details?.officeLocationSegment?.officeLocation?.building}}
               </span>
             </div>
           </div>
           <div class="row collapse-row">
-            <div class="col-6">
+            <div class="col-md-6">
               <span class="custom-label">
                 {{i18n.translate('floor')}} :
               </span>
             </div>
-            <div class="col-6">
+            <div class="col-md-6">
               <span class="custom-details">
                 {{section?.body?.details?.officeLocationSegment?.officeLocation?.floor}}
               </span>
@@ -522,25 +522,25 @@
             </div>
           </div>
           <div class="row collapse-row">
-            <div class="col-6">
+            <div class="col-md-6">
               <span class="custom-label">
                 {{i18n.translate('officeNo')}} :
               </span>
 
             </div>
-            <div class="col-6">
+            <div class="col-md-6">
               <span class="custom-details">
                 {{section?.body?.details?.officeLocationSegment?.officeLocation?.officeNo}}
               </span>
             </div>
           </div>
           <div class="row collapse-row">
-            <div class="col-6">
+            <div class="col-md-6">
               <span class="custom-label">
                 {{i18n.translate('note')}} :
               </span>
             </div>
-            <div class="col-6">
+            <div class="col-md-6">
               <span class="custom-details">
                 {{section?.body?.details?.officeLocationSegment?.officeLocation?.note}}
               </span>
@@ -931,54 +931,54 @@
         <!-- <mat-card-header>
         </mat-card-header> -->
         <div class="row collapse-row">
-          <div class="col-6">
+          <div class="col-md-6">
             <span class="custom-label"> {{i18n.translate('bloodType')}} :</span>
 
           </div>
-          <div class="col-6">
+          <div class="col-md-6">
             <span
               class="custom-details">{{section?.body?.details?.medicalDetailsSegment?.medicalDetails?.bloodType?.value}}
             </span>
           </div>
         </div>
         <div class="row collapse-row">
-          <div class="col-6">
+          <div class="col-md-6">
             <span class="custom-label"> {{i18n.translate('weight')}} :</span>
 
           </div>
-          <div class="col-6">
+          <div class="col-md-6">
             <span
               class="custom-details">{{section?.body?.details?.medicalDetailsSegment?.medicalDetails?.weight}}</span>
           </div>
         </div>
         <div class="row collapse-row">
-          <div class="col-6">
+          <div class="col-md-6">
             <span class="custom-label"> {{i18n.translate('height')}} :</span>
 
           </div>
-          <div class="col-6">
+          <div class="col-md-6">
             <span
               class="custom-details">{{section?.body?.details?.medicalDetailsSegment?.medicalDetails?.height}}</span>
 
           </div>
         </div>
         <div class="row collapse-row">
-          <div class="col-6">
+          <div class="col-md-6">
             <span class="custom-label"> {{i18n.translate('smoker')}} :</span>
 
           </div>
-          <div class="col-6">
+          <div class="col-md-6">
             <span class="custom-details">
               {{section?.body?.details?.medicalDetailsSegment?.medicalDetails?.smoker?.value}}</span>
 
           </div>
         </div>
         <div class="row collapse-row">
-          <div class="col-6">
+          <div class="col-md-6">
             <span class="custom-label">{{i18n.translate('chronicDisease')}}:</span>
 
           </div>
-          <div class="col-6">
+          <div class="col-md-6">
             <span class="custom-details">
               {{section?.body?.details?.medicalDetailsSegment?.medicalDetails?.chronicDisease?.value}}</span>
 
@@ -986,11 +986,11 @@
         </div>
         <div class="row collapse-row"
           *ngIf="section?.body?.details?.medicalDetailsSegment?.medicalDetails?.chronicDisease?.key == 'Y' ">
-          <div class="col-6">
+          <div class="col-md-6">
             <span class="custom-label"> {{i18n.translate('chronicDiseaseType')}}:</span>
 
           </div>
-          <div class="col-6">
+          <div class="col-md-6">
             <span
               class="custom-details">{{section?.body?.details?.medicalDetailsSegment?.medicalDetails?.chronicDiseaseType?.value}}
             </span>
@@ -998,11 +998,11 @@
           </div>
         </div>
         <div class="row collapse-row">
-          <div class="col-6">
+          <div class="col-md-6">
             <span class="custom-label"> {{i18n.translate('disabilityFlag')}}:</span>
 
           </div>
-          <div class="col-6">
+          <div class="col-md-6">
             <span class="custom-details">
               {{section?.body?.details?.medicalDetailsSegment?.medicalDetails?.disabilityFlag?.value}}
             </span>
@@ -1010,13 +1010,13 @@
         </div>
         <div class="row collapse-row"
           *ngIf="section?.body?.details?.medicalDetailsSegment?.medicalDetails?.disabilityFlag?.key == 'Y' ">
-          <div class="col-6">
+          <div class="col-md-6">
             <span class="custom-label">
               {{i18n.translate('disabilityType')}}:
             </span>
 
           </div>
-          <div class="col-6">
+          <div class="col-md-6">
             <span class="custom-details">
               {{section?.body?.details?.medicalDetailsSegment?.medicalDetails?.disabilityType?.value}}
             </span>
@@ -1025,13 +1025,13 @@
         </div>
         <div class="row collapse-row"
           *ngIf="section?.body?.details?.medicalDetailsSegment?.medicalDetails?.disabilityFlag?.key == 'Y' ">
-          <div class="col-6">
+          <div class="col-md-6">
             <span class="custom-label">
               {{i18n.translate('medicalReport')}} :
             </span>
 
           </div>
-          <div class="col-6">
+          <div class="col-md-6">
             <app-attachment [hasLabel]="true"
               [field]="section?.body?.details?.medicalDetailsSegment?.medicalDetails?.medicalReport" name="attachment"
               [hasColumnBreak]="true" [required]="true" [isReadOnly]="true">
@@ -1040,13 +1040,13 @@
         </div>
         <div class="row collapse-row"
           *ngIf="section?.body?.details?.medicalDetailsSegment?.medicalDetails?.disabilityFlag?.key == 'Y' ">
-          <div class="col-6">
+          <div class="col-md-6">
             <span class="custom-label">
               {{i18n.translate('disabilityCard')}} :
             </span>
 
           </div>
-          <div class="col-6">
+          <div class="col-md-6">
             <app-attachment [hasLabel]="true"
               [field]="section?.body?.details?.medicalDetailsSegment?.medicalDetails?.disabilityCard" name="attachment"
               [hasColumnBreak]="true" [required]="true" [isReadOnly]="true">

@@ -7,8 +7,8 @@
     </app-input>
   </div>
 
-  <div class="row">
-    <div class="col-6">
+  <div class="row mx-2">
+    <div class="col-md-6">
       <app-select [field]="data?.country" name="country" [labelTextReadMode]="i18n.translate('country')"
         [labelTextWriteMode]="i18n.translate('country')" [hasColumnBreak]="false" [lov]="lov?.country" [required]="true"
         [isReadOnly]="section?.header?.readOnly" (selectedElement)="onSelectChange('country',data, $event)">
@@ -16,7 +16,7 @@
     </div>
     <!-- </div>
     <div class="row"> -->
-    <div class="col-6 mt-4">
+    <div class="col-md-6 mt-4">
       <app-input [field]="data?.city" name="city" [labelTextReadMode]="i18n.translate('city')"
         [labelTextWriteMode]="i18n.translate('city')" [hasColumnBreak]="false" [required]="true"
         [isReadOnly]="section?.header?.readOnly" (enteredData)="handleTextInput('city', data , $event)">
@@ -62,13 +62,13 @@
     </app-datepicker>
   </div>
   <div class="row mt-4">
-    <div class="col-6">
+    <div class="col-md-6">
       <app-input-table [field]="data?.duration?.periodYears" name="periodYears"
         [labelTextReadMode]="i18n.translate('periodYears')" [labelTextWriteMode]="i18n.translate('periodYears')"
         [hasColumnBreak]="false" [required]="true" [disabled]="true">
       </app-input-table>
     </div>
-    <div class="col-6">
+    <div class="col-md-6">
       <app-input-table [field]="data?.duration?.periodMonths" name="periodMonths"
         [labelTextReadMode]="i18n.translate('periodMonths')" [labelTextWriteMode]="i18n.translate('periodMonths')"
         [hasColumnBreak]="false" [required]="true" [disabled]="true">

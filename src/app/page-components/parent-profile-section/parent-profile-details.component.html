@@ -7,15 +7,15 @@
     </app-select>
   </div>
 
-  <div class="row mt-4">
-    <div class="col-6">
+  <div class="row mt-4 mx-2">
+    <div class="col-md-6">
       <app-input [field]="data?.firstNameEn" name="firstNameEn" [labelTextReadMode]="i18n.translate('firstNameEn')"
         [maxlength]="50" [labelTextWriteMode]="i18n.translate('firstNameEn')" [hasColumnBreak]="false"
         (enteredData)="handleTextInput('firstNameEn', data , $event)" enOnly [required]="true"
         [isReadOnly]="section?.header?.readOnly">
       </app-input>
     </div>
-    <div class="col-6">
+    <div class="col-md-6">
       <app-input [field]="data?.firstNameAr" name="firstNameAr" [labelTextReadMode]="i18n.translate('firstNameAr')"
         [maxlength]="50" [labelTextWriteMode]="i18n.translate('firstNameAr')" [hasColumnBreak]="false"
         (enteredData)="handleTextInput('firstNameAr', data , $event)" arOnly [required]="true"
@@ -24,15 +24,15 @@
     </div>
   </div>
 
-  <div class="row mt-4">
-    <div class="col-6">
+  <div class="row mt-4 mx-2">
+    <div class="col-md-6">
       <app-input [field]="data?.fatherNameEn" name="fatherNameEn" [labelTextReadMode]="i18n.translate('fatherNameEn')"
         [maxlength]="50" [labelTextWriteMode]="i18n.translate('fatherNameEn')" [hasColumnBreak]="false"
         (enteredData)="handleTextInput('fatherNameEn', data , $event)" enOnly [required]="false"
         [isReadOnly]="section?.header?.readOnly">
       </app-input>
     </div>
-    <div class="col-6">
+    <div class="col-md-6">
       <app-input [field]="data?.fatherNameAr" name="fatherNameAr" [labelTextReadMode]="i18n.translate('fatherNameAr')"
         [maxlength]="50" [labelTextWriteMode]="i18n.translate('fatherNameAr')" [hasColumnBreak]="false"
         (enteredData)="handleTextInput('fatherNameAr', data , $event)" arOnly [required]="false"
@@ -41,8 +41,8 @@
     </div>
   </div>
 
-  <div class="row mt-4">
-    <div class="col-6">
+  <div class="row mt-4 mx-2">
+    <div class="col-md-6">
       <app-input [field]="data?.grandFatherNameEn" name="grandFatherNameEn"
         [labelTextReadMode]="i18n.translate('grandFatherNameEn')" [maxlength]="50"
         [labelTextWriteMode]="i18n.translate('grandFatherNameEn')" [hasColumnBreak]="false"
@@ -50,7 +50,7 @@
         [isReadOnly]="section?.header?.readOnly">
       </app-input>
     </div>
-    <div class="col-6">
+    <div class="col-md-6">
       <app-input [field]="data?.grandFatherNameAr" name="grandFatherNameAr"
         [labelTextReadMode]="i18n.translate('grandFatherNameAr')" [maxlength]="50"
         [labelTextWriteMode]="i18n.translate('grandFatherNameAr')" [hasColumnBreak]="false"
@@ -60,15 +60,15 @@
     </div>
   </div>
 
-  <div class="row mt-4">
-    <div class="col-6">
+  <div class="row mt-4 mx-2">
+    <div class="col-md-6">
       <app-input [field]="data?.familyNameEn" name="familyNameEn" [labelTextReadMode]="i18n.translate('familyNameEn')"
         [maxlength]="50" [labelTextWriteMode]="i18n.translate('familyNameEn')" [hasColumnBreak]="false"
         (enteredData)="handleTextInput('familyNameEn', data , $event)" enOnly [required]="true"
         [isReadOnly]="section?.header?.readOnly">
       </app-input>
     </div>
-    <div class="col-6">
+    <div class="col-md-6">
       <app-input [field]="data?.familyNameAr" name="familyNameAr" [labelTextReadMode]="i18n.translate('familyNameAr')"
         [maxlength]="50" [labelTextWriteMode]="i18n.translate('familyNameAr')" [hasColumnBreak]="false"
         (enteredData)="handleTextInput('familyNameAr', data , $event)" arOnly [required]="true"

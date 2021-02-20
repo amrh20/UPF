@@ -3,7 +3,7 @@
     <div class="col-6">
       <label *ngIf="isReadOnly && labelTextReadMode && hasLabel" class="custom-label">{{labelTextReadMode}}</label>
     </div>
-    <div  *ngIf="isReadOnly;else other_content"  class="custom-details col-6">
+    <div  *ngIf="isReadOnly;else other_content"  class="custom-details col-md-6">
       {{field | date :'dd/MM/yyyy'}}
     </div>
   </div>
