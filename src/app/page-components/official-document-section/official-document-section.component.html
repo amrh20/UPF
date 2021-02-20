@@ -208,11 +208,11 @@ section?.body?.details?.officialDocumentSegment?.officialDocument?.length >= 0">
         <div class="modal-body">
           <app-official-document-popup [section]="section" [lov]="lov"></app-official-document-popup>
         </div>
-        <div class="modal-footer d-flex justify-content-center">
+        <div class="modal-footer d-flex justify-content-center mb-4">
           <button class="btn-secondary" data-dismiss="modal" aria-label="Close"
             *ngIf="(this.officialDocumentType != 'editofficialDocumentSegment' )"
             (click)="close()"><span>Discard</span></button>
-          <button class="btn-secondary mx-3" data-dismiss="modal" aria-label="Close" [disabled]="!formisvalid()"
+          <button class="btn-secondary mx-5" data-dismiss="modal" aria-label="Close" [disabled]="!formisvalid()"
             (click)="update()"><span>Update</span></button>
         </div>
       </div>
