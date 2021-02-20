@@ -1,13 +1,15 @@
 <div class="panel-body">
 
-
+     <div>
+       
       <app-select [field]="data?.documentType" name="documentType" [labelTextReadMode]="i18n.translate('documentType')"
-        [labelTextWriteMode]="i18n.translate('documentType')" [hasColumnBreak]="true" [lov]="lov?.documentType"
-        [required]="true" [isReadOnly]="section?.header?.readOnly"
-        (selectedElement)="onSelectChange('documentType',data, $event)">
-      </app-select>
+      [labelTextWriteMode]="i18n.translate('documentType')" [hasColumnBreak]="true" [lov]="lov?.documentType"
+      [required]="true" [isReadOnly]="section?.header?.readOnly"
+      (selectedElement)="onSelectChange('documentType',data, $event)">
+    </app-select>
+     </div>
 
-    <div class="mt-4 mx-1">
+    <div class="mt-4">
       <app-input [field]="data?.documentNumber" name="documentNumber"
         [labelTextReadMode]="i18n.translate('documentNumber')" [labelTextWriteMode]="i18n.translate('documentNumber')"
         [hasColumnBreak]="true" [required]="true" [isReadOnly]="section?.header?.readOnly"
@@ -24,7 +26,7 @@
      
     </div>
 
-    <div class="mt-4 mx-3">
+    <div class="mt-4">
       <app-datepicker [field]="data?.issueDate" name="issueDate" [labelTextReadMode]="i18n.translate('issueDate')"
       [labelTextWriteMode]="i18n.translate('issueDate')" [hasColumnBreak]="true"
       (dateValue)="handleDateSelected(data , 'issueDate' , $event)" [required]="false"
@@ -32,7 +34,7 @@
     </app-datepicker>
     </div>
 
-    <div class="mt-4 mx-3">
+    <div class="mt-4">
       <app-datepicker [field]="data?.expiryDate" name="expiryDate" [labelTextReadMode]="i18n.translate('expiryDate')"
         [labelTextWriteMode]="i18n.translate('expiryDate')" [hasColumnBreak]="true"
         (dateValue)="handleDateSelected(data , 'expiryDate' , $event)" [required]="false"

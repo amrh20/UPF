@@ -186,7 +186,7 @@
     </div>
 
 
-    <div class="mx-4 mt-4">
+    <div class="mx-2 mt-4">
       <app-datepicker [field]="data.certificateDate" name="certificateDate"
         [labelTextReadMode]="i18n.translate('certificateDate')" [labelTextWriteMode]="i18n.translate('certificateDate')"
         [hasColumnBreak]="false" [required]="true" (dateValue)="handleDateSelected(data , 'certificateDate' , $event)"
@@ -195,7 +195,7 @@
 
       
     </div>
-   <div class="mx-4 mt-4">
+   <div class="mx-2 mt-4">
     <app-datepicker [field]="data.expiryDate" name="expiryDate" [labelTextReadMode]="i18n.translate('expiryDate')"
     [labelTextWriteMode]="i18n.translate('expiryDate')" [hasColumnBreak]="false" [required]="true"
     (dateValue)="handleDateSelected(data , 'expiryDate' , $event)" [isReadOnly]="section?.header?.readOnly">

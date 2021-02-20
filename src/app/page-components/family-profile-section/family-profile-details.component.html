@@ -1,6 +1,6 @@
 <div class="panel-body" [hidden]="data?.minimize">
 
-    <div class="mx-2">
+    <div class="col-12">
       <app-select [field]="data?.title" name="title" [labelTextReadMode]="i18n.translate('title')"
       [labelTextWriteMode]="i18n.translate('title')" [hasColumnBreak]="true" [lov]="lov?.title" [required]="true"
       [isReadOnly]="section?.header?.readOnly" (selectedElement)="onSelectChange('title', data ,  $event)">
@@ -106,7 +106,7 @@
 
 
  
-      <div class="mx-2">
+      <div class="col-12">
         <app-select [disabled]="checkIfImportFromElmFamilyProfile(data)" [field]="data?.nationality" name="nationality"
       [labelTextReadMode]="i18n.translate('nationality')" [labelTextWriteMode]="i18n.translate('nationality')"
       [hasColumnBreak]="true" [lov]="lov?.nationality" [required]="true" [isReadOnly]="section?.header?.readOnly"
@@ -121,7 +121,7 @@
     </app-checkbox>
   </div>
 
-  <div class="mx-2">
+  <div class="col-12">
     <app-input *ngIf="data?.newToSaudi == 'true'" [labelTextReadMode]="i18n.translate('borderBirthNumber')"
       [labelTextWriteMode]="i18n.translate('borderBirthNumber')" [hasColumnBreak]="true"
       (enteredData)="handleTextInput('borderBirthNumber', data , $event)" [required]="true"
@@ -129,7 +129,7 @@
     </app-input>
   </div>
 
-    <div class="mx-2">
+    <div class="col-12">
       <app-select [field]="data?.maritalStatus" name="maritalStatus" [labelTextReadMode]="i18n.translate('maritalStatus')"
       [labelTextWriteMode]="i18n.translate('maritalStatus')" [hasColumnBreak]="true" [lov]="lov?.maritalStatus"
       [required]="true" [isReadOnly]="section?.header?.readOnly"
@@ -168,7 +168,7 @@
     </div>
   </div>
 
-   <div class="mx-2">
+   <div class="col-12">
     <app-select [field]="data?.disabilityFlag" name="disabilityFlag"
     [labelTextReadMode]="i18n.translate('disabilityFlag')" [labelTextWriteMode]="i18n.translate('disabilityFlag')"
     [hasColumnBreak]="true" [lov]="lov?.yesNo" [required]="true" [isReadOnly]="section?.header?.readOnly"
@@ -201,7 +201,7 @@
 
   </div>
 
-   <div class="mx-2">
+   <div class="col-12">
     <app-select [disabled]="checkIfImportFromElmFamilyProfile(data)" [field]="data?.gender" name="gender"
     [labelTextReadMode]="i18n.translate('gender')" [labelTextWriteMode]="i18n.translate('gender')"
     [hasColumnBreak]="false" [lov]="lov?.gender" [required]="true" [isReadOnly]="section?.header?.readOnly"
@@ -210,15 +210,15 @@
    </div>
     <!-- </div>
   <div class="row"> -->
-    <div class="mx-2">
+    <div class="col-12">
       <app-select [field]="data?.relationship" name="relationship" [labelTextReadMode]="i18n.translate('relationship')"
       [labelTextWriteMode]="i18n.translate('relationship')" [hasColumnBreak]="false" [lov]="lov?.relationship"
       [required]="true" [isReadOnly]="section?.header?.readOnly"
       (selectedElement)="onSelectChange('relationship', data, $event)">
     </app-select>
     </div>
-   
-    <div class="mx-2">
+
+    <div class="col-12">
       <app-select [field]="data?.chronicDisease" name="chronicDisease"
       [labelTextReadMode]="i18n.translate('chronicDisease')" [labelTextWriteMode]="i18n.translate('chronicDisease')"
       [hasColumnBreak]="true" [lov]="lov?.yesNo" [required]="true" [isReadOnly]="section?.header?.readOnly"
@@ -234,14 +234,14 @@
     </app-select>
   </div>
 
-    <div class="mx-2">
+    <div class="col-12">
       <app-select [field]="data?.working" name="working" [labelTextReadMode]="i18n.translate('working')"
       [labelTextWriteMode]="i18n.translate('working')" [hasColumnBreak]="false" [lov]="lov?.yesNo" [required]="true"
       [isReadOnly]="section?.header?.readOnly" (selectedElement)="onSelectChange('working', data, $event)">
     </app-select>
     </div>
    
-    <div class="mx-2">
+    <div class="col-12">
       <app-select [field]="data?.noNeedMedical" name="noNeedMedical" [labelTextReadMode]="i18n.translate('noNeedMedical')"
       [labelTextWriteMode]="i18n.translate('noNeedMedical')" [hasColumnBreak]="false" [lov]="lov?.yesNo"
       [required]="true" [isReadOnly]="section?.header?.readOnly"
@@ -258,7 +258,7 @@
     </app-attachment>
   </div>
 
-  <div class="mx-2">
+  <div class="col-12">
     <app-select [field]="data?.justification" name="justification" [labelTextReadMode]="i18n.translate('justification')"
     [labelTextWriteMode]="i18n.translate('justification')" [hasColumnBreak]="true" [lov]="lov?.updateJustification"
     [required]="true" [isReadOnly]="section?.header?.readOnly"
@@ -289,7 +289,7 @@
       [isReadOnly]="section?.header?.readOnly" (AttachmentValue)="handleAttachment('familyCard', data, $event)">
     </app-attachment>
 
-    <div>
+    <div class="col-12">
       <app-textarea [field]="data?.note" name="note" [labelTextReadMode]="i18n.translate('note')"
       [labelTextWriteMode]="i18n.translate('note')" [hasColumnBreak]="true" [required]="true" [minLength]='15'
       [maxlength]='1000' [isReadOnly]="section?.header?.readOnly" (enteredData)="handleTextInput('note', data , $event)"

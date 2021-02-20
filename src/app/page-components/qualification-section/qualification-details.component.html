@@ -1,7 +1,7 @@
 <div class="panel-body">
 
 
-      <div class="row" style="margin-left: -13px;">
+      <div class="row mx-1" style="margin-left: -13px;">
         <div class="col-6">
           <app-select [field]="data?.educationLevel" name="educationLevel"
         [labelTextReadMode]="i18n.translate('educationLevel')" [labelTextWriteMode]="i18n.translate('educationLevel')"
@@ -58,7 +58,6 @@
        </div>
      
 
-    
 
     <div class="mt-4 mx-4">
         <app-datepicker [field]="data?.startDate" name="startDate" [labelTextReadMode]="i18n.translate('startDate')"
@@ -91,7 +90,7 @@
 
 
 
-    <div class="mt-4" [hidden]="hidenationalAttch('certificate' , data)">
+    <div class="row w-100" [hidden]="hidenationalAttch('certificate' , data)">
       <app-attachment [field]="data?.certificate" name="certificate" [hasColumnBreak]="true" [required]="true"
         [labelTextReadMode]="i18n.translate('certificate')" [labelTextWriteMode]="i18n.translate('certificate')"
         [isReadOnly]="section?.header?.readOnly" (AttachmentValue)="handleAttachment('certificate', data, $event)">

@@ -1,109 +1,113 @@
 <div class="panel-body">
-      
-     <div class="mx-2">
-      <app-input [field]="data?.jobTitle" name="jobTitle" [labelTextReadMode]="i18n.translate('jobTitle')"
+
+  <div class="col-12">
+    <app-input [field]="data?.jobTitle" name="jobTitle" [labelTextReadMode]="i18n.translate('jobTitle')"
       [labelTextWriteMode]="i18n.translate('jobTitle')" [hasColumnBreak]="true" [required]="true"
       [isReadOnly]="section?.header?.readOnly" (enteredData)="handleTextInput('jobTitle', data , $event)">
     </app-input>
-     </div>
+  </div>
 
-    <div class="row">
-      <div class="col-6">
-        <app-select [field]="data?.country" name="country" [labelTextReadMode]="i18n.translate('country')"
+  <div class="row">
+    <div class="col-6">
+      <app-select [field]="data?.country" name="country" [labelTextReadMode]="i18n.translate('country')"
         [labelTextWriteMode]="i18n.translate('country')" [hasColumnBreak]="false" [lov]="lov?.country" [required]="true"
         [isReadOnly]="section?.header?.readOnly" (selectedElement)="onSelectChange('country',data, $event)">
       </app-select>
-      </div>
-      <!-- </div>
+    </div>
+    <!-- </div>
     <div class="row"> -->
-      <div class="col-6 mt-4">
-        <app-input [field]="data?.city" name="city" [labelTextReadMode]="i18n.translate('city')"
+    <div class="col-6 mt-4">
+      <app-input [field]="data?.city" name="city" [labelTextReadMode]="i18n.translate('city')"
         [labelTextWriteMode]="i18n.translate('city')" [hasColumnBreak]="false" [required]="true"
         [isReadOnly]="section?.header?.readOnly" (enteredData)="handleTextInput('city', data , $event)">
       </app-input>
-      </div>
     </div>
+  </div>
 
-      <div class="mt-4 mx-2">
-        <app-input [field]="data?.companyName" name="companyName" [labelTextReadMode]="i18n.translate('companyName')"
-        [labelTextWriteMode]="i18n.translate('companyName')" [hasColumnBreak]="true" [required]="true"
-        [isReadOnly]="section?.header?.readOnly" (enteredData)="handleTextInput('companyName', data , $event)">
-      </app-input>
-      </div>
+  <div class="mt-4 col-12">
+    <app-input [field]="data?.companyName" name="companyName" [labelTextReadMode]="i18n.translate('companyName')"
+      [labelTextWriteMode]="i18n.translate('companyName')" [hasColumnBreak]="true" [required]="true"
+      [isReadOnly]="section?.header?.readOnly" (enteredData)="handleTextInput('companyName', data , $event)">
+    </app-input>
+  </div>
 
-      <div class="mx-2">
-        <app-select [field]="data?.jobField" name="jobField" [labelTextReadMode]="i18n.translate('jobField')"
-        [labelTextWriteMode]="i18n.translate('jobField')" [hasColumnBreak]="true" [lov]="lov?.jobField"
-        [required]="true" [isReadOnly]="section?.header?.readOnly"
-        (selectedElement)="onSelectChange('jobField',data, $event)">
-      </app-select>
-      </div>
+  <div class="col-12">
+    <app-select [field]="data?.jobField" name="jobField" [labelTextReadMode]="i18n.translate('jobField')"
+      [labelTextWriteMode]="i18n.translate('jobField')" [hasColumnBreak]="true" [lov]="lov?.jobField" [required]="true"
+      [isReadOnly]="section?.header?.readOnly" (selectedElement)="onSelectChange('jobField',data, $event)">
+    </app-select>
+  </div>
 
-        <div class="mx-2">
-          <app-select [field]="data?.companySector" name="companySector"
-          [labelTextReadMode]="i18n.translate('companySector')" [labelTextWriteMode]="i18n.translate('companySector')"
-          [hasColumnBreak]="true" [lov]="lov?.companySector" [required]="true" [isReadOnly]="section?.header?.readOnly"
-          (selectedElement)="onSelectChange('companySector',data, $event)">
-        </app-select>
-        </div>
+  <div class="col-12">
+    <app-select [field]="data?.companySector" name="companySector" [labelTextReadMode]="i18n.translate('companySector')"
+      [labelTextWriteMode]="i18n.translate('companySector')" [hasColumnBreak]="true" [lov]="lov?.companySector"
+      [required]="true" [isReadOnly]="section?.header?.readOnly"
+      (selectedElement)="onSelectChange('companySector',data, $event)">
+    </app-select>
+  </div>
 
-        <div class="mt-4 mx-4">
-          <app-datepicker [field]="data?.startDate" name="startDate" [labelTextReadMode]="i18n.translate('startDate')"
-          [labelTextWriteMode]="i18n.translate('startDate')" [hasColumnBreak]="false" [required]="true"
-          [isReadOnly]="section?.header?.readOnly" (dateValue)="handleDateSelected(data , 'startDate' , $event)">
-         </app-datepicker>
+  <div class="mt-4 mx-4">
+    <app-datepicker [field]="data?.startDate" name="startDate" [labelTextReadMode]="i18n.translate('startDate')"
+      [labelTextWriteMode]="i18n.translate('startDate')" [hasColumnBreak]="false" [required]="true"
+      [isReadOnly]="section?.header?.readOnly" (dateValue)="handleDateSelected(data , 'startDate' , $event)">
+    </app-datepicker>
 
-        
 
-        </div>
-        <div class="mt-4 mx-4">
-          <app-datepicker [field]="data?.endDate" name="endDate" [labelTextReadMode]="i18n.translate('endDate')"
-          [labelTextWriteMode]="i18n.translate('endDate')" [hasColumnBreak]="false" [required]="true"
-          [isReadOnly]="section?.header?.readOnly" (dateValue)="handleDateSelected(data  , 'endDate', $event)">
-         </app-datepicker>
-         </div>
-       <div class="row mt-4">
-         <div class="col-6">
-          <app-input-table [field]="data?.duration?.periodYears" name="periodYears"
-          [labelTextReadMode]="i18n.translate('periodYears')" [labelTextWriteMode]="i18n.translate('periodYears')"
-          [hasColumnBreak]="false" [required]="true" [disabled]="true">
-        </app-input-table>
-         </div>
-        <div class="col-6">
-          <app-input-table [field]="data?.duration?.periodMonths" name="periodMonths"
-          [labelTextReadMode]="i18n.translate('periodMonths')" [labelTextWriteMode]="i18n.translate('periodMonths')"
-          [hasColumnBreak]="false" [required]="true" [disabled]="true">
-        </app-input-table>
-        </div>
-       </div>
-     
 
-      <app-textarea [field]="data?.responsibilities" name="responsibilities"
-      [labelTextReadMode]="i18n.translate('responsibilities')"
-      [labelTextWriteMode]="i18n.translate('responsibilities')" [hasColumnBreak]="true" [required]="false"
-      [minLength]='15' [maxlength]='1000' [isReadOnly]="section?.header?.readOnly"
-      (enteredData)="handleTextInput('responsibilities', data , $event)"
+  </div>
+  <div class="mt-4 mx-4">
+    <app-datepicker [field]="data?.endDate" name="endDate" [labelTextReadMode]="i18n.translate('endDate')"
+      [labelTextWriteMode]="i18n.translate('endDate')" [hasColumnBreak]="false" [required]="true"
+      [isReadOnly]="section?.header?.readOnly" (dateValue)="handleDateSelected(data  , 'endDate', $event)">
+    </app-datepicker>
+  </div>
+  <div class="row mt-4">
+    <div class="col-6">
+      <app-input-table [field]="data?.duration?.periodYears" name="periodYears"
+        [labelTextReadMode]="i18n.translate('periodYears')" [labelTextWriteMode]="i18n.translate('periodYears')"
+        [hasColumnBreak]="false" [required]="true" [disabled]="true">
+      </app-input-table>
+    </div>
+    <div class="col-6">
+      <app-input-table [field]="data?.duration?.periodMonths" name="periodMonths"
+        [labelTextReadMode]="i18n.translate('periodMonths')" [labelTextWriteMode]="i18n.translate('periodMonths')"
+        [hasColumnBreak]="false" [required]="true" [disabled]="true">
+      </app-input-table>
+    </div>
+  </div>
+
+
+  <div class="mx-3">
+    <app-textarea [field]="data?.responsibilities" name="responsibilities"
+      [labelTextReadMode]="i18n.translate('responsibilities')" [labelTextWriteMode]="i18n.translate('responsibilities')"
+      [hasColumnBreak]="true" [required]="false" [minLength]='15' [maxlength]='1000'
+      [isReadOnly]="section?.header?.readOnly" (enteredData)="handleTextInput('responsibilities', data , $event)"
       [errorMessage]="i18n.translate('lenghtMin15Max1000')">
     </app-textarea>
+  </div>
 
-    <div class="mt-4" [hidden]="hidenationalAttch('attachment' , data)">
-      <app-attachment [field]="data?.attachment" name="attachment" [hasColumnBreak]="true" [required]="true"
-        [labelTextReadMode]="i18n.translate('attachment')" [labelTextWriteMode]="i18n.translate('attachment')"
-        [isReadOnly]="section?.header?.readOnly" (AttachmentValue)="handleAttachment('attachment', data, $event)">
-      </app-attachment>
-    </div>
+  <div class="mt-4" [hidden]="hidenationalAttch('attachment' , data)">
+    <app-attachment [field]="data?.attachment" name="attachment" [hasColumnBreak]="true" [required]="true"
+      [labelTextReadMode]="i18n.translate('attachment')" [labelTextWriteMode]="i18n.translate('attachment')"
+      [isReadOnly]="section?.header?.readOnly" (AttachmentValue)="handleAttachment('attachment', data, $event)">
+    </app-attachment>
+  </div>
 
-      <app-textarea [field]="data?.note" name="note" [labelTextReadMode]="i18n.translate('note')"
-        [labelTextWriteMode]="i18n.translate('note')" [hasColumnBreak]="true" [required]="false" [minLength]='15'
-        [maxlength]='1000' [isReadOnly]="section?.header?.readOnly"
-        (enteredData)="handleTextInput('note', data , $event)" [errorMessage]="i18n.translate('lenghtMin15Max1000')">
-      </app-textarea>
+  <div class="mx-3">
+    <app-textarea [field]="data?.note" name="note" [labelTextReadMode]="i18n.translate('note')"
+      [labelTextWriteMode]="i18n.translate('note')" [hasColumnBreak]="true" [required]="false" [minLength]='15'
+      [maxlength]='1000' [isReadOnly]="section?.header?.readOnly" (enteredData)="handleTextInput('note', data , $event)"
+      [errorMessage]="i18n.translate('lenghtMin15Max1000')">
+    </app-textarea>
+  </div>
 
+  <div class="mx-3">
 
-      <app-textarea [field]="data?.justification" name="justification"
-        [labelTextReadMode]="i18n.translate('justification')" [labelTextWriteMode]="i18n.translate('justification')"
-        [hasColumnBreak]="true" [required]="false" [minLength]='15' [maxlength]='1000'
-        [isReadOnly]="section?.header?.readOnly" (enteredData)="handleTextInput('justification', data , $event)"
-        [errorMessage]="i18n.translate('lenghtMin15Max1000')">
-      </app-textarea>
+    <app-textarea [field]="data?.justification" name="justification"
+      [labelTextReadMode]="i18n.translate('justification')" [labelTextWriteMode]="i18n.translate('justification')"
+      [hasColumnBreak]="true" [required]="false" [minLength]='15' [maxlength]='1000'
+      [isReadOnly]="section?.header?.readOnly" (enteredData)="handleTextInput('justification', data , $event)"
+      [errorMessage]="i18n.translate('lenghtMin15Max1000')">
+    </app-textarea>
+  </div>
 </div>
