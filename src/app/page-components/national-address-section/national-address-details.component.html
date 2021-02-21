@@ -1,6 +1,6 @@
 <div class="panel-body">
 
-  <div  [hidden]="hidenational('buildingNumber' , data)" class="mx-2">
+  <div  [hidden]="hidenational('buildingNumber' , data)" class="mx-2 mt-4">
     <app-input [field]="data?.buildingNumber" name="buildingNumber"
       [labelTextReadMode]="i18n.translate('buildingNumber')" [labelTextWriteMode]="i18n.translate('buildingNumber')"
       [hasColumnBreak]="true" [required]="true" [isReadOnly]="section?.header?.readOnly"

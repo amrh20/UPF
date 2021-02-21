@@ -1,4 +1,7 @@
 @import "../../stylesheets/scss/bootstrap/variables";
+// body,html {
+//   direction: rtl;
+// }
 
 .reset-button {
   border: 0;
@@ -94,6 +97,7 @@ input {
   color: #000 !important;
   font-size: 26px;
   margin: 0 !important;
+  
 }
 
 .mat-expansion-panel-header-title {
@@ -985,6 +989,10 @@ $shadow: rgba(205, 210, 214, .8);
     }
   }
 }
+.modal-header .close {
+  margin: 0;
+  padding: 0;
+}
 .panel-body {
   padding: 10px !important;
 }
@@ -1003,3 +1011,43 @@ $shadow: rgba(205, 210, 214, .8);
 .form-date-picker.form-calendar-date .calendars-month-header {
   background-color: $primary-purple !important;
 }
+.action-button-style {
+  display: flex;
+  justify-content: flex-end;
+}
+.modal-header:before, .modal-header:after {
+  display: none;
+}
+.ar-dir-rtl {
+  text-align: right;
+  .titleForm h2 {
+    text-align: right;
+  }
+  .tooltip-wrapper__item {
+    left: -70px;
+  }
+  .tooltip-wrapper .tooltip-wrapper__item:after {
+    right: 9%;
+  }
+  .family-relation {
+    margin-right: 20px;
+    margin-left: 0;
+  }
+  .action-button-style {
+    justify-content: start;
+  }
+  select {
+    background-position-x: 2% !important;
+  }
+  input {
+    padding-right: 15px;
+  }
+  .edit-button {
+    margin-left: 20px;
+  }
+  .desktopButtons button {
+    margin-left: 30px;
+    margin-right: 0;
+  }
+}
+

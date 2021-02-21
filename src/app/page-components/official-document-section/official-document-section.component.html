@@ -161,7 +161,7 @@ section?.body?.details?.officialDocumentSegment?.officialDocument?.length >= 0">
     </mat-card>
 
   </div>
-  <div style="position: relative;top: 11px;text-align: end;"
+  <div class="action-button-style"
     *ngIf="(section?.body?.details?.officialDocumentSegment?.isUpdated =='true')">
     <button class="btn-primary tableButtonPad px-5 m-3" id="itemDetails" data-backdrop="static" data-keyboard="false"
       (click)="openPopUp('officialDocumentSegment')" data-toggle="modal" data-target="#officialDocumentPopup">
@@ -190,6 +190,7 @@ section?.body?.details?.officialDocumentSegment?.officialDocument?.length >= 0">
           <div class="mx-2">
             <h4 class="center modal-title orgchart">{{i18n.translate('officialDocumentSegment')}}</h4>
           </div>
+         <div>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true" (click)="close()">
               <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35">
@@ -203,6 +204,7 @@ section?.body?.details?.officialDocumentSegment?.officialDocument?.length >= 0">
               </svg>
             </span>
           </button>
+         </div>
 
         </div>
         <div class="modal-body">

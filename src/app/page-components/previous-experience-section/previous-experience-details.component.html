@@ -61,7 +61,7 @@
       [isReadOnly]="section?.header?.readOnly" (dateValue)="handleDateSelected(data  , 'endDate', $event)">
     </app-datepicker>
   </div>
-  <div class="row mt-4">
+  <div class="row mt-4 mx-2">
     <div class="col-md-6">
       <app-input-table [field]="data?.duration?.periodYears" name="periodYears"
         [labelTextReadMode]="i18n.translate('periodYears')" [labelTextWriteMode]="i18n.translate('periodYears')"

@@ -4,7 +4,9 @@
 
 }
 
-
+body {
+    text-align: left;
+}
 
 .panel-heading .arrow i {
     color: #4F008C !important;

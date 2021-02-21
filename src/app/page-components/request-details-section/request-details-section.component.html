@@ -186,7 +186,7 @@
     </div>
     <div *ngIf="section?.body?.details?.originalAddressSegment && section?.body?.details?.originalAddressSegment?.originalAddress &&
                          section?.body?.details?.originalAddressSegment?.originalAddress.length == 0"
-      style="position: relative;top: 11px;text-align: end;">
+                         class="action-button-style">
       <button class="btn-primary tableButtonPad px-5 m-3" id="itemDetails" data-backdrop="static" data-keyboard="false"
         (click)="openPopUp('originalAddressSegment')" data-toggle="modal" data-target="#exampleModal3">
 
@@ -355,7 +355,7 @@
     </div>
     <div *ngIf="section?.body?.details?.contactInformationSegment && section?.body?.details?.contactInformationSegment?.contactInformation &&
           section?.body?.details?.contactInformationSegment?.contactInformation?.length >= 0"
-      style="position: relative;top: 11px;text-align: end;">
+          class="action-button-style">
 
       <button class="btn-primary tableButtonPad px-3 m-3" id="itemDetails" data-backdrop="static" data-keyboard="false"
         (click)="openPopUp('contactInformationSegment')" data-toggle="modal" data-target="#exampleModal3">
@@ -551,7 +551,7 @@
     </div>
     <div
       *ngIf="!(section?.body?.details?.officeLocationSegment && section?.body?.details?.officeLocationSegment?.officeLocation)"
-      style="position: relative;top: 11px;text-align: end;">
+      class="action-button-style">
       <button class="btn-primary tableButtonPad px-5 m-3" id="itemDetails" data-backdrop="static" data-keyboard="false"
         (click)="openPopUp('officeLocationSegment')" data-toggle="modal" data-target="#exampleModal3">
 
@@ -1057,7 +1057,7 @@
     </mat-card>
     <div
       *ngIf="!(section?.body?.details?.medicalDetailsSegment && section?.body?.details?.medicalDetailsSegment?.medicalDetails)"
-      style="position: relative;top: 11px;text-align: end;">
+      class="action-button-style">
 
       <button class="btn-primary tableButtonPad px-5 m-3" id="itemDetails" data-backdrop="static" data-keyboard="false"
         (click)="openPopUp('medicalDetailsSegment')" data-toggle="modal" data-target="#exampleModal3">
@@ -1101,20 +1101,22 @@
             <div class="mx-2">
               <h4 class="center modal-title orgchart">{{popupLabel}}</h4>
             </div>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true" (click)="close()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35">
-                  <g id="Group_16490" data-name="Group 16490" transform="translate(-724.833 -20)">
-                    <rect id="Rectangle_2209" data-name="Rectangle 2209" width="35" height="35"
-                      transform="translate(724.833 20)" fill="#f3f3f1" />
-                    <path id="Icon_ionic-ios-close" data-name="Icon ionic-ios-close"
-                      d="M21.179,19.285l5.713-5.713A1.339,1.339,0,0,0,25,11.678l-5.713,5.713-5.713-5.713a1.339,1.339,0,1,0-1.893,1.893l5.713,5.713L11.679,25a1.339,1.339,0,0,0,1.893,1.893l5.713-5.713L25,26.892A1.339,1.339,0,1,0,26.892,25Z"
-                      transform="translate(723.496 18.711)" />
-                  </g>
-                </svg>
-
-              </span>
-            </button>
+            <div>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true" (click)="close()">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35">
+                    <g id="Group_16490" data-name="Group 16490" transform="translate(-724.833 -20)">
+                      <rect id="Rectangle_2209" data-name="Rectangle 2209" width="35" height="35"
+                        transform="translate(724.833 20)" fill="#f3f3f1" />
+                      <path id="Icon_ionic-ios-close" data-name="Icon ionic-ios-close"
+                        d="M21.179,19.285l5.713-5.713A1.339,1.339,0,0,0,25,11.678l-5.713,5.713-5.713-5.713a1.339,1.339,0,1,0-1.893,1.893l5.713,5.713L11.679,25a1.339,1.339,0,0,0,1.893,1.893l5.713-5.713L25,26.892A1.339,1.339,0,1,0,26.892,25Z"
+                        transform="translate(723.496 18.711)" />
+                    </g>
+                  </svg>
+  
+                </span>
+              </button>
+            </div>
 
           </div>
           <div class="modal-body">
