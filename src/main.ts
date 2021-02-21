@@ -8,7 +8,7 @@ if (environment.production) {
   enableProdMode();
 }
 else {
-  (window as any).wmConfig = environment.formConfigNew;
+  (window as any).wmConfig = environment.formConfigNewAr;
 }
 
 (window as any).wmConfig = JSON.parse(atob((window as any).wmConfig));
